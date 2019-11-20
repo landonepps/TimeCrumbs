@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
+    
+    // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
+    var moc: NSManagedObjectContext!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
 
 }
 

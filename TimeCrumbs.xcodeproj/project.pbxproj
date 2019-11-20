@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */; };
 		4496D6502385ADE800294710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D64F2385ADE800294710 /* AppDelegate.swift */; };
 		4496D6522385ADE800294710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D6512385ADE800294710 /* SceneDelegate.swift */; };
 		4496D6542385ADE800294710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D6532385ADE800294710 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		4496D64C2385ADE800294710 /* TimeCrumbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCrumbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4496D64F2385ADE800294710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4496D6512385ADE800294710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4433A0532385B809004AC1E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4496D6432385ADE800294710 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 				449C5A1F2385B235007828C7 /* Model */,
 				44B4EBB12385B28C00BEA8FA /* View Controllers */,
 				44B4EBB22385B29100BEA8FA /* Storyboards */,
+				4433A0532385B809004AC1E7 /* Extensions */,
 				449C5A202385B25B007828C7 /* Supporting Files */,
 			);
 			path = TimeCrumbs;
@@ -298,6 +309,7 @@
 				4496D6502385ADE800294710 /* AppDelegate.swift in Sources */,
 				4496D65A2385ADE800294710 /* TimeCrumbs.xcdatamodeld in Sources */,
 				4496D6522385ADE800294710 /* SceneDelegate.swift in Sources */,
+				4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
