@@ -16,8 +16,8 @@ Instead of using a singleton, we use dependency injection to set the managed obj
 e.g. In `SceneDelegate.swift`
 ```swift
 if let rootVC = window?.rootViewController as? ViewController {
-let appDelegate = UIApplication.shared.delegate as? AppDelegate
-rootVC.moc = appDelegate?.persistentContainer.viewContext
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    rootVC.moc = appDelegate?.persistentContainer.viewContext
 }
 ```
 
