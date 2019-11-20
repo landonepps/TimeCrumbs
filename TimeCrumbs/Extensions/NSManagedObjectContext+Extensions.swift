@@ -18,7 +18,7 @@ extension NSManagedObjectContext {
             return true
         } catch {
             rollback()
-            return true
+            return false
         }
     }
     
