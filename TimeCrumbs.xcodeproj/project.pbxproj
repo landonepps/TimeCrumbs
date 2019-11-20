@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */; };
+		4433A0552385C0BE004AC1E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4433A0542385C0BE004AC1E7 /* README.md */; };
 		4496D6502385ADE800294710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D64F2385ADE800294710 /* AppDelegate.swift */; };
 		4496D6522385ADE800294710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D6512385ADE800294710 /* SceneDelegate.swift */; };
 		4496D6542385ADE800294710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D6532385ADE800294710 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		4433A0542385C0BE004AC1E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4496D64C2385ADE800294710 /* TimeCrumbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCrumbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4496D64F2385ADE800294710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4496D6512385ADE800294710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		4496D6432385ADE800294710 = {
 			isa = PBXGroup;
 			children = (
+				4433A0542385C0BE004AC1E7 /* README.md */,
 				4496D64E2385ADE800294710 /* TimeCrumbs */,
 				4496D6682385ADEB00294710 /* TimeCrumbsTests */,
 				4496D6732385ADEB00294710 /* TimeCrumbsUITests */,
@@ -280,6 +283,7 @@
 			files = (
 				4496D65F2385ADEA00294710 /* LaunchScreen.storyboard in Resources */,
 				4496D65C2385ADEA00294710 /* Assets.xcassets in Resources */,
+				4433A0552385C0BE004AC1E7 /* README.md in Resources */,
 				4496D6572385ADE800294710 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
