@@ -16,14 +16,14 @@ Instead of using a singleton, we use dependency injection to set the managed obj
 e.g. In `SceneDelegate.swift`
 ```swift
 if let rootVC = window?.rootViewController as? ViewController {
-    let appDelegate = UIApplication.shared.delegate as? AppDelegate
-    rootVC.moc = appDelegate?.persistentContainer.viewContext
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
+rootVC.moc = appDelegate?.persistentContainer.viewContext
 }
 ```
 
 ## Git
 
-#### Using feature branches
+#### Feature branch workflow
 
 ```bash
 # switch to develop
@@ -41,8 +41,12 @@ git push -u origin feature/add-some-feature
 git checkout develop
 # pull changes to develop
 git pull
-# pull changes from feature to develop
+# pull changes from (remote) feature to (local) develop
 git pull origin feature/add-some-feature
-# push new feature
+# push merged local develop branch to remote
 git push
+# delete remote feature branch if finished
+git push origin --delete feature/add-some-feature
+# delete local feature branch
+git branch -d feature/add-some-feature
 ```
