@@ -22,6 +22,7 @@
 		4496D65F2385ADEA00294710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4496D65D2385ADEA00294710 /* LaunchScreen.storyboard */; };
 		4496D66A2385ADEB00294710 /* TimeCrumbsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D6692385ADEB00294710 /* TimeCrumbsTests.swift */; };
 		4496D6752385ADEB00294710 /* TimeCrumbsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D6742385ADEB00294710 /* TimeCrumbsUITests.swift */; };
+		44FCE8CA238C994200F1DFA9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCE8C9238C994200F1DFA9 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		4496D6702385ADEB00294710 /* TimeCrumbsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeCrumbsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4496D6742385ADEB00294710 /* TimeCrumbsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCrumbsUITests.swift; sourceTree = "<group>"; };
 		4496D6762385ADEB00294710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44FCE8C7238C993C00F1DFA9 /* TimeCrumbs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeCrumbs.entitlements; sourceTree = "<group>"; };
+		44FCE8C9238C994200F1DFA9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FCE8CA238C994200F1DFA9 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +110,7 @@
 				4496D6682385ADEB00294710 /* TimeCrumbsTests */,
 				4496D6732385ADEB00294710 /* TimeCrumbsUITests */,
 				4496D64D2385ADE800294710 /* Products */,
+				44FCE8C8238C994200F1DFA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +127,7 @@
 		4496D64E2385ADE800294710 /* TimeCrumbs */ = {
 			isa = PBXGroup;
 			children = (
+				44FCE8C7238C993C00F1DFA9 /* TimeCrumbs.entitlements */,
 				449C5A1F2385B235007828C7 /* Model */,
 				44B4EBB12385B28C00BEA8FA /* View Controllers */,
 				44B4EBB22385B29100BEA8FA /* Storyboards */,
@@ -187,6 +193,14 @@
 				446812E1238C8B4F00CF522A /* Settings.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		44FCE8C8238C994200F1DFA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44FCE8C9238C994200F1DFA9 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,6 +548,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TimeCrumbs/TimeCrumbs.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6R9933TQJB;
 				INFOPLIST_FILE = "$(SRCROOT)/TimeCrumbs/Supporting Files/Info.plist";
@@ -543,6 +559,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.convenientcode.TimeCrumbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -552,6 +569,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TimeCrumbs/TimeCrumbs.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6R9933TQJB;
 				INFOPLIST_FILE = "$(SRCROOT)/TimeCrumbs/Supporting Files/Info.plist";
@@ -561,6 +580,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.convenientcode.TimeCrumbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
