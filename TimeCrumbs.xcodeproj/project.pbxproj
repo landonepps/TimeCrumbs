@@ -12,6 +12,7 @@
 		2A8155E3238C97C800B1859C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E2238C97C800B1859C /* Category.swift */; };
 		2A8155E5238C988D00B1859C /* ProjectControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E4238C988D00B1859C /* ProjectControllers.swift */; };
 		2A8155E8238CA94400B1859C /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E7238CA94400B1859C /* Managed.swift */; };
+		2A8155EA238D98C000B1859C /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E9238D98C000B1859C /* TaskController.swift */; };
 		4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */; };
 		4433A0552385C0BE004AC1E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4433A0542385C0BE004AC1E7 /* README.md */; };
 		446812E7238C8B4F00CF522A /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446812DF238C8B4F00CF522A /* Log.storyboard */; };
@@ -53,6 +54,7 @@
 		2A8155E2238C97C800B1859C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2A8155E4238C988D00B1859C /* ProjectControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectControllers.swift; sourceTree = "<group>"; };
 		2A8155E7238CA94400B1859C /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
+		2A8155E9238D98C000B1859C /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		4433A0542385C0BE004AC1E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		446812E0238C8B4F00CF522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Log.storyboard; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8155E4238C988D00B1859C /* ProjectControllers.swift */,
+				2A8155E9238D98C000B1859C /* TaskController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				2A8155E1238C961300B1859C /* Task.swift in Sources */,
 				2A8155E5238C988D00B1859C /* ProjectControllers.swift in Sources */,
+				2A8155EA238D98C000B1859C /* TaskController.swift in Sources */,
 				2A8155DF238C90A100B1859C /* Project.swift in Sources */,
 				2A8155E3238C97C800B1859C /* Category.swift in Sources */,
 				2A8155E8238CA94400B1859C /* Managed.swift in Sources */,

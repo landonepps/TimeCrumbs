@@ -15,6 +15,7 @@ final class Project: NSManagedObject {
     @NSManaged fileprivate(set) var clientName: String
     @NSManaged fileprivate(set) var dateAdded: Date
     @NSManaged fileprivate(set) var archived: Bool
+    @NSManaged fileprivate(set) var tasks: Set<Task>
 }
 
 extension Project: Managed {

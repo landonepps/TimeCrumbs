@@ -11,4 +11,5 @@ import CoreData
 
 final class Category: NSManagedObject {
     @NSManaged fileprivate(set) var name: String
+    @NSManaged fileprivate(set) var tasks: Set<Task>
 }
