@@ -7,42 +7,59 @@
 //
 
 import Foundation
+import CoreData
 
 class TaskController {
     
     // MARK: - CRUD
     // Create
-    func startTask(startTime: Date? = nil, duration: Double = 0, date: Date = Date()) {
+    static func createTask(startTime: Date? = nil, duration: Double = 0, date: Date = Date(), moc: NSManagedObjectContext) {
+        let task = Task(context: moc)
         
+        task.startTime = startTime
+        task.duration = duration
+        task.date = date
+        moc.saveOrRollback()
     }
     
     // Update
-    func pauseTask(task: Task) {
-        // get duration
-        // reset start time
-        // save
-    }
-    
-    func resumeTask(task: Task) {
-        // set start time
-        // save
-    }
-    
-    func finishTask(task: Task) {
-        // stop timer
-        // set duration
-    }
-    
-    func setCategory(task: Task, category: Category) {
+    static func pauseTask(_ task: Task) {
+        guard let startTime = task.startTime else {return}
         
+        task.duration = Date().timeIntervalSince(startTime)
+        task.startTime = nil
+        task.managedObjectContext?.saveOrRollback()
+    }
+    
+    static func resumeTask(_ task: Task) {
+        guard task.startTime == nil else {return}
+        
+        task.startTime = Date()
+        task.managedObjectContext?.saveOrRollback()
+    }
+    
+    static func finishTask(_ task: Task) {
+        guard let startTime = task.startTime else {return}
+        
+        task.duration = Date().timeIntervalSince(startTime)
+        task.managedObjectContext?.saveOrRollback()
+    }
+    
+    static func setCategory(to category: Category, for task: Task) {
+        task.category = category
+        task.managedObjectContext?.saveOrRollback()
     }
     
     // Delete
-    func cancelTask(task: Task) {
-        // reset start time to nil
+    static func cancelTask(_ task: Task) {
+        task.startTime = nil
+        task.managedObjectContext?.saveOrRollback()
     }
     
-    func deleteTask(task: Task) {
-        // delete task
+    static func deleteTask(_ task: Task) {
+        let moc = task.managedObjectContext
+        
+        moc?.delete(task)
+        moc?.saveOrRollback()
     }
 }

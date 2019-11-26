@@ -18,7 +18,6 @@ class ProjectController {
     
     // Update
     func updateProject(project: Project, name: String, hourlyRate: Double, clientName: String) {
-        
     }
     
     // Delete
@@ -31,7 +30,6 @@ class ProjectController {
         
     }
     
-    // Unarchive
     func unarchiveProject(project: Project) {
         
     }

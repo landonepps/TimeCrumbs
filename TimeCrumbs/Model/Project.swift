@@ -10,12 +10,12 @@ import Foundation
 import CoreData
 
 final class Project: NSManagedObject {
-    @NSManaged fileprivate(set) var name: String
-    @NSManaged fileprivate(set) var hourlyRate: Double
-    @NSManaged fileprivate(set) var clientName: String
-    @NSManaged fileprivate(set) var dateAdded: Date
-    @NSManaged fileprivate(set) var archived: Bool
-    @NSManaged fileprivate(set) var tasks: Set<Task>
+    @NSManaged var name: String
+    @NSManaged var hourlyRate: Double
+    @NSManaged var clientName: String
+    @NSManaged var dateAdded: Date
+    @NSManaged var archived: Bool
+    @NSManaged var tasks: Set<Task>
 }
 
 extension Project: Managed {
