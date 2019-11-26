@@ -23,6 +23,14 @@ class TaskController {
     }
     
     // Update
+    static func updateTask(_ task: Task, category: Category, date: Date, duration: Double) {
+        task.category = category
+        task.date = date
+        task.duration = duration
+        
+        task.managedObjectContext?.saveOrRollback()
+    }
+    
     static func pauseTask(_ task: Task) {
         guard let startTime = task.startTime else {return}
         
