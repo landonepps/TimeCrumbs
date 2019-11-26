@@ -9,7 +9,7 @@
         <!--Reminders-->
         <scene sceneID="2HJ-hl-2Yn">
             <objects>
-                <tableViewController id="ZyF-xs-fzV" sceneMemberID="viewController">
+                <tableViewController id="ZyF-xs-fzV" customClass="SettingsTableViewController" customModule="TimeCrumbs" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="83" estimatedRowHeight="83" sectionHeaderHeight="18" sectionFooterHeight="18" id="1z2-ya-8sY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
