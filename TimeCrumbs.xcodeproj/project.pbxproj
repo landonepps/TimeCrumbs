@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A8155DF238C90A100B1859C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155DE238C90A100B1859C /* Project.swift */; };
+		2A8155E1238C961300B1859C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E0238C961300B1859C /* Task.swift */; };
+		2A8155E3238C97C800B1859C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E2238C97C800B1859C /* Category.swift */; };
+		2A8155E5238C988D00B1859C /* ProjectControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E4238C988D00B1859C /* ProjectControllers.swift */; };
+		2A8155E8238CA94400B1859C /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E7238CA94400B1859C /* Managed.swift */; };
 		4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */; };
 		4433A0552385C0BE004AC1E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4433A0542385C0BE004AC1E7 /* README.md */; };
 		4496D6502385ADE800294710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D64F2385ADE800294710 /* AppDelegate.swift */; };
@@ -38,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A8155DE238C90A100B1859C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		2A8155E0238C961300B1859C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		2A8155E2238C97C800B1859C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		2A8155E4238C988D00B1859C /* ProjectControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectControllers.swift; sourceTree = "<group>"; };
+		2A8155E7238CA94400B1859C /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		4433A0542385C0BE004AC1E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4496D64C2385ADE800294710 /* TimeCrumbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCrumbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A8155DD238C7FFB00B1859C /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A8155E4238C988D00B1859C /* ProjectControllers.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		2A8155E6238CA91B00B1859C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2A8155E7238CA94400B1859C /* Managed.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4433A0532385B809004AC1E7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				449C5A1F2385B235007828C7 /* Model */,
+				2A8155DD238C7FFB00B1859C /* Model Controllers */,
 				44B4EBB12385B28C00BEA8FA /* View Controllers */,
 				44B4EBB22385B29100BEA8FA /* Storyboards */,
+				2A8155E6238CA91B00B1859C /* Helpers */,
 				4433A0532385B809004AC1E7 /* Extensions */,
 				449C5A202385B25B007828C7 /* Supporting Files */,
 			);
@@ -145,6 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				4496D6582385ADE800294710 /* TimeCrumbs.xcdatamodeld */,
+				2A8155DE238C90A100B1859C /* Project.swift */,
+				2A8155E0238C961300B1859C /* Task.swift */,
+				2A8155E2238C97C800B1859C /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,6 +345,11 @@
 				4496D65A2385ADE800294710 /* TimeCrumbs.xcdatamodeld in Sources */,
 				4496D6522385ADE800294710 /* SceneDelegate.swift in Sources */,
 				4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				2A8155E1238C961300B1859C /* Task.swift in Sources */,
+				2A8155E5238C988D00B1859C /* ProjectControllers.swift in Sources */,
+				2A8155DF238C90A100B1859C /* Project.swift in Sources */,
+				2A8155E3238C97C800B1859C /* Category.swift in Sources */,
+				2A8155E8238CA94400B1859C /* Managed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
