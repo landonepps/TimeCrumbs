@@ -14,6 +14,7 @@
 		2A8155E8238CA94400B1859C /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E7238CA94400B1859C /* Managed.swift */; };
 		2A8155EA238D98C000B1859C /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E9238D98C000B1859C /* TaskController.swift */; };
 		2A8155EC238DCA2000B1859C /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155EB238DCA2000B1859C /* CategoryController.swift */; };
+		441C07FE239597BC002BB48E /* HomeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441C07FD239597BC002BB48E /* HomeLayout.swift */; };
 		4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */; };
 		4433A0552385C0BE004AC1E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4433A0542385C0BE004AC1E7 /* README.md */; };
 		446812E7238C8B4F00CF522A /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446812DF238C8B4F00CF522A /* Log.storyboard */; };
@@ -61,6 +62,7 @@
 		2A8155E7238CA94400B1859C /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		2A8155E9238D98C000B1859C /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		2A8155EB238DCA2000B1859C /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		441C07FD239597BC002BB48E /* HomeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayout.swift; sourceTree = "<group>"; };
 		4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		4433A0542385C0BE004AC1E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		446812E0238C8B4F00CF522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Log.storyboard; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		441C07FA23959778002BB48E /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				441C07FD239597BC002BB48E /* HomeLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
 		4433A0532385B809004AC1E7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +182,7 @@
 				449C5A1F2385B235007828C7 /* Model */,
 				2A8155DD238C7FFB00B1859C /* Model Controllers */,
 				44B4EBB12385B28C00BEA8FA /* View Controllers */,
+				441C07FA23959778002BB48E /* Layouts */,
 				44B4EBB22385B29100BEA8FA /* Storyboards */,
 				2A8155E6238CA91B00B1859C /* Helpers */,
 				4433A0532385B809004AC1E7 /* Extensions */,
@@ -396,6 +407,7 @@
 				4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				2A8155EC238DCA2000B1859C /* CategoryController.swift in Sources */,
 				449B3E57238D9B4F0091819D /* DashboardViewController.swift in Sources */,
+				441C07FE239597BC002BB48E /* HomeLayout.swift in Sources */,
 				449B3E5D238DA7DB0091819D /* CoreDataClient.swift in Sources */,
 				2A8155E1238C961300B1859C /* Task.swift in Sources */,
 				2A8155E5238C988D00B1859C /* ProjectControllers.swift in Sources */,

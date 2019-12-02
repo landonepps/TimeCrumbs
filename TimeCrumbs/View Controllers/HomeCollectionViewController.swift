@@ -57,7 +57,7 @@ class HomeCollectionViewController: UICollectionViewController {
         // Configure the cell
     
         return cell
-    }
+    } 
 
     // MARK: UICollectionViewDelegate
 
