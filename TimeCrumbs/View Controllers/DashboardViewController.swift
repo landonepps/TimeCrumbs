@@ -11,6 +11,15 @@ import CoreData
 
 class DashboardViewController: UIViewController {
     
+    // MARK: - Outlets
+    @IBOutlet weak var dateRangeButton: UIButton!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var dollarAmountLabel: UILabel!
+    @IBOutlet weak var timeCrumbsImageView: UIImageView!
+    @IBOutlet weak var timeCrumbsDollarLabel: UILabel!
+    @IBOutlet weak var congratulationsLabel: UILabel!
+    
+    
     // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
     var moc: NSManagedObjectContext!
 
