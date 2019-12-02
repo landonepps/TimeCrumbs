@@ -49,18 +49,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9M1-BQ-rTq">
-                                            <rect key="frame" x="0.0" y="2" width="22" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9M1-BQ-rTq">
+                                            <rect key="frame" x="0.0" y="0.0" width="25" height="133"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="V24-mX-iRg"/>
+                                            </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4P-gb-9sP">
-                                            <rect key="frame" x="30" y="8" width="75" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3Sr-A4-LGI">
                                             <rect key="frame" x="215" y="25" width="159" height="83"/>
                                             <subviews>
@@ -102,11 +97,23 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4P-gb-9sP">
+                                            <rect key="frame" x="33" y="8" width="107" height="26.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="3Sr-A4-LGI" secondAttribute="bottom" constant="25" id="6BF-0K-doG"/>
+                                        <constraint firstItem="3Sr-A4-LGI" firstAttribute="leading" secondItem="Y4P-gb-9sP" secondAttribute="trailing" constant="75" id="6FJ-A9-YiA"/>
+                                        <constraint firstItem="Y4P-gb-9sP" firstAttribute="leading" secondItem="9M1-BQ-rTq" secondAttribute="trailing" constant="8" id="MWT-lw-rpC"/>
+                                        <constraint firstAttribute="bottom" secondItem="9M1-BQ-rTq" secondAttribute="bottom" id="Soi-Ao-WGp"/>
+                                        <constraint firstItem="Y4P-gb-9sP" firstAttribute="top" secondItem="AMz-0F-EV7" secondAttribute="top" constant="8" id="Y1d-d6-41b"/>
                                         <constraint firstAttribute="trailing" secondItem="3Sr-A4-LGI" secondAttribute="trailing" constant="40" id="ZxN-Po-cJC"/>
                                         <constraint firstItem="3Sr-A4-LGI" firstAttribute="top" secondItem="AMz-0F-EV7" secondAttribute="top" constant="25" id="jVQ-pU-ICQ"/>
+                                        <constraint firstItem="9M1-BQ-rTq" firstAttribute="leading" secondItem="AMz-0F-EV7" secondAttribute="leading" id="tgp-qw-gxR"/>
+                                        <constraint firstItem="9M1-BQ-rTq" firstAttribute="top" secondItem="AMz-0F-EV7" secondAttribute="top" id="xQm-5k-aGT"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="414" height="133"/>
