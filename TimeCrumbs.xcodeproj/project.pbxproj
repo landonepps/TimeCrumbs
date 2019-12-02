@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A349C1723957F570012AD58 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2A349C1623957F570012AD58 /* Charts */; };
+		2A349C1A2395827F0012AD58 /* LogItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A349C192395827F0012AD58 /* LogItemTableViewCell.swift */; };
+		2A349C1C2395853D0012AD58 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A349C1B2395853D0012AD58 /* ProjectCollectionViewCell.swift */; };
 		2A8155DF238C90A100B1859C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155DE238C90A100B1859C /* Project.swift */; };
 		2A8155E1238C961300B1859C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E0238C961300B1859C /* Task.swift */; };
 		2A8155E3238C97C800B1859C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E2238C97C800B1859C /* Category.swift */; };
@@ -55,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A349C192395827F0012AD58 /* LogItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItemTableViewCell.swift; sourceTree = "<group>"; };
+		2A349C1B2395853D0012AD58 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A8155DE238C90A100B1859C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		2A8155E0238C961300B1859C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2A8155E2238C97C800B1859C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FCE8CA238C994200F1DFA9 /* CloudKit.framework in Frameworks */,
+				2A349C1723957F570012AD58 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A349C1D239585480012AD58 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2A349C192395827F0012AD58 /* LogItemTableViewCell.swift */,
+				2A349C1B2395853D0012AD58 /* ProjectCollectionViewCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		2A8155DD238C7FFB00B1859C /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +254,7 @@
 				449B3E56238D9B4F0091819D /* DashboardViewController.swift */,
 				449B3E54238D99DC0091819D /* LogTableViewController.swift */,
 				449B3E52238D98D00091819D /* SettingsTableViewController.swift */,
+				2A349C1D239585480012AD58 /* Custom Cells */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -279,6 +295,9 @@
 			dependencies = (
 			);
 			name = TimeCrumbs;
+			packageProductDependencies = (
+				2A349C1623957F570012AD58 /* Charts */,
+			);
 			productName = TimeCrumbs;
 			productReference = 4496D64C2385ADE800294710 /* TimeCrumbs.app */;
 			productType = "com.apple.product-type.application";
@@ -351,6 +370,9 @@
 				Base,
 			);
 			mainGroup = 4496D6432385ADE800294710;
+			packageReferences = (
+				2A349C1523957F570012AD58 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 4496D64D2385ADE800294710 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -401,6 +423,7 @@
 			files = (
 				449B3E55238D99DC0091819D /* LogTableViewController.swift in Sources */,
 				4496D6502385ADE800294710 /* AppDelegate.swift in Sources */,
+				2A349C1A2395827F0012AD58 /* LogItemTableViewCell.swift in Sources */,
 				4496D65A2385ADE800294710 /* TimeCrumbs.xcdatamodeld in Sources */,
 				449B3E53238D98D00091819D /* SettingsTableViewController.swift in Sources */,
 				4496D6522385ADE800294710 /* SceneDelegate.swift in Sources */,
@@ -413,6 +436,7 @@
 				2A8155E5238C988D00B1859C /* ProjectControllers.swift in Sources */,
 				2A8155EA238D98C000B1859C /* TaskController.swift in Sources */,
 				2A8155DF238C90A100B1859C /* Project.swift in Sources */,
+				2A349C1C2395853D0012AD58 /* ProjectCollectionViewCell.swift in Sources */,
 				449B3E5B238DA4200091819D /* HomeCollectionViewController.swift in Sources */,
 				2A8155E3238C97C800B1859C /* Category.swift in Sources */,
 				2A8155E8238CA94400B1859C /* Managed.swift in Sources */,
@@ -786,6 +810,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A349C1523957F570012AD58 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A349C1623957F570012AD58 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A349C1523957F570012AD58 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4496D6582385ADE800294710 /* TimeCrumbs.xcdatamodeld */ = {

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cZE-v0-N4m">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,19 +36,89 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xvY-0I-ewU">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="414" height="133"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProjectCell" id="mbt-GA-RdJ" customClass="HomeC">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProjectCell" id="mbt-GA-RdJ" customClass="ProjectCollectionViewCell" customModule="TimeCrumbs" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AMz-0F-EV7">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9M1-BQ-rTq">
+                                            <rect key="frame" x="0.0" y="2" width="22" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4P-gb-9sP">
+                                            <rect key="frame" x="30" y="8" width="75" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3Sr-A4-LGI">
+                                            <rect key="frame" x="215" y="25" width="159" height="83"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Piv-1y-JbA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="77" height="83"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTK-TX-0tv">
+                                                            <rect key="frame" x="0.0" y="0.0" width="77" height="54.5"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <connections>
+                                                                <action selector="logTimeButtonTapped:" destination="mbt-GA-RdJ" eventType="touchUpInside" id="stP-yB-aQv"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOG TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lq4-vt-bdj">
+                                                            <rect key="frame" x="0.0" y="62.5" width="77" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GTO-6h-3ID">
+                                                    <rect key="frame" x="107" y="0.0" width="52" height="83"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ka-bn-EBO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="54.5"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <connections>
+                                                                <action selector="startButtonTapped:" destination="mbt-GA-RdJ" eventType="touchUpInside" id="1i0-7y-eiV"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="START" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bS-Z3-irZ">
+                                                            <rect key="frame" x="0.0" y="62.5" width="52" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="3Sr-A4-LGI" secondAttribute="bottom" constant="25" id="6BF-0K-doG"/>
+                                        <constraint firstAttribute="trailing" secondItem="3Sr-A4-LGI" secondAttribute="trailing" constant="40" id="ZxN-Po-cJC"/>
+                                        <constraint firstItem="3Sr-A4-LGI" firstAttribute="top" secondItem="AMz-0F-EV7" secondAttribute="top" constant="25" id="jVQ-pU-ICQ"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="414" height="133"/>
+                                <connections>
+                                    <outlet property="logTimeButton" destination="HTK-TX-0tv" id="K9v-In-IEP"/>
+                                    <outlet property="logTimeButtonTapped" destination="HTK-TX-0tv" id="AsT-6N-ze8"/>
+                                    <outlet property="logTimeLabel" destination="Lq4-vt-bdj" id="T6M-Fh-rBP"/>
+                                    <outlet property="projectColorView" destination="9M1-BQ-rTq" id="f8U-PW-sZe"/>
+                                    <outlet property="projectLabel" destination="Y4P-gb-9sP" id="ahH-yJ-Mm3"/>
+                                    <outlet property="startButton" destination="8Ka-bn-EBO" id="vdL-XO-weZ"/>
+                                    <outlet property="startLabel" destination="7bS-Z3-irZ" id="bGR-Vb-aIf"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -56,11 +126,14 @@
                             <outlet property="delegate" destination="8xd-Jd-rd8" id="BIm-c1-roz"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="s1z-E4-sRc"/>
+                    <navigationItem key="navigationItem" id="s1z-E4-sRc">
+                        <barButtonItem key="leftBarButtonItem" title="View Archive" id="5jX-4S-B1A"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add Project" id="FuV-BX-kZq"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MVQ-aL-prB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2013" y="137"/>
+            <point key="canvasLocation" x="2011.594202898551" y="136.60714285714286"/>
         </scene>
     </scenes>
     <resources>
