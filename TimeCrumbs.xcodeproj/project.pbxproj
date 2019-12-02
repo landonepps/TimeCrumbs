@@ -197,6 +197,7 @@
 				449C5A1F2385B235007828C7 /* Model */,
 				2A8155DD238C7FFB00B1859C /* Model Controllers */,
 				44B4EBB12385B28C00BEA8FA /* View Controllers */,
+				2A349C1D239585480012AD58 /* Custom Cells */,
 				441C07FA23959778002BB48E /* Layouts */,
 				44B4EBB22385B29100BEA8FA /* Storyboards */,
 				2A8155E6238CA91B00B1859C /* Helpers */,
@@ -254,7 +255,6 @@
 				449B3E56238D9B4F0091819D /* DashboardViewController.swift */,
 				449B3E54238D99DC0091819D /* LogTableViewController.swift */,
 				449B3E52238D98D00091819D /* SettingsTableViewController.swift */,
-				2A349C1D239585480012AD58 /* Custom Cells */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

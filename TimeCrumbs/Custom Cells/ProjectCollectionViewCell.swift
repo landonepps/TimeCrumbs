@@ -10,6 +10,8 @@ import UIKit
 
 class ProjectCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var projectColorView: UIView!
     @IBOutlet weak var projectLabel: UILabel!
     @IBOutlet weak var logTimeButton: UIButton!
@@ -17,9 +19,18 @@ class ProjectCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var logTimeLabel: UILabel!
     @IBOutlet weak var startLabel: UILabel!
     
+    // MARK: - Actions
+    
     @IBAction func logTimeButtonTapped(_ sender: Any) {
     }
+    
     @IBAction func startButtonTapped(_ sender: Any) {
+    }
+    
+    // MARK: - Methods
+    
+    func setupViews() {
+        startButton.imageView?.tintColor = UIColor.white
     }
     
 }
