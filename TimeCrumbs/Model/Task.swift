@@ -9,10 +9,11 @@
 import Foundation
 import CoreData
 
-final class Task: NSManagedObject {
-    @NSManaged var startTime: Date?
-    @NSManaged var duration: Double
-    @NSManaged var date: Date
-    @NSManaged var category: Category?
-    @NSManaged var project: Project
+@objc(Task)
+public class Task: NSManagedObject, Managed {
+    
+    static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: #keyPath(date), ascending: false)]
+    }
+    
 }

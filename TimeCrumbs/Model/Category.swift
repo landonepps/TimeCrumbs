@@ -9,7 +9,11 @@
 import Foundation
 import CoreData
 
-final class Category: NSManagedObject {
-    @NSManaged var name: String
-    @NSManaged var tasks: Set<Task>
+@objc(Category)
+public class Category: NSManagedObject, Managed {
+    
+    static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: #keyPath(name), ascending: false)]
+    }
+    
 }

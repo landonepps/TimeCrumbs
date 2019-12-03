@@ -13,7 +13,7 @@ class CategoryController {
     
     // MARK: - CRUD
     // Create
-    func addNewCategory(name: String, moc: NSManagedObjectContext) {
+    static func addNewCategory(name: String, moc: NSManagedObjectContext) {
         let category = Category(context: moc)
         category.name = name
         
@@ -21,14 +21,14 @@ class CategoryController {
     }
     
     // Update
-    func updateCategory(_ category: Category, with name: String) {
+    static func updateCategory(_ category: Category, with name: String) {
         category.name = name
         
         category.managedObjectContext?.saveOrRollback()
     }
     
     // Delete
-    func deleteCategory(_ category: Category) {
+    static func deleteCategory(_ category: Category) {
         let moc = category.managedObjectContext
         moc?.delete(category)
         

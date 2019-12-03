@@ -13,7 +13,7 @@ class ProjectController {
     
     // MARK: - CRUD
     // Create
-    func createProject(name: String, hourlyRate: Double = 0, clientName: String = "", dateAdded: Date = Date(), color: String, moc: NSManagedObjectContext) {
+    static func createProject(name: String, hourlyRate: Double = 0, clientName: String = "", dateAdded: Date = Date(), color: String, moc: NSManagedObjectContext) {
         let project = Project(context: moc)
         
         project.name = name
@@ -27,7 +27,7 @@ class ProjectController {
     }
     
     // Update
-    func updateProject(_ project: Project, name: String, hourlyRate: Double, clientName: String, color: String) {
+    static func updateProject(_ project: Project, name: String, hourlyRate: Double, clientName: String, color: String) {
         project.name = name
         project.hourlyRate = hourlyRate
         project.clientName = clientName
@@ -37,7 +37,7 @@ class ProjectController {
     }
     
     // Delete
-    func deleteProject(_ project: Project) {
+    static func deleteProject(_ project: Project) {
         let moc = project.managedObjectContext
         
         moc?.delete(project)
@@ -45,13 +45,13 @@ class ProjectController {
     }
     
     // Archive
-    func archiveProject(_ project: Project) {
+    static func archiveProject(_ project: Project) {
         project.isArchived = true
         
         project.managedObjectContext?.saveOrRollback()
     }
     
-    func unarchiveProject(_ project: Project) {
+    static func unarchiveProject(_ project: Project) {
         project.isArchived = false
         
         project.managedObjectContext?.saveOrRollback()
