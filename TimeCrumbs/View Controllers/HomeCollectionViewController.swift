@@ -15,39 +15,44 @@ class HomeCollectionViewController: UICollectionViewController {
     
     // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
     var moc: NSManagedObjectContext!
+    
+    var fetchedResultsController: NSFetchedResultsController<Project>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.register(ProjectCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.register(UINib(nibName: "ProjectCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
+        fetchedResultsController = NSFetchedResultsController<Project>(fetchRequest: Project.sortedFetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController?.performFetch()
+        } catch {
+            print("Error:", error)
+        }
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return 0
+        return fetchedResultsController?.sections?.count ?? 0
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 0
+        return fetchedResultsController?.fetchedObjects?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ProjectCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ProjectCollectionViewCell else { fatalError("Incorrect cell type: expected ProjectCollectionViewCell") }
     
         // Configure the cell
     
@@ -55,36 +60,16 @@ class HomeCollectionViewController: UICollectionViewController {
     } 
 
     // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("selected cell:", indexPath)
     }
-    */
+}
 
+extension HomeCollectionViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        collectionView.reloadData()
+    }
 }
 
 extension HomeCollectionViewController: CoreDataClient {

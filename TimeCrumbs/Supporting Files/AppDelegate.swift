@@ -14,6 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        #warning("Remove code to reset DB & generate dummy data")
+        print("Removing all records in:", persistentContainer.name)
+        // create the delete request for the specified entity
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        let backgroundMOC = persistentContainer.newBackgroundContext()
+
+        // perform the delete
+        do {
+            try backgroundMOC.execute(deleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        print("Recreating dummy project")
+        print("main thread?", Thread.isMainThread)
+        ProjectController.createProject(name: "Project 1", color: "orangeColor", moc: persistentContainer.viewContext)
+        
         return true
     }
 
