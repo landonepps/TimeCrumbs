@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,110 +34,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xvY-0I-ewU">
-                            <size key="itemSize" width="408" height="140"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProjectCell" id="mbt-GA-RdJ" customClass="ProjectCollectionViewCell" customModule="TimeCrumbs" customModuleProvider="target">
-                                <rect key="frame" x="8" y="0.0" width="398" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AMz-0F-EV7">
-                                    <rect key="frame" x="0.0" y="0.0" width="398" height="140"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9M1-BQ-rTq">
-                                            <rect key="frame" x="0.0" y="0.0" width="25" height="140"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="25" id="zSx-0A-FW4"/>
-                                            </constraints>
-                                        </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4P-gb-9sP">
-                                            <rect key="frame" x="36" y="8" width="351" height="27.5"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="3Sr-A4-LGI">
-                                            <rect key="frame" x="180.5" y="43.5" width="180.5" height="87"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Piv-1y-JbA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="63.5" height="87"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTK-TX-0tv">
-                                                            <rect key="frame" x="1" y="0.0" width="62" height="62"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="62" id="1aY-tz-xkE"/>
-                                                                <constraint firstAttribute="width" secondItem="HTK-TX-0tv" secondAttribute="height" multiplier="1:1" id="Xxr-PW-snc"/>
-                                                            </constraints>
-                                                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <state key="normal" image="plus" backgroundImage="smallbutton"/>
-                                                            <connections>
-                                                                <action selector="logTimeButtonTapped:" destination="mbt-GA-RdJ" eventType="touchUpInside" id="stP-yB-aQv"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="LOG TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lq4-vt-bdj">
-                                                            <rect key="frame" x="0.0" y="70" width="63.5" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GTO-6h-3ID">
-                                                    <rect key="frame" x="118.5" y="0.0" width="62" height="87"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ka-bn-EBO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="8Ka-bn-EBO" secondAttribute="height" multiplier="1:1" id="Vq3-ze-Pm4"/>
-                                                                <constraint firstAttribute="height" constant="62" id="sNB-lh-cxB"/>
-                                                            </constraints>
-                                                            <state key="normal" image="clock" backgroundImage="smallbutton">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="startButtonTapped:" destination="mbt-GA-RdJ" eventType="touchUpInside" id="1i0-7y-eiV"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="START" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bS-Z3-irZ">
-                                                            <rect key="frame" x="9.5" y="70" width="43" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="9M1-BQ-rTq" firstAttribute="leading" secondItem="AMz-0F-EV7" secondAttribute="leading" id="1r0-Sv-viZ"/>
-                                        <constraint firstAttribute="bottom" secondItem="9M1-BQ-rTq" secondAttribute="bottom" id="LJ0-yP-P2o"/>
-                                        <constraint firstItem="3Sr-A4-LGI" firstAttribute="top" secondItem="Y4P-gb-9sP" secondAttribute="bottom" constant="8" id="Nv9-3V-DKl"/>
-                                        <constraint firstItem="9M1-BQ-rTq" firstAttribute="top" secondItem="AMz-0F-EV7" secondAttribute="top" id="Pmo-Rr-yWG"/>
-                                        <constraint firstItem="Y4P-gb-9sP" firstAttribute="leading" secondItem="9M1-BQ-rTq" secondAttribute="trailing" constant="11" id="XDd-1w-88m"/>
-                                        <constraint firstItem="Y4P-gb-9sP" firstAttribute="top" secondItem="AMz-0F-EV7" secondAttribute="top" constant="8" id="dA2-wS-CHb"/>
-                                        <constraint firstAttribute="trailing" secondItem="3Sr-A4-LGI" secondAttribute="trailing" constant="37" id="oHh-pQ-jvH"/>
-                                        <constraint firstAttribute="trailing" secondItem="Y4P-gb-9sP" secondAttribute="trailing" constant="11" id="s8I-Ya-qYf"/>
-                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="3Sr-A4-LGI" secondAttribute="bottom" constant="4" id="tcc-kc-n91"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="398" height="140"/>
-                                <connections>
-                                    <outlet property="logTimeButton" destination="HTK-TX-0tv" id="K9v-In-IEP"/>
-                                    <outlet property="logTimeButtonTapped" destination="HTK-TX-0tv" id="AsT-6N-ze8"/>
-                                    <outlet property="logTimeLabel" destination="Lq4-vt-bdj" id="T6M-Fh-rBP"/>
-                                    <outlet property="projectColorView" destination="9M1-BQ-rTq" id="f8U-PW-sZe"/>
-                                    <outlet property="projectLabel" destination="Y4P-gb-9sP" id="ahH-yJ-Mm3"/>
-                                    <outlet property="startButton" destination="8Ka-bn-EBO" id="vdL-XO-weZ"/>
-                                    <outlet property="startLabel" destination="7bS-Z3-irZ" id="bGR-Vb-aIf"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
+                        <collectionViewLayout key="collectionViewLayout" id="V7G-fH-3g9" customClass="HomeLayout" customModule="TimeCrumbs" customModuleProvider="target"/>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="8xd-Jd-rd8" id="q0P-6o-XQC"/>
                             <outlet property="delegate" destination="8xd-Jd-rd8" id="BIm-c1-roz"/>
@@ -155,9 +52,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clock" width="35" height="40"/>
         <image name="house" catalog="system" width="64" height="54"/>
-        <image name="plus" width="35" height="35"/>
-        <image name="smallbutton" width="62" height="62"/>
     </resources>
 </document>
