@@ -22,6 +22,9 @@
                                     <rect key="frame" x="20" y="6" width="107" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Oct 30 - Nov 11"/>
+                                    <connections>
+                                        <action selector="dateRangeButtonTapped:" destination="1ko-7l-l5r" eventType="touchUpInside" id="cLA-dx-Vgw"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -84,6 +87,13 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="GM3-37-yX0" secondAttribute="bottom" id="z7B-Cd-wmi"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryNameLabel" destination="qZB-60-49L" id="Nli-pd-xPl"/>
+                                    <outlet property="dateLabel" destination="4Zr-yl-Z1d" id="cM8-KA-ATx"/>
+                                    <outlet property="dollarAmountLabel" destination="czL-J4-rk5" id="mD8-Li-EXa"/>
+                                    <outlet property="projectNameLabel" destination="bp1-xa-pmT" id="TDm-m2-Xqq"/>
+                                    <outlet property="timeLabel" destination="txu-92-Gal" id="Rt5-2p-F0R"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -94,6 +104,9 @@
                     <navigationItem key="navigationItem" id="zC1-ek-qIr">
                         <barButtonItem key="leftBarButtonItem" title="Export" image="square.and.arrow.down" catalog="system" id="dOS-3Z-RdM"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateRangeButton" destination="K8J-bV-fc3" id="Dey-2q-v7y"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaG-gt-TC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
