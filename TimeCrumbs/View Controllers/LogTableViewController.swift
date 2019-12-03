@@ -13,6 +13,9 @@ fileprivate let reuseIdentifier = "TaskCell"
 
 class LogTableViewController: UITableViewController {
     
+    // MARK: - Outlets
+    @IBOutlet weak var dateRangeButton: UIButton!
+    
     // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
     var moc: NSManagedObjectContext!
 
@@ -27,6 +30,10 @@ class LogTableViewController: UITableViewController {
         
         let buttonView = makeExportButton()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: buttonView)
+    }
+    
+    // MARK: - Actions
+    @IBAction func dateRangeButtonTapped(_ sender: Any) {
     }
 
     // MARK: - Table view data source

@@ -25,17 +25,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tR5-rO-kWb">
-                                <rect key="frame" x="23" y="219.5" width="368" height="35"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tR5-rO-kWb">
+                                <rect key="frame" x="20" y="219.5" width="374" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17.9 hrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16G-vb-jD8" userLabel="Hours Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="181.5" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,074.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-B8-vJv" userLabel="Dollar Amount Label">
-                                        <rect key="frame" x="186.5" y="0.0" width="181.5" height="35"/>
+                                        <rect key="frame" x="159" y="0.0" width="215" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -88,14 +88,14 @@
                         <constraints>
                             <constraint firstItem="8mp-MH-GVN" firstAttribute="bottom" secondItem="FAX-91-hOh" secondAttribute="bottom" constant="20" id="19R-Dh-FWP"/>
                             <constraint firstAttribute="trailing" secondItem="FAX-91-hOh" secondAttribute="trailing" constant="55" id="8In-ar-16j"/>
-                            <constraint firstItem="8mp-MH-GVN" firstAttribute="trailing" secondItem="tR5-rO-kWb" secondAttribute="trailing" constant="23" id="D4R-zJ-O5e"/>
+                            <constraint firstItem="8mp-MH-GVN" firstAttribute="trailing" secondItem="tR5-rO-kWb" secondAttribute="trailing" constant="20" id="D4R-zJ-O5e"/>
                             <constraint firstItem="8mp-MH-GVN" firstAttribute="trailing" secondItem="pIx-mk-Ac7" secondAttribute="trailing" constant="20" id="FlN-DU-Sgh"/>
                             <constraint firstItem="XnN-vd-Una" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="26" id="J0e-pU-n95"/>
                             <constraint firstItem="FAX-91-hOh" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="55" id="MXb-oH-z6g"/>
                             <constraint firstItem="tR5-rO-kWb" firstAttribute="top" secondItem="ZwP-Cv-vWz" secondAttribute="bottom" constant="28" id="NKe-8W-909"/>
                             <constraint firstItem="7i2-j2-hQH" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="20" id="PQt-8Z-AIN"/>
                             <constraint firstItem="pIx-mk-Ac7" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="20" id="WVB-MJ-RBO"/>
-                            <constraint firstItem="tR5-rO-kWb" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="23" id="Whi-Gn-wcz"/>
+                            <constraint firstItem="tR5-rO-kWb" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="20" id="Whi-Gn-wcz"/>
                             <constraint firstItem="FAX-91-hOh" firstAttribute="top" secondItem="7i2-j2-hQH" secondAttribute="bottom" constant="50" id="d9H-qS-TUf"/>
                             <constraint firstItem="ZwP-Cv-vWz" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="20" id="dC4-0X-740"/>
                             <constraint firstItem="7i2-j2-hQH" firstAttribute="top" secondItem="pIx-mk-Ac7" secondAttribute="bottom" constant="52" id="fnq-PC-dv9"/>
