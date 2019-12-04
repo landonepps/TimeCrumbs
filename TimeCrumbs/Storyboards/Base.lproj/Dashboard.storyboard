@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Dashboard View Controller-->
+        <!--Project 1-->
         <scene sceneID="Zfk-Pa-pxb">
             <objects>
                 <viewController id="Htf-Ky-8Ne" customClass="DashboardViewController" customModule="TimeCrumbs" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,114 +15,107 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnN-vd-Una" userLabel="Date Button">
-                                <rect key="frame" x="26" y="114" width="107" height="30"/>
-                                <state key="normal" title="Oct 30 - Nov 11"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Totals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwP-Cv-vWz" userLabel="Totals Label">
-                                <rect key="frame" x="20" y="170" width="45" height="21.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tR5-rO-kWb">
-                                <rect key="frame" x="20" y="219.5" width="374" height="35"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3Fj-3t-xWM">
+                                <rect key="frame" x="20.5" y="520.5" width="373" height="254"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17.9 hrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16G-vb-jD8" userLabel="Hours Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="159" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Crumbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i2-j2-hQH" userLabel="Time Crumbs Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="34.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,074.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-B8-vJv" userLabel="Dollar Amount Label">
-                                        <rect key="frame" x="159" y="0.0" width="215" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIx-mk-Ac7">
-                                <rect key="frame" x="20" y="299.5" width="374" height="175"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="O7D-lR-bk3"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Crumbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i2-j2-hQH" userLabel="Time Crumbs Label">
-                                <rect key="frame" x="20" y="526.5" width="107" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FAX-91-hOh">
-                                <rect key="frame" x="55" y="598" width="304" height="195"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="B9b-tF-bWN">
-                                        <rect key="frame" x="57.5" y="0.0" width="189.5" height="155.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MlF-qX-g5y">
+                                        <rect key="frame" x="0.0" y="49.5" width="373" height="145"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graph" translatesAutoresizingMaskIntoConstraints="NO" id="y84-if-sdc" userLabel="Time Crumbs Image View">
-                                                <rect key="frame" x="0.0" y="36" width="84" height="84"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="y84-if-sdc" secondAttribute="height" multiplier="1:1" id="Ag5-4s-hkB"/>
-                                                </constraints>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeCrumbsTotal" translatesAutoresizingMaskIntoConstraints="NO" id="8Sh-sU-NxI">
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="145"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$48" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jY6-S4-D0n" userLabel="Time Crumbs Label">
-                                                <rect key="frame" x="118" y="55.5" width="71.5" height="44.5"/>
+                                                <rect key="frame" x="224" y="0.0" width="149" height="145"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="37"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="jY6-S4-D0n" firstAttribute="width" secondItem="MlF-qX-g5y" secondAttribute="width" multiplier="0.4" id="Ms4-Wr-iba"/>
+                                        </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations - you made an extra $48 by tracking your Time Crumb tasks under 30 minutes!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUA-Kf-YdP">
-                                        <rect key="frame" x="2.5" y="163.5" width="299.5" height="31.5"/>
+                                        <rect key="frame" x="0.0" y="209.5" width="373" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="bvs-9f-5ch">
+                                <rect key="frame" x="20" y="108" width="374" height="362.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="C2D-eg-8YC">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="159"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnN-vd-Una" userLabel="Date Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="107" height="46.5"/>
+                                                <state key="normal" title="Oct 30 - Nov 11"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Totals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwP-Cv-vWz" userLabel="Totals Label">
+                                                <rect key="frame" x="0.0" y="74.5" width="45" height="21.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="CKb-nE-dL6">
+                                                <rect key="frame" x="0.0" y="124" width="374" height="35"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17.9 hrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16G-vb-jD8" userLabel="Hours Label">
+                                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,074.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-B8-vJv" userLabel="Dollar Amount Label">
+                                                        <rect key="frame" x="204.5" y="0.0" width="169.5" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="CKb-nE-dL6" secondAttribute="trailing" id="RTR-2H-xOP"/>
+                                        </constraints>
+                                    </stackView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylG-nQ-cAX">
+                                        <rect key="frame" x="0.0" y="204" width="374" height="158.5"/>
+                                        <connections>
+                                            <segue destination="l80-mV-5qV" kind="embed" id="cyb-qN-AnR"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8mp-MH-GVN" firstAttribute="bottom" secondItem="FAX-91-hOh" secondAttribute="bottom" constant="20" id="19R-Dh-FWP"/>
-                            <constraint firstAttribute="trailing" secondItem="FAX-91-hOh" secondAttribute="trailing" constant="55" id="8In-ar-16j"/>
-                            <constraint firstItem="8mp-MH-GVN" firstAttribute="trailing" secondItem="tR5-rO-kWb" secondAttribute="trailing" constant="20" id="D4R-zJ-O5e"/>
-                            <constraint firstItem="8mp-MH-GVN" firstAttribute="trailing" secondItem="pIx-mk-Ac7" secondAttribute="trailing" constant="20" id="FlN-DU-Sgh"/>
-                            <constraint firstItem="XnN-vd-Una" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="26" id="J0e-pU-n95"/>
-                            <constraint firstItem="FAX-91-hOh" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="55" id="MXb-oH-z6g"/>
-                            <constraint firstItem="tR5-rO-kWb" firstAttribute="top" secondItem="ZwP-Cv-vWz" secondAttribute="bottom" constant="28" id="NKe-8W-909"/>
-                            <constraint firstItem="7i2-j2-hQH" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="20" id="PQt-8Z-AIN"/>
-                            <constraint firstItem="pIx-mk-Ac7" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="20" id="WVB-MJ-RBO"/>
-                            <constraint firstItem="tR5-rO-kWb" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="20" id="Whi-Gn-wcz"/>
-                            <constraint firstItem="FAX-91-hOh" firstAttribute="top" secondItem="7i2-j2-hQH" secondAttribute="bottom" constant="50" id="d9H-qS-TUf"/>
-                            <constraint firstItem="ZwP-Cv-vWz" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="20" id="dC4-0X-740"/>
-                            <constraint firstItem="7i2-j2-hQH" firstAttribute="top" secondItem="pIx-mk-Ac7" secondAttribute="bottom" constant="52" id="fnq-PC-dv9"/>
-                            <constraint firstItem="ZwP-Cv-vWz" firstAttribute="top" secondItem="XnN-vd-Una" secondAttribute="bottom" constant="26" id="gSy-iR-ggL"/>
-                            <constraint firstItem="pIx-mk-Ac7" firstAttribute="top" secondItem="tR5-rO-kWb" secondAttribute="bottom" constant="45" id="uAb-9H-N9Z"/>
-                            <constraint firstItem="XnN-vd-Una" firstAttribute="top" secondItem="8mp-MH-GVN" secondAttribute="top" constant="26" id="vJz-QK-VDf"/>
+                            <constraint firstItem="3Fj-3t-xWM" firstAttribute="centerX" secondItem="myI-Bh-Aju" secondAttribute="centerX" id="4Dm-8F-o3o"/>
+                            <constraint firstItem="bvs-9f-5ch" firstAttribute="leading" secondItem="8mp-MH-GVN" secondAttribute="leading" constant="20" id="6Nb-zT-Twm"/>
+                            <constraint firstItem="8mp-MH-GVN" firstAttribute="trailing" secondItem="bvs-9f-5ch" secondAttribute="trailing" constant="20" id="Am7-Xq-4kS"/>
+                            <constraint firstItem="bvs-9f-5ch" firstAttribute="top" secondItem="8mp-MH-GVN" secondAttribute="top" constant="20" id="WeX-oZ-Jnv"/>
+                            <constraint firstItem="3Fj-3t-xWM" firstAttribute="width" secondItem="8mp-MH-GVN" secondAttribute="width" multiplier="0.9" id="YF7-aB-gMp"/>
+                            <constraint firstItem="3Fj-3t-xWM" firstAttribute="height" secondItem="8mp-MH-GVN" secondAttribute="height" multiplier="0.35" id="ZJ8-FE-S4u"/>
+                            <constraint firstItem="bvs-9f-5ch" firstAttribute="height" secondItem="8mp-MH-GVN" secondAttribute="height" multiplier="0.5" id="Ztv-bo-xbX"/>
+                            <constraint firstItem="3Fj-3t-xWM" firstAttribute="top" secondItem="bvs-9f-5ch" secondAttribute="bottom" constant="50" id="cML-sN-W07"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8mp-MH-GVN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FyD-KD-3ib">
-                        <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="seh-wT-KIS">
-                            <rect key="frame" x="163.5" y="3" width="87" height="38"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                            <state key="normal" title="Project ▿">
-                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </state>
-                        </button>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Project 1" id="FyD-KD-3ib"/>
                     <connections>
                         <outlet property="congratulationsLabel" destination="EUA-Kf-YdP" id="FlR-ja-g4J"/>
                         <outlet property="dateRangeButton" destination="XnN-vd-Una" id="SdU-Zn-JNU"/>
                         <outlet property="dollarAmountLabel" destination="lLa-B8-vJv" id="cqV-tR-Fz0"/>
                         <outlet property="hoursLabel" destination="16G-vb-jD8" id="M7I-VQ-OmC"/>
                         <outlet property="timeCrumbsDollarLabel" destination="jY6-S4-D0n" id="XKO-qe-ZBH"/>
-                        <outlet property="timeCrumbsImageView" destination="y84-if-sdc" id="7z8-w2-pTN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCy-w0-FoV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -149,9 +142,35 @@
             </objects>
             <point key="canvasLocation" x="1296" y="804"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ObL-7J-6NN">
+            <objects>
+                <viewController id="l80-mV-5qV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PQA-yN-wlW">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="158.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DonutGraphPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ssh-kC-t9m">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="158.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ssh-kC-t9m" secondAttribute="trailing" id="Agx-fR-lhg"/>
+                            <constraint firstItem="Ssh-kC-t9m" firstAttribute="top" secondItem="PQA-yN-wlW" secondAttribute="top" id="MnG-wa-teZ"/>
+                            <constraint firstItem="Ssh-kC-t9m" firstAttribute="leading" secondItem="PQA-yN-wlW" secondAttribute="leading" id="fjx-8D-VM4"/>
+                            <constraint firstAttribute="bottom" secondItem="Ssh-kC-t9m" secondAttribute="bottom" id="lk9-YC-Zso"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQf-YN-bcT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2742" y="726"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="DonutGraphPlaceholder" width="112.5" height="112.5"/>
         <image name="chart.bar" catalog="system" width="64" height="44"/>
-        <image name="graph" width="84" height="84"/>
+        <image name="timeCrumbsTotal" width="106" height="90"/>
     </resources>
 </document>
