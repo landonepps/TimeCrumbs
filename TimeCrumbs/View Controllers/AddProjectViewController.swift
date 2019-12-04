@@ -11,7 +11,6 @@ import CoreData
 
 class AddProjectViewController: UIViewController {
     
-    var project: Project?
     var moc: NSManagedObjectContext!
     
     // MARK: - Outlets
@@ -25,6 +24,7 @@ class AddProjectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpColorStackView()
     }
     
     // MARK: - Actions
@@ -33,6 +33,10 @@ class AddProjectViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+//        guard let projectName = projectNameTextField.text,
+//            let projectColor = "\(projectColorSelectionStackView)"
+//
+//        ProjectController.createProject(name: <#T##String#>, color: <#T##String#>, moc: moc)
     }
     
     @IBAction func archiveProjectButtonTapped(_ sender: Any) {
@@ -64,5 +68,26 @@ class AddProjectViewController: UIViewController {
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true)
+    }
+    
+    func makeColorView(color: UIColor) -> UIView {
+        
+        let colorView = UIView()
+        colorView.translatesAutoresizingMaskIntoConstraints = false
+        colorView.heightAnchor.constraint(equalToConstant: 31).isActive = true
+        colorView.widthAnchor.constraint(equalToConstant: 31).isActive = true
+        colorView.backgroundColor = color
+        colorView.layer.cornerRadius = 7
+        colorView.layer.masksToBounds = true
+        // Add border
+        
+        return colorView
+    }
+    
+    func setUpColorStackView() {
+        for colorName in Colors.projectColorNames {
+            let colorView = makeColorView(color: UIColor(named: colorName)!)
+            projectColorSelectionStackView.addArrangedSubview(colorView)
+        }
     }
 }
