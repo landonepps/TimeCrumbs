@@ -54,6 +54,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="vzc-gO-dz3" kind="show" id="0xq-q3-jhw"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MVQ-aL-prB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,16 +134,16 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="800" verticalCompressionResistancePriority="1000" distribution="fillProportionally" spacing="176" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-bn-zah">
+                                        <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="800" verticalCompressionResistancePriority="1000" distribution="fillEqually" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-bn-zah">
                                             <rect key="frame" x="0.0" y="258" width="374" height="30"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb4-ND-Q6Y">
-                                                    <rect key="frame" x="0.0" y="0.0" width="115.5" height="30"/>
-                                                    <state key="normal" title="Oct 30 - Nov 11"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="149.5" height="30"/>
+                                                    <state key="normal" title="MAR 30 - MAY 30"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIX-nX-ijV">
-                                                    <rect key="frame" x="291.5" y="0.0" width="82.5" height="30"/>
-                                                    <state key="normal" title="⍌ Export "/>
+                                                    <rect key="frame" x="224.5" y="0.0" width="149.5" height="30"/>
+                                                    <state key="normal" title="Export "/>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -341,7 +344,7 @@
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <state key="normal" title="Archive Project"/>
                                             <connections>
-                                                <action selector="archiveButtonTapped:" destination="Nj5-CX-Ajx" eventType="touchUpInside" id="bSh-qw-Bjw"/>
+                                                <action selector="archiveProjectButtonTapped:" destination="Nj5-CX-Ajx" eventType="touchUpInside" id="Cd9-cZ-3H0"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9At-Gq-dzs">
@@ -519,7 +522,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPv-xz-fo9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2851" y="520"/>
+            <point key="canvasLocation" x="3758" y="500"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WmX-ci-ffS">
+            <objects>
+                <viewController id="vzc-gO-dz3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YXb-7k-N9s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LSf-s4-tuo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uNO-oz-mhd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Zja-OD-WBw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gRa-Bm-hRD"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyi-An-VYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2851" y="500"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GK0-XA-Lmn">
