@@ -17,7 +17,7 @@ extension NSManagedObjectContext {
             try save()
             return true
         } catch {
-            print(error)
+            print("Error saving: \(error)")
             rollback()
             return false
         }
