@@ -17,6 +17,7 @@ class AddProjectTableViewController: UITableViewController {
     @IBOutlet weak var billingTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var selectedColorView: UIView!
     @IBOutlet weak var projectColorSelectionStackView: UIStackView!
+    @IBOutlet weak var footerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,9 @@ class AddProjectTableViewController: UITableViewController {
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
     }
-    @IBAction func archiveButtonTapped(_ sender: Any) {
+    @IBAction func archiveProjectButtonTapped(_ sender: Any) {
     }
-    @IBAction func deleteButtonTapped(_ sender: Any) {
+    @IBAction func deleteProjectButtonTapped(_ sender: Any) {
     }
     
 

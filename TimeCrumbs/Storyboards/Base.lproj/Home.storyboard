@@ -349,7 +349,7 @@
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <state key="normal" title="Delete Project"/>
                                             <connections>
-                                                <action selector="deleteButtonTapped:" destination="Nj5-CX-Ajx" eventType="touchUpInside" id="2eM-d3-rXP"/>
+                                                <action selector="deleteProjectButtonTapped:" destination="Nj5-CX-Ajx" eventType="touchUpInside" id="2eM-d3-rXP"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -511,6 +511,7 @@
                         <outlet property="billingRateTextField" destination="ELu-yi-FSK" id="n9h-Md-bW8"/>
                         <outlet property="billingTypeSegmentedControl" destination="xAh-G7-KhV" id="Gnv-sY-DGl"/>
                         <outlet property="clientNameTextField" destination="8CV-Vk-fy5" id="DJl-tA-iEm"/>
+                        <outlet property="footerView" destination="tvJ-JQ-jvo" id="xaJ-Bd-HYB"/>
                         <outlet property="projectColorSelectionStackView" destination="bYM-pB-Iae" id="A29-GX-nUE"/>
                         <outlet property="projectNameTextField" destination="Yjc-qW-3R3" id="G3J-KF-L3H"/>
                         <outlet property="selectedColorView" destination="euf-wu-vGu" id="OR0-HE-OA1"/>

@@ -18,6 +18,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var timeCrumbsImageView: UIImageView!
     @IBOutlet weak var timeCrumbsDollarLabel: UILabel!
     @IBOutlet weak var congratulationsLabel: UILabel!
+    @IBOutlet weak var earningsContainerView: UIView!
     
     
     // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
