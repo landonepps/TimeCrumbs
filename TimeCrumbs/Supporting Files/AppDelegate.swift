@@ -29,8 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(error)
         }
         
+        backgroundMOC.saveOrRollback()
+        
         print("Recreating dummy project")
-        print("main thread?", Thread.isMainThread)
+        print("Is main thread?: \(Thread.isMainThread)")
         ProjectController.createProject(name: "Project 1", color: "orangeColor", moc: persistentContainer.viewContext)
         
         return true
