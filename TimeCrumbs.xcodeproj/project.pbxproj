@@ -667,7 +667,7 @@
 				CODE_SIGN_ENTITLEMENTS = TimeCrumbs/TimeCrumbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 6R9933TQJB;
 				INFOPLIST_FILE = "$(SRCROOT)/TimeCrumbs/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -690,7 +690,7 @@
 				CODE_SIGN_ENTITLEMENTS = TimeCrumbs/TimeCrumbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 6R9933TQJB;
 				INFOPLIST_FILE = "$(SRCROOT)/TimeCrumbs/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
