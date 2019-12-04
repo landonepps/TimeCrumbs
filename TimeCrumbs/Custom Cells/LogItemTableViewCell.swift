@@ -9,7 +9,13 @@
 import UIKit
 
 class LogItemTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var projectNameLabel: UILabel!
+    @IBOutlet weak var categoryNameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var dollarAmountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

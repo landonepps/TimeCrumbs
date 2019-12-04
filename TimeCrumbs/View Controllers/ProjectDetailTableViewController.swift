@@ -1,23 +1,14 @@
 //
-//  LogTableViewController.swift
+//  ProjectDetailTableViewController.swift
 //  TimeCrumbs
 //
-//  Created by Landon Epps on 11/26/19.
+//  Created by Austin Goetz on 12/3/19.
 //  Copyright © 2019 Landon Epps. All rights reserved.
 //
 
 import UIKit
-import CoreData
 
-fileprivate let reuseIdentifier = "TaskCell"
-
-class LogTableViewController: UITableViewController {
-    
-    // MARK: - Outlets
-    @IBOutlet weak var dateRangeButton: UIButton!
-    
-    // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
-    var moc: NSManagedObjectContext!
+class ProjectDetailTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,24 +18,17 @@ class LogTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        let buttonView = makeExportButton()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: buttonView)
-    }
-    
-    // MARK: - Actions
-    @IBAction func dateRangeButtonTapped(_ sender: Any) {
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 7
+        return 15
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectDetailCell", for: indexPath)
 
         // Configure the cell...
 
@@ -95,41 +79,5 @@ class LogTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    // MARK: - Helpers
-    
-    func makeExportButton() -> UIView {
-        let buttonView = UIView()
-        
-        // Set up subviews
-        let imageView = UIImageView(image: UIImage(systemName: "square.and.arrow.down"))
-        let label = UILabel()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        label.translatesAutoresizingMaskIntoConstraints = false
-        buttonView.addSubview(imageView)
-        buttonView.addSubview(label)
-        
-        label.text = "Export"
-        label.textColor = UIColor.systemBlue
-        
-        // Add constraints
-        imageView.topAnchor.constraint(equalTo: buttonView.topAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor).isActive = true
-        imageView.leftAnchor.constraint(equalTo: buttonView.leftAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: buttonView.topAnchor).isActive = true
-        label.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor).isActive = true
-        label.rightAnchor.constraint(equalTo: buttonView.rightAnchor).isActive = true
-        label.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8).isActive = true
-        
-        buttonView.sizeToFit()
-        
-        return buttonView
-    }
 
-}
-
-extension LogTableViewController: CoreDataClient {
-    func set(moc: NSManagedObjectContext) {
-        self.moc = moc
-    }
 }
