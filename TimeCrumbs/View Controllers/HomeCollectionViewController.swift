@@ -37,8 +37,15 @@ class HomeCollectionViewController: UICollectionViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "CellToProjectDetail" {
+            guard let cell = sender as? ProjectCollectionViewCell,
+                let indexPath = collectionView.indexPath(for: cell),
+                let destination = segue.destination as? ProjectDetailTableViewController,
+                let project = fetchedResultsController?.object(at: indexPath)
+            else { return }
+            
+            destination.project = project
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -62,7 +69,9 @@ class HomeCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected cell:", indexPath)
+        let cell = collectionView.cellForItem(at: indexPath)
+        performSegue(withIdentifier: "CellToProjectDetail", sender: cell)
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 

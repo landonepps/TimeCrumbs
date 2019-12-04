@@ -9,6 +9,8 @@
 import UIKit
 
 class ProjectDetailTableViewController: UITableViewController {
+    
+    var project: Project?
 
     override func viewDidLoad() {
         super.viewDidLoad()

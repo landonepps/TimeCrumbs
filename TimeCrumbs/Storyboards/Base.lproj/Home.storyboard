@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cZE-v0-N4m">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,11 +43,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="s1z-E4-sRc">
-                        <barButtonItem key="leftBarButtonItem" title="View Archive" id="5jX-4S-B1A">
-                            <connections>
-                                <segue destination="t0z-c8-CDI" kind="show" id="Tqd-3U-KMV"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="View Archive" id="5jX-4S-B1A"/>
                         <barButtonItem key="rightBarButtonItem" title="Add Project" id="FuV-BX-kZq">
                             <connections>
                                 <segue destination="Nj5-CX-Ajx" kind="show" id="XSO-PX-vKK"/>
@@ -56,6 +52,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="vzc-gO-dz3" kind="show" id="0xq-q3-jhw"/>
+                        <segue destination="t0z-c8-CDI" kind="show" identifier="CellToProjectDetail" id="ELp-0G-Ko3"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MVQ-aL-prB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
