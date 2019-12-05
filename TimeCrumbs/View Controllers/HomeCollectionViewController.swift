@@ -61,7 +61,7 @@ class HomeCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ProjectCollectionViewCell else { fatalError("Incorrect cell type: expected ProjectCollectionViewCell") }
     
-        // Configure the cell
+        cell.delegate = self
     
         return cell
     } 
@@ -72,6 +72,24 @@ class HomeCollectionViewController: UICollectionViewController {
         let cell = collectionView.cellForItem(at: indexPath)
         performSegue(withIdentifier: "CellToProjectDetail", sender: cell)
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+    
+    // MARK: Expanding/Collapsing
+    
+    func expand(cell: UICollectionViewCell) {
+        guard let cell = cell as? ExpandableCell else { return }
+        
+        cell.expand(in: collectionView)
+    }
+}
+
+extension HomeCollectionViewController: ProjectCollectionViewCellDelegate {
+    func logTimeButtonTapped(cell: ProjectCollectionViewCell) {
+        expand(cell: cell)
+    }
+    
+    func startButtonTapped(cell: ProjectCollectionViewCell) {
+        expand(cell: cell)
     }
 }
 
