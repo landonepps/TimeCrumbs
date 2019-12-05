@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cZE-v0-N4m">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -351,7 +351,7 @@
                                                     <constraint firstAttribute="height" constant="38" id="6dw-Qf-Paf"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -370,14 +370,14 @@
                                                     <constraint firstAttribute="height" constant="38" id="JxG-ae-jUQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AWD-4i-Z5m" userLabel="Rate Stack View">
                                         <rect key="frame" x="0.0" y="191" width="374" height="66.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUo-Vp-h6y">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" text="Rate $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUo-Vp-h6y">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -386,13 +386,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mXP-Dh-qaI">
                                                 <rect key="frame" x="0.0" y="28.5" width="374" height="38"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EvR-Wq-UJe" userLabel="Client Name Text Field">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EvR-Wq-UJe" userLabel="Client Name Text Field">
                                                         <rect key="frame" x="0.0" y="0.0" width="237" height="38"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="38" id="TMr-aP-Arw"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oXW-wi-2cy">
                                                         <rect key="frame" x="257" y="0.0" width="117" height="39"/>
@@ -419,18 +419,44 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjS-dD-Kza">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="rjS-dD-Kza" secondAttribute="height" multiplier="1:1" id="F2a-AU-2tV"/>
                                                             <constraint firstAttribute="height" constant="60" id="sGo-Uc-48i"/>
                                                         </constraints>
                                                     </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L3K-BJ-69l">
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGa-HD-chq">
                                                         <rect key="frame" x="0.0" y="72" width="374" height="44"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiz-2M-tRp" userLabel="Content View">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L3K-BJ-69l">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="44" id="mOe-0y-et8"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="L3K-BJ-69l" secondAttribute="trailing" id="8NX-Q8-xw9"/>
+                                                                    <constraint firstItem="L3K-BJ-69l" firstAttribute="top" secondItem="iiz-2M-tRp" secondAttribute="top" id="E13-oO-BDw"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="L3K-BJ-69l" secondAttribute="bottom" id="Jti-bo-UTB"/>
+                                                                    <constraint firstItem="L3K-BJ-69l" firstAttribute="leading" secondItem="iiz-2M-tRp" secondAttribute="leading" id="YXh-HD-1X4"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="cdv-uY-NPY"/>
+                                                            <constraint firstItem="iiz-2M-tRp" firstAttribute="leading" secondItem="ItW-nH-FgP" secondAttribute="leading" id="FYl-j1-vga"/>
+                                                            <constraint firstItem="iiz-2M-tRp" firstAttribute="top" secondItem="ItW-nH-FgP" secondAttribute="top" id="I7z-pT-6mr"/>
+                                                            <constraint firstItem="iiz-2M-tRp" firstAttribute="bottom" secondItem="ItW-nH-FgP" secondAttribute="bottom" id="MZ7-mE-AIq"/>
+                                                            <constraint firstItem="iiz-2M-tRp" firstAttribute="centerX" secondItem="rGa-HD-chq" secondAttribute="centerX" priority="250" id="Yu3-Vv-aMf"/>
+                                                            <constraint firstItem="iiz-2M-tRp" firstAttribute="trailing" secondItem="ItW-nH-FgP" secondAttribute="trailing" id="rwP-J5-4d7"/>
+                                                            <constraint firstItem="iiz-2M-tRp" firstAttribute="centerY" secondItem="rGa-HD-chq" secondAttribute="centerY" id="w7l-K7-Gr8"/>
                                                         </constraints>
-                                                    </stackView>
+                                                        <viewLayoutGuide key="contentLayoutGuide" id="ItW-nH-FgP"/>
+                                                        <viewLayoutGuide key="frameLayoutGuide" id="NG9-k8-qB4"/>
+                                                    </scrollView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
