@@ -50,7 +50,7 @@ class AddProjectViewController: UIViewController {
         
         let clientName = clientNameTextField.text ?? "Client"
         
-        ProjectController.createProject(name: projectName, hourlyRate: hourlyRate, clientName: clientName, dateAdded: Date(), color: projectColorName, moc: moc)
+        ProjectController.createProject(name: projectName, rate: hourlyRate, clientName: clientName, dateAdded: Date(), color: projectColorName, moc: moc)
         
         navigationController?.popViewController(animated: true)
     }

@@ -95,6 +95,6 @@ class ProjectDetailTableViewController: UITableViewController {
         
         projectNameLabel.text = project.name
         clientNameLabel.text = project.clientName
-        chargeRateLabel.text = "\(project.hourlyRate)/hr"
+        chargeRateLabel.text = "\(project.rate)/hr"
     }
 }

@@ -28,15 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error as NSError {
             print(error)
         }
-        
+
         backgroundMOC.saveOrRollback()
-        
-        print("Recreating dummy project")
-        print("Is main thread?: \(Thread.isMainThread)")
-        ProjectController.createProject(name: "Project 3", color: "cerulean", moc: persistentContainer.viewContext)
-        ProjectController.createProject(name: "Project 2", color: "orange", moc: persistentContainer.viewContext)
-        ProjectController.createProject(name: "Project 1", color: "lightOrange", moc: persistentContainer.viewContext)
-        
+//
+//        print("Recreating dummy project")
+//        print("Is main thread?: \(Thread.isMainThread)")
+//        ProjectController.createProject(name: "Project 3", color: "cerulean", moc: persistentContainer.viewContext)
+//        ProjectController.createProject(name: "Project 2", color: "orange", moc: persistentContainer.viewContext)
+//        ProjectController.createProject(name: "Project 1", color: "lightOrange", moc: persistentContainer.viewContext)
+//
         return true
     }
 
