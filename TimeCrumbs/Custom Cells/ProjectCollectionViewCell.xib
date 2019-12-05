@@ -82,6 +82,7 @@
                     </stackView>
                 </subviews>
             </view>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="dbV-J0-PFZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6TO-In-pW2"/>
                 <constraint firstAttribute="trailing" secondItem="BAF-t4-5Es" secondAttribute="trailing" constant="37" id="B7g-F3-ASZ"/>

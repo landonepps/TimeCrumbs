@@ -21,7 +21,9 @@ class HomeLayout: UICollectionViewFlowLayout {
         // Set up layout for initial state
         
         let width = collectionView!.bounds.width
-        self.itemSize = CGSize(width: width - 10, height: HomeLayoutConstants.collapsedHeight)
+        itemSize = CGSize(width: width - 16, height: HomeLayoutConstants.collapsedHeight)
+        sectionInset = UIEdgeInsets(top: 20, left: 8, bottom: 20, right: 8)
+        minimumLineSpacing = 24.0
     }
 
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {

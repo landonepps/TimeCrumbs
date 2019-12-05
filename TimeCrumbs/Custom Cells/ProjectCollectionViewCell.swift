@@ -70,8 +70,8 @@ class ProjectCollectionViewCell: UICollectionViewCell, ExpandableCell {
         
         // Shadow
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.14
-        layer.shadowOffset = CGSize(width: 0, height: 4.0)
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 0, height: 5.0)
         layer.shadowRadius = 5.0
         layer.masksToBounds = false
         layer.shadowPath = path.cgPath
