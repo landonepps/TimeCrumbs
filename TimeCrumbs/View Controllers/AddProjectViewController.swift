@@ -41,11 +41,17 @@ class AddProjectViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        
         guard let projectName = projectNameTextField.text,
             projectName.isEmpty == false,
-            let projectColorName = selectedColorName
+            let projectColorName = selectedColorName,
+            let hourlyRate = Double(billingRateTextField.text!)
             else { return }
-        ProjectController.createProject(name: projectName, color: projectColorName, moc: moc)
+        
+        let clientName = clientNameTextField.text ?? "Client"
+        
+        ProjectController.createProject(name: projectName, hourlyRate: hourlyRate, clientName: clientName, dateAdded: Date(), color: projectColorName, moc: moc)
+        
         navigationController?.popViewController(animated: true)
     }
     
@@ -57,19 +63,19 @@ class AddProjectViewController: UIViewController {
     }
     
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    
     
     // MARK: - Helper Functions
     func presentDeleteAlertController() {
         
-        let alertController = UIAlertController(title: "Delete Project", message: "This action cannot be undone. Delete Project?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Delete Project", message: "This action cannot be undone. Delete Project?", preferredStyle: .actionSheet)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cZE-v0-N4m">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -316,10 +316,15 @@
                     <navigationItem key="navigationItem" id="eOW-gw-meY">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="uoT-7H-t3k">
                             <connections>
-                                <segue destination="vzc-gO-dz3" kind="show" id="QUx-Ua-ZFs"/>
+                                <segue destination="vzc-gO-dz3" kind="show" identifier="toEditProject" id="QUx-Ua-ZFs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="chargeRateLabel" destination="1oK-Ct-D2c" id="uom-JU-Qbk"/>
+                        <outlet property="clientNameLabel" destination="js5-Et-iTh" id="Q2I-UE-j4o"/>
+                        <outlet property="projectNameLabel" destination="aoU-0U-L9x" id="D2y-VD-kJZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5h-f5-zFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -553,6 +558,6 @@
         <image name="timeCrumbsTotal" width="106" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ahi-Wu-iWS"/>
+        <segue reference="QUx-Ua-ZFs"/>
     </inferredMetricsTieBreakers>
 </document>

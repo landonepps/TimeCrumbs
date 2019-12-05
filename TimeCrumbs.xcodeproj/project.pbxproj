@@ -273,8 +273,8 @@
 				449B3E5A238DA4200091819D /* HomeCollectionViewController.swift */,
 				449B3E56238D9B4F0091819D /* DashboardViewController.swift */,
 				449B3E54238D99DC0091819D /* LogTableViewController.swift */,
-				449B3E52238D98D00091819D /* SettingsTableViewController.swift */,
 				2A349C20239723F00012AD58 /* ProjectDetailTableViewController.swift */,
+				449B3E52238D98D00091819D /* SettingsTableViewController.swift */,
 				2A67DBF623984D540077B243 /* AddProjectViewController.swift */,
 			);
 			path = "View Controllers";
