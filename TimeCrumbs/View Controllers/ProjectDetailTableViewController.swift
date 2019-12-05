@@ -11,22 +11,23 @@ import UIKit
 class ProjectDetailTableViewController: UITableViewController {
     
     var project: Project?
+    
+    // MARK: - Outlets
+    @IBOutlet weak var projectNameLabel: UILabel!
+    @IBOutlet weak var clientNameLabel: UILabel!
+    @IBOutlet weak var chargeRateLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        updateViews()
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 15
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,5 +82,19 @@ class ProjectDetailTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - Helper Functions
+    func updateViews() {
+        
+        guard let project = project else { return }
+        
+        if let projectColorName = project.color,
+            let projectColor = UIColor(named: projectColorName) {
+            projectNameLabel.textColor = projectColor
+        }
+        
+        projectNameLabel.text = project.name
+        clientNameLabel.text = project.clientName
+        chargeRateLabel.text = "\(project.hourlyRate)/hr"
+    }
 }
