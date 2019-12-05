@@ -16,7 +16,7 @@ class HomeCollectionViewController: UICollectionViewController {
     // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
     var moc: NSManagedObjectContext!
     
-    var fetchedResultsController: NSFetchedResultsController<Project>!
+    var fetchedResultsController: NSFetchedResultsController<Project>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class HomeCollectionViewController: UICollectionViewController {
         self.collectionView.register(UINib(nibName: "ProjectCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
 
         fetchedResultsController = NSFetchedResultsController<Project>(fetchRequest: Project.sortedFetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController.delegate = self
+        fetchedResultsController?.delegate = self
         
         do {
             try fetchedResultsController?.performFetch()
@@ -59,9 +59,12 @@ class HomeCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ProjectCollectionViewCell else { fatalError("Incorrect cell type: expected ProjectCollectionViewCell") }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ProjectCollectionViewCell,
+            let project = fetchedResultsController?.object(at: indexPath)
+        else { fatalError("Incorrect cell type: expected ProjectCollectionViewCell") }
     
         cell.delegate = self
+        cell.project = project
     
         return cell
     } 
@@ -79,7 +82,7 @@ class HomeCollectionViewController: UICollectionViewController {
     func expand(cell: UICollectionViewCell) {
         guard let cell = cell as? ExpandableCell else { return }
         
-        cell.expand(in: collectionView)
+//        cell.expand(in: collectionView)
     }
 }
 

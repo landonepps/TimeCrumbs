@@ -16,6 +16,11 @@ protocol ProjectCollectionViewCellDelegate {
 class ProjectCollectionViewCell: UICollectionViewCell, ExpandableCell {
     
     var delegate: ProjectCollectionViewCellDelegate?
+    var project: Project? {
+        didSet {
+            setupViews()
+        }
+    }
     
     private var initialFrame: CGRect?
     private var initialCornerRadius: CGFloat?
@@ -34,7 +39,7 @@ class ProjectCollectionViewCell: UICollectionViewCell, ExpandableCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        setupViews()
+        layoutViews()
     }
     
     // MARK: - Actions
@@ -47,12 +52,12 @@ class ProjectCollectionViewCell: UICollectionViewCell, ExpandableCell {
         delegate?.startButtonTapped(cell: self)
     }
     
-    // MARK: - Methods
+    // MARK: - Helpers
 
-    func setupViews() {
+    private func layoutViews() {
         // Cell color
         backgroundColor = .clear
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = UIColor(named: "cellColor")
         
         // Rounded corners
         let cornerRadius = 24
@@ -74,6 +79,18 @@ class ProjectCollectionViewCell: UICollectionViewCell, ExpandableCell {
         // Button image color
         logTimeButton.imageView?.tintColor = UIColor.white
         startButton.imageView?.tintColor = UIColor.white
+    }
+    
+    private func setupViews() {
+        projectLabel.text = project?.name
+        if let projectColorName = project?.color,
+            let projectColor = UIColor(named: projectColorName)
+        {
+            projectColorView.backgroundColor = projectColor
+            logTimeButton.tintColor = projectColor
+            startButton.tintColor = projectColor
+        }
+        
     }
     
     // MARK: - Expanding/Collapsing
