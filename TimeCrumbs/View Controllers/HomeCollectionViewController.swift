@@ -45,6 +45,11 @@ class HomeCollectionViewController: UICollectionViewController {
             else { return }
             
             destination.project = project
+            
+        } else if segue.identifier == "AddProject" {
+            guard let destination = segue.destination as? AddProjectViewController
+                else { return }
+            destination.moc = moc
         }
     }
 

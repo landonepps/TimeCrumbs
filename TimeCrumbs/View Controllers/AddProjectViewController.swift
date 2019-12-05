@@ -13,6 +13,7 @@ class AddProjectViewController: UIViewController {
     
     var moc: NSManagedObjectContext!
     var colorButtons = [UIButton]()
+    var selectedColorName: String?
     
     // MARK: - Outlets
     @IBOutlet weak var projectNameTextField: UITextField!
@@ -26,7 +27,12 @@ class AddProjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpColorStackView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         selectedColorView.layer.cornerRadius = 7
+        selectColor(named: Colors.projectColorNames.first!)
     }
     
     // MARK: - Actions
@@ -35,7 +41,12 @@ class AddProjectViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        
+        guard let projectName = projectNameTextField.text,
+            projectName.isEmpty == false,
+            let projectColorName = selectedColorName
+            else { return }
+        ProjectController.createProject(name: projectName, color: projectColorName, moc: moc)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func archiveProjectButtonTapped(_ sender: Any) {
@@ -46,7 +57,6 @@ class AddProjectViewController: UIViewController {
     }
     
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -54,10 +64,11 @@ class AddProjectViewController: UIViewController {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
      }
-     */
+
     
     // MARK: - Helper Functions
     func presentDeleteAlertController() {
+        
         let alertController = UIAlertController(title: "Delete Project", message: "This action cannot be undone. Delete Project?", preferredStyle: .alert)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive)
@@ -83,6 +94,7 @@ class AddProjectViewController: UIViewController {
     }
     
     func setUpColorStackView() {
+        
         for colorName in Colors.projectColorNames {
             let colorButton = makeColorButton(color: UIColor(named: colorName)!)
             colorButton.addTarget(self, action: #selector(colorButtonTapped(sender:)), for: .touchUpInside)
@@ -93,10 +105,16 @@ class AddProjectViewController: UIViewController {
     
     
     @objc func colorButtonTapped(sender: UIButton) {
-        guard let index = colorButtons.firstIndex(of: sender),
-            let color = UIColor(named: Colors.projectColorNames[index])
+        
+        guard let index = colorButtons.firstIndex(of: sender)
             else { return }
         
+        selectColor(named: Colors.projectColorNames[index])
+    }
+    
+    func selectColor(named name: String) {
+        guard let color = UIColor(named: name) else { return }
         selectedColorView.backgroundColor = color
+        selectedColorName = name
     }
 }
