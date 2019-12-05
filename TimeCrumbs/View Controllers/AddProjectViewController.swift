@@ -27,12 +27,12 @@ class AddProjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpColorStackView()
+        selectColor(named: Colors.projectColorNames.first!)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         selectedColorView.layer.cornerRadius = 7
-        selectColor(named: Colors.projectColorNames.first!)
     }
     
     // MARK: - Actions
@@ -44,13 +44,27 @@ class AddProjectViewController: UIViewController {
         
         guard let projectName = projectNameTextField.text,
             projectName.isEmpty == false,
-            let projectColorName = selectedColorName,
-            let hourlyRate = Double(billingRateTextField.text!)
+            
+            let projectColorName = selectedColorName
             else { return }
         
-        let clientName = clientNameTextField.text ?? "Client"
+        var clientName = "Client"
+        var rate: Decimal = 0.0
         
-        ProjectController.createProject(name: projectName, rate: hourlyRate, clientName: clientName, dateAdded: Date(), color: projectColorName, moc: moc)
+        if let _clientName = clientNameTextField.text,
+            _clientName.isEmpty == false
+            {
+            clientName = _clientName
+        }
+        
+        if let rateString = billingRateTextField.text,
+            let _rate = Decimal(string: rateString) {
+            rate = _rate
+        }
+        
+        let isHourly = billingTypeSegmentedControl.selectedSegmentIndex == 0 ? true : false
+        
+        ProjectController.createProject(name: projectName, clientName: clientName, rate: rate, isHourly: isHourly, color: projectColorName, moc: moc)
         
         navigationController?.popViewController(animated: true)
     }
@@ -119,6 +133,7 @@ class AddProjectViewController: UIViewController {
     }
     
     func selectColor(named name: String) {
+        
         guard let color = UIColor(named: name) else { return }
         selectedColorView.backgroundColor = color
         selectedColorName = name

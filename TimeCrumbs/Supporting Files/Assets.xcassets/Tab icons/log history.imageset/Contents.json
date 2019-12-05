@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "log history.pdf",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "01loghistory.pdf",
       "scale" : "2x"
     },
     {

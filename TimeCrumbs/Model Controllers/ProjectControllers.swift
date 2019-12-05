@@ -13,13 +13,14 @@ class ProjectController {
     
     // MARK: - CRUD
     // Create
-    static func createProject(name: String, clientName: String = "", rate: Double = 0, isHourly: Bool = true, color: String, moc: NSManagedObjectContext) {
+    static func createProject(name: String, clientName: String = "", rate: Decimal = 0, isHourly: Bool = true, color: String, moc: NSManagedObjectContext) {
         
         let project = Project(context: moc)
         
         project.name = name
         project.clientName = clientName
-        project.rate = rate
+        project.rate = rate as NSDecimalNumber
+        project.isHourly = isHourly
         project.color = color
         project.dateAdded = Date()
         project.isArchived = false
@@ -28,11 +29,11 @@ class ProjectController {
     }
     
     // Update
-    static func updateProject(_ project: Project, name: String, clientName: String, rate: Double, isHourly: Bool, color: String) {
+    static func updateProject(_ project: Project, name: String, clientName: String, rate: Decimal, isHourly: Bool, color: String) {
         
         project.name = name
         project.clientName = clientName
-        project.rate = rate
+        project.rate = rate as NSDecimalNumber
         project.isHourly = isHourly
         project.color = color
         

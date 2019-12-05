@@ -128,7 +128,7 @@
         <scene sceneID="pxd-3l-Lbu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HMP-y5-RD7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="chart.bar" catalog="system" id="DnI-Lm-nvf"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="graph" id="DnI-Lm-nvf"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hw1-Qu-ZEX">
@@ -173,7 +173,7 @@
     </scenes>
     <resources>
         <image name="DonutGraphPlaceholder" width="112" height="112"/>
-        <image name="chart.bar" catalog="system" width="64" height="44"/>
+        <image name="graph" width="44" height="44"/>
         <image name="timeCrumbsTotal" width="106" height="90"/>
     </resources>
 </document>

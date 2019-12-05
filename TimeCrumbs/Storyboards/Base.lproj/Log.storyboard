@@ -127,7 +127,7 @@
         <scene sceneID="Cdd-LD-LkD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GGX-Fe-I1K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Log History" image="list.bullet" catalog="system" id="veH-G5-Aux"/>
+                    <tabBarItem key="tabBarItem" title="Log History" image="log history" id="veH-G5-Aux"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rqg-y5-dUP">
@@ -145,7 +145,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list.bullet" catalog="system" width="64" height="44"/>
+        <image name="log history" width="34" height="44"/>
         <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
     </resources>
 </document>
