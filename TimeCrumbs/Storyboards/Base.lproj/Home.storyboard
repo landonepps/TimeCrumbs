@@ -276,7 +276,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectDetailCell" id="suB-B1-B3V">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectDetailCell" id="suB-B1-B3V" customClass="ProjectDetailTableViewCell" customModule="TimeCrumbs" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="378" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="suB-B1-B3V" id="1mW-L7-IGv">
@@ -328,6 +328,12 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="Rgx-DY-UMl" secondAttribute="bottom" id="Qhy-B8-5AF"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="bDG-yG-otl" id="Hgv-cj-dTD"/>
+                                    <outlet property="durationLabel" destination="MDi-FH-lV5" id="OTG-cn-lGK"/>
+                                    <outlet property="taskNameLabel" destination="Dng-qO-Cf2" id="zDp-mC-zw4"/>
+                                    <outlet property="totalAmountLabel" destination="ikA-P0-emX" id="6Jh-zp-wax"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

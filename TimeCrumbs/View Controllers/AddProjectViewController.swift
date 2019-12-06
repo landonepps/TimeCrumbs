@@ -15,6 +15,13 @@ class AddProjectViewController: UIViewController {
     var colorButtons = [UIButton]()
     var selectedColorName: String?
     
+    var project: Project? {
+        didSet {
+            loadViewIfNeeded()
+            updateViews()
+        }
+    }
+    
     // MARK: - Outlets
     @IBOutlet weak var projectNameTextField: UITextField!
     @IBOutlet weak var clientNameTextField: UITextField!
@@ -22,7 +29,6 @@ class AddProjectViewController: UIViewController {
     @IBOutlet weak var billingTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var selectedColorView: UIView!
     @IBOutlet weak var projectColorSelectionStackView: UIStackView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +47,6 @@ class AddProjectViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        
         guard let projectName = projectNameTextField.text,
             projectName.isEmpty == false,
             
@@ -52,19 +57,29 @@ class AddProjectViewController: UIViewController {
         var rate: Decimal = 0.0
         
         if let _clientName = clientNameTextField.text,
-            _clientName.isEmpty == false
-            {
+            _clientName.isEmpty == false {
+            
             clientName = _clientName
         }
         
         if let rateString = billingRateTextField.text,
-            let _rate = Decimal(string: rateString) {
-            rate = _rate
+            rateString.isEmpty == false {
+            
+            if let _rate = Decimal(string: rateString) {
+                rate = _rate
+                
+            } else {
+                return
+            }
         }
         
         let isHourly = billingTypeSegmentedControl.selectedSegmentIndex == 0 ? true : false
         
-        ProjectController.createProject(name: projectName, clientName: clientName, rate: rate, isHourly: isHourly, color: projectColorName, moc: moc)
+        if let project = project {
+            ProjectController.updateProject(project, name: projectName, clientName: clientName, rate: rate, isHourly: isHourly, color: projectColorName)
+        } else {
+            ProjectController.createProject(name: projectName, clientName: clientName, rate: rate, isHourly: isHourly, color: projectColorName, moc: moc)
+        }
         
         navigationController?.popViewController(animated: true)
     }
@@ -79,10 +94,8 @@ class AddProjectViewController: UIViewController {
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
     }
     
     
@@ -91,11 +104,11 @@ class AddProjectViewController: UIViewController {
         
         let alertController = UIAlertController(title: "Delete Project", message: "This action cannot be undone. Delete Project?", preferredStyle: .actionSheet)
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive)
         
-        alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
+        alertController.addAction(deleteAction)
         
         present(alertController, animated: true)
     }
@@ -137,5 +150,25 @@ class AddProjectViewController: UIViewController {
         guard let color = UIColor(named: name) else { return }
         selectedColorView.backgroundColor = color
         selectedColorName = name
+    }
+    
+    func updateViews() {
+        guard let project = project else { return }
+        
+        if project.isHourly {
+            billingTypeSegmentedControl.selectedSegmentIndex = 0
+        } else {
+            billingTypeSegmentedControl.selectedSegmentIndex = 1
+        }
+        
+        guard let projectRate = project.rate else { return }
+        
+        projectNameTextField.text = project.name
+        clientNameTextField.text = project.clientName
+        billingRateTextField.text = String(format: "%.02f", projectRate.floatValue)
+    
+        if let projectColor = project.color {
+            selectColor(named: projectColor)
+        }
     }
 }

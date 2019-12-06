@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ProjectDetailTableViewController: UITableViewController {
     
@@ -20,18 +21,22 @@ class ProjectDetailTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         updateViews()
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return project?.tasks?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectDetailCell", for: indexPath)
+        // set custom cell
 
         // Configure the cell...
 
@@ -73,15 +78,15 @@ class ProjectDetailTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toEditProject" {
+            guard let destination = segue.destination as? AddProjectViewController,
+            let project = project
+            else { return }
+            destination.project = project
+        }
     }
-    */
     
     // MARK: - Helper Functions
     func updateViews() {
@@ -95,6 +100,6 @@ class ProjectDetailTableViewController: UITableViewController {
         
         projectNameLabel.text = project.name
         clientNameLabel.text = project.clientName
-        chargeRateLabel.text = "$\(project.rate ?? 0)" + (project.isHourly ? "/hr" : " fixed")
+        chargeRateLabel.text = "\(project.rate?.asCurrency() ?? "")" + (project.isHourly ? "/hr" : " fixed")
     }
 }
