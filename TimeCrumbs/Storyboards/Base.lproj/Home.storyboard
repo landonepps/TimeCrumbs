@@ -27,6 +27,85 @@
             </objects>
             <point key="canvasLocation" x="1295.6521739130435" y="136.60714285714286"/>
         </scene>
+        <!--Task View Controller-->
+        <scene sceneID="gTZ-qq-YJJ">
+            <objects>
+                <viewController id="wAQ-FR-tG7" customClass="FAKETaskViewController" customModule="TimeCrumbs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o8b-gi-btA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="46G-sC-Hnh">
+                                <rect key="frame" x="20" y="242" width="374" height="501"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kRS-j6-qb7">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="244.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJC-Xy-hZJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="1Kg-JH-NMJ">
+                                                <rect key="frame" x="0.0" y="28.5" width="374" height="216"/>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ki8-xZ-hG9">
+                                        <rect key="frame" x="0.0" y="256.5" width="374" height="244.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9i-qx-tLl">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftt-Re-sBR">
+                                                <rect key="frame" x="0.0" y="28.5" width="374" height="216"/>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKo-ox-Zlv">
+                                <rect key="frame" x="20" y="763" width="374" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="wAQ-FR-tG7" eventType="touchUpInside" id="1gl-mx-7KW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtl-bR-2av">
+                                <rect key="frame" x="20" y="108" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HNG-Ra-i08" firstAttribute="trailing" secondItem="jtl-bR-2av" secondAttribute="trailing" constant="20" id="Bjs-eT-dsk"/>
+                            <constraint firstItem="jtl-bR-2av" firstAttribute="leading" secondItem="HNG-Ra-i08" secondAttribute="leading" constant="20" id="NT0-L5-e8I"/>
+                            <constraint firstItem="HNG-Ra-i08" firstAttribute="trailing" secondItem="LKo-ox-Zlv" secondAttribute="trailing" constant="20" id="Q1z-Yv-svD"/>
+                            <constraint firstItem="LKo-ox-Zlv" firstAttribute="top" secondItem="46G-sC-Hnh" secondAttribute="bottom" constant="20" id="YQt-n3-lnB"/>
+                            <constraint firstItem="46G-sC-Hnh" firstAttribute="leading" secondItem="HNG-Ra-i08" secondAttribute="leading" constant="20" id="Yld-g7-UG8"/>
+                            <constraint firstItem="HNG-Ra-i08" firstAttribute="trailing" secondItem="46G-sC-Hnh" secondAttribute="trailing" constant="20" id="dfB-ir-8eg"/>
+                            <constraint firstItem="HNG-Ra-i08" firstAttribute="bottom" secondItem="LKo-ox-Zlv" secondAttribute="bottom" constant="20" id="f4E-lE-GcT"/>
+                            <constraint firstItem="jtl-bR-2av" firstAttribute="top" secondItem="HNG-Ra-i08" secondAttribute="top" constant="20" id="i5B-Iz-k1q"/>
+                            <constraint firstItem="LKo-ox-Zlv" firstAttribute="leading" secondItem="HNG-Ra-i08" secondAttribute="leading" constant="20" id="lVI-K3-3Rs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HNG-Ra-i08"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rek-G6-3IX"/>
+                    <connections>
+                        <outlet property="dateDatePicker" destination="1Kg-JH-NMJ" id="7l9-kW-fiW"/>
+                        <outlet property="minutesDatePicker" destination="ftt-Re-sBR" id="W6k-q7-Ec8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h3t-Wr-TVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3986" y="385"/>
+        </scene>
         <!--Home Collection View Controller-->
         <scene sceneID="PIN-ia-Zst">
             <objects>
@@ -163,6 +242,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIX-nX-ijV">
                                                     <rect key="frame" x="325" y="0.0" width="49" height="30"/>
                                                     <state key="normal" title="Export "/>
+                                                    <connections>
+                                                        <segue destination="wAQ-FR-tG7" kind="show" identifier="toAddTask" id="pBd-w9-uOr"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -356,7 +438,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5h-f5-zFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2850.7246376811595" y="-205.58035714285714"/>
+            <point key="canvasLocation" x="2783" y="137"/>
         </scene>
         <!--Add Project View Controller-->
         <scene sceneID="WmX-ci-ffS">
@@ -378,7 +460,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Project Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yX-5f-kYC">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Required" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yX-5f-kYC">
                                                 <rect key="frame" x="0.0" y="30.5" width="374" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="6dw-Qf-Paf"/>
@@ -553,7 +635,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyi-An-VYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2850.7246376811595" y="499.55357142857139"/>
+            <point key="canvasLocation" x="2412" y="957"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GK0-XA-Lmn">
@@ -579,7 +661,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6B-Ts-h11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3488" y="-366"/>
+            <point key="canvasLocation" x="3393" y="-12"/>
         </scene>
     </scenes>
     <resources>

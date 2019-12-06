@@ -47,10 +47,11 @@ class AddProjectViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        
         guard let projectName = projectNameTextField.text,
             projectName.isEmpty == false,
-            
             let projectColorName = selectedColorName
+            
             else { return }
         
         var clientName = "Client"
@@ -58,7 +59,6 @@ class AddProjectViewController: UIViewController {
         
         if let _clientName = clientNameTextField.text,
             _clientName.isEmpty == false {
-            
             clientName = _clientName
         }
         
@@ -80,7 +80,6 @@ class AddProjectViewController: UIViewController {
         } else {
             ProjectController.createProject(name: projectName, clientName: clientName, rate: rate, isHourly: isHourly, color: projectColorName, moc: moc)
         }
-        
         navigationController?.popViewController(animated: true)
     }
     
@@ -93,7 +92,6 @@ class AddProjectViewController: UIViewController {
     
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     }
@@ -135,7 +133,6 @@ class AddProjectViewController: UIViewController {
             projectColorSelectionStackView.addArrangedSubview(colorButton)
         }
     }
-    
     
     @objc func colorButtonTapped(sender: UIButton) {
         

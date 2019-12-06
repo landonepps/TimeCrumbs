@@ -20,6 +20,13 @@ class ProjectDetailTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func update(with task: Task) {
+        taskNameLabel.text = task.category?.name
+        dateLabel.text = "\(String(describing: task.date))"
+        durationLabel.text = "\(task.duration)"
+        totalAmountLabel.text = "100"
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -19,12 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // create the delete request for the specified entity
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        let taskFetchRequest: NSFetchRequest<NSFetchRequestResult> = Task.fetchRequest()
+        let taskDeleteRequest = NSBatchDeleteRequest(fetchRequest: taskFetchRequest)
+        
+        let categoryFetchRequest: NSFetchRequest<NSFetchRequestResult> = Category.fetchRequest()
+        let categoryDeleteRequest = NSBatchDeleteRequest(fetchRequest: categoryFetchRequest)
 
         let backgroundMOC = persistentContainer.newBackgroundContext()
 
         // perform the delete
         do {
             try backgroundMOC.execute(deleteRequest)
+            try backgroundMOC.execute(taskDeleteRequest)
+            try backgroundMOC.execute(categoryDeleteRequest)
+
         } catch let error as NSError {
             print(error)
         }
@@ -72,6 +81,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Failed to load store: \(error), \(error.userInfo)")
             }
         }
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        
         return container
     }()
 

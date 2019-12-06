@@ -13,10 +13,10 @@ class TaskController {
     
     // MARK: - CRUD
     // Create
-    static func createTask(category: Category, startTime: Date? = nil, duration: Double = 0, date: Date = Date(), moc: NSManagedObjectContext) {
+    static func createTask(project: Project, startTime: Date? = nil, duration: Double = 0, date: Date = Date(), moc: NSManagedObjectContext) {
         let task = Task(context: moc)
         
-        task.category = category
+        task.project = project
         task.startTime = startTime
         task.duration = duration
         task.date = date
