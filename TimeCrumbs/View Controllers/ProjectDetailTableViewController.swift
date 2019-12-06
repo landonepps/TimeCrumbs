@@ -11,79 +11,101 @@ import CoreData
 
 class ProjectDetailTableViewController: UITableViewController {
     
-    var project: Project?
+    var project: Project!
+    var fetchedResultsController: NSFetchedResultsController<Task>?
     
     // MARK: - Outlets
     @IBOutlet weak var projectNameLabel: UILabel!
     @IBOutlet weak var clientNameLabel: UILabel!
     @IBOutlet weak var chargeRateLabel: UILabel!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let request = Task.sortedFetchRequest
+        request.predicate = NSPredicate(format: "project == %@", project)
+        
+        let moc = project.managedObjectContext!
+        
+        fetchedResultsController = NSFetchedResultsController<Task>(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController?.delegate = self
+        
+        do {
+            try fetchedResultsController?.performFetch()
+        } catch {
+            print("Error:", error)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateViews()
     }
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return project?.tasks?.count ?? 0
+        return fetchedResultsController?.fetchedObjects?.count ?? 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectDetailCell", for: indexPath)
-        // set custom cell
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectDetailCell", for: indexPath) as? ProjectDetailTableViewCell
+            else { fatalError("Cell with identifier ProjectDetailCell is not of type ProjectDetailViewCell") }
+        
+        if let task = fetchedResultsController?.object(at: indexPath) {
+            cell.update(with: task)
+        }
+        
         return cell
     }
-
+    
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
     /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     } else if editingStyle == .insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
     /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     
+     }
+     */
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support conditional rearranging of the table view.
+     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEditProject" {
             guard let destination = segue.destination as? AddProjectViewController,
-            let project = project
-            else { return }
+                let project = project
+                else { return }
+            destination.project = project
+        } else if segue.identifier == "toAddTask" {
+            guard let destination = segue.destination as? FAKETaskViewController,
+                let project = project
+                else { return }
             destination.project = project
         }
     }
@@ -101,5 +123,12 @@ class ProjectDetailTableViewController: UITableViewController {
         projectNameLabel.text = project.name
         clientNameLabel.text = project.clientName
         chargeRateLabel.text = "\(project.rate?.asCurrency() ?? "")" + (project.isHourly ? "/hr" : " fixed")
+    }
+}
+
+extension ProjectDetailTableViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
     }
 }
