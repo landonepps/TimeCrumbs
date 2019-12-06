@@ -16,22 +16,29 @@ class ProjectDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var totalAmountLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    func update(with task: Task) {
-        taskNameLabel.text = task.category?.name
-        dateLabel.text = "\(String(describing: task.date))"
-        durationLabel.text = "\(task.duration)"
-        totalAmountLabel.text = "100"
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
 
+    func update(with task: Task) {
+        
+        let taskDuration = format(duration: task.duration)
+        
+        taskNameLabel.text = task.category?.name
+        dateLabel.text = "\(String(describing: task.date))"
+        durationLabel.text = taskDuration
+        totalAmountLabel.text = "100"
+        
+    }
+    
+    func format(duration: TimeInterval) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute]
+        formatter.unitsStyle = .abbreviated
+        formatter.maximumUnitCount = 2
+        
+        return formatter.string(from: duration)!
+    }
 }
