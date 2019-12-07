@@ -30,14 +30,14 @@ class ProjectDetailTableViewCell: UITableViewCell {
         
         taskNameLabel.text = task.name
         durationLabel.text = taskDuration
-        totalAmountLabel.text = String(format: "%.02f", "100")
+        totalAmountLabel.text = String(format: "%.02f", task.duration * (task.project!.rate!).doubleValue / 60 / 60)
     }
     
     func format(duration: TimeInterval) -> String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute]
         formatter.unitsStyle = .abbreviated
-        formatter.maximumUnitCount = 2
+        formatter.maximumUnitCount = 1
         
         return formatter.string(from: duration)!
     }

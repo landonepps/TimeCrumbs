@@ -50,19 +50,16 @@ class AddProjectViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         
         guard let projectName = projectNameTextField.text,
-            projectName.isEmpty == false,
-            let projectColorName = selectedColorName
-            
-            else { return }
-        
-        var clientName = ""
-        var rate: Decimal = 0.0
-        
-        if let _clientName = clientNameTextField.text,
-            _clientName.isEmpty == false {
-            clientName = _clientName
+            projectName.isEmpty == false
+        else {
+            presentEmptyFieldAlertController(title: "Unable to Save", message: "Invalid Project Name")
+            return
         }
         
+        guard let projectColorName = selectedColorName else { return }
+        let clientName = clientNameTextField.text ?? ""
+
+        var rate: Decimal = 0.0
         if let rateString = billingRateTextField.text,
             rateString.isEmpty == false {
             
@@ -70,6 +67,7 @@ class AddProjectViewController: UIViewController {
                 rate = _rate
                 
             } else {
+                presentEmptyFieldAlertController(title: "Unable to Save", message: "Invalid Rate")
                 return
             }
         }
@@ -92,12 +90,12 @@ class AddProjectViewController: UIViewController {
     }
     
     
-/*
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-    }
- */
+    /*
+     // MARK: - Navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     
+     }
+     */
     
     // MARK: - Helper Functions
     func presentDeleteAlertController() {
@@ -117,6 +115,18 @@ class AddProjectViewController: UIViewController {
         alertController.addAction(deleteAction)
         
         present(alertController, animated: true)
+    }
+    
+    func presentEmptyFieldAlertController(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        present(alertController, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        
     }
     
     func makeColorButton(color: UIColor) -> UIButton {
@@ -172,7 +182,7 @@ class AddProjectViewController: UIViewController {
         projectNameTextField.text = project.name
         clientNameTextField.text = project.clientName
         billingRateTextField.text = String(format: "%.02f", projectRate.floatValue)
-    
+        
         if let projectColor = project.color {
             selectColor(named: projectColor)
         }
