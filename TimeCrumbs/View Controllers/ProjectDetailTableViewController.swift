@@ -23,19 +23,7 @@ class ProjectDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let request = Task.sortedFetchRequest
-        request.predicate = NSPredicate(format: "project == %@", project)
-        
-        let moc = project.managedObjectContext!
-        
-        fetchedResultsController = NSFetchedResultsController<Task>(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController?.delegate = self
-        
-        do {
-            try fetchedResultsController?.performFetch()
-        } catch {
-            print("Error:", error)
-        }
+        setUpPredicate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,15 +85,19 @@ class ProjectDetailTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toEditProject" {
             guard let destination = segue.destination as? AddProjectViewController,
                 let project = project
                 else { return }
+            
             destination.project = project
+            
         } else if segue.identifier == "toAddTask" {
             guard let destination = segue.destination as? FAKETaskViewController,
                 let project = project
                 else { return }
+            
             destination.project = project
         }
     }
@@ -123,6 +115,23 @@ class ProjectDetailTableViewController: UITableViewController {
         projectNameLabel.text = project.name
         clientNameLabel.text = project.clientName
         chargeRateLabel.text = "\(project.rate?.asCurrency() ?? "")" + (project.isHourly ? "/hr" : " fixed")
+    }
+    
+    func setUpPredicate() {
+        
+        let request = Task.sortedFetchRequest
+        request.predicate = NSPredicate(format: "project == %@", project)
+        
+        let moc = project.managedObjectContext!
+        
+        fetchedResultsController = NSFetchedResultsController<Task>(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController?.delegate = self
+        
+        do {
+            try fetchedResultsController?.performFetch()
+        } catch {
+            print("Error:", error)
+        }
     }
 }
 

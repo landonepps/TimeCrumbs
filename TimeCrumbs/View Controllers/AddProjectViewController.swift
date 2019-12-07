@@ -11,6 +11,7 @@ import CoreData
 
 class AddProjectViewController: UIViewController {
     
+    // MARK: - Class Properties
     var moc: NSManagedObjectContext!
     var colorButtons = [UIButton]()
     var selectedColorName: String?
@@ -54,7 +55,7 @@ class AddProjectViewController: UIViewController {
             
             else { return }
         
-        var clientName = "Client"
+        var clientName = ""
         var rate: Decimal = 0.0
         
         if let _clientName = clientNameTextField.text,
@@ -91,11 +92,12 @@ class AddProjectViewController: UIViewController {
     }
     
     
+/*
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     }
-    
+ */
     
     // MARK: - Helper Functions
     func presentDeleteAlertController() {
@@ -103,7 +105,13 @@ class AddProjectViewController: UIViewController {
         let alertController = UIAlertController(title: "Delete Project", message: "This action cannot be undone. Delete Project?", preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
+            if let project = self.project {
+                ProjectController.deleteProject(project)
+                self.navigationController?.popViewController(animated: true)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
         
         alertController.addAction(cancelAction)
         alertController.addAction(deleteAction)
@@ -150,6 +158,7 @@ class AddProjectViewController: UIViewController {
     }
     
     func updateViews() {
+        
         guard let project = project else { return }
         
         if project.isHourly {

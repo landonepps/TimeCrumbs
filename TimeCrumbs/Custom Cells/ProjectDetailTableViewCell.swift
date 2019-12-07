@@ -18,19 +18,19 @@ class ProjectDetailTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     func update(with task: Task) {
         
         let taskDuration = format(duration: task.duration)
         
-        taskNameLabel.text = task.category?.name
-        dateLabel.text = "\(String(describing: task.date))"
-        durationLabel.text = taskDuration
-        totalAmountLabel.text = "100"
+        if let date = task.date {
+            dateLabel.text = format(date: date)
+        }
         
+        taskNameLabel.text = task.name
+        durationLabel.text = taskDuration
+        totalAmountLabel.text = String(format: "%.02f", "100")
     }
     
     func format(duration: TimeInterval) -> String {
@@ -41,4 +41,13 @@ class ProjectDetailTableViewCell: UITableViewCell {
         
         return formatter.string(from: duration)!
     }
+    
+    func format(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd"
+        
+        return dateFormatter.string(from: date)
+    }
 }
+
+

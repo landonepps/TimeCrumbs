@@ -15,6 +15,7 @@ class FAKETaskViewController: UIViewController {
     var project: Project?
 
     // MARK: - Outlets
+    @IBOutlet weak var taskNameField: UITextField!
     @IBOutlet weak var dateDatePicker: UIDatePicker!
     @IBOutlet weak var minutesDatePicker: UIDatePicker!
     
@@ -28,23 +29,15 @@ class FAKETaskViewController: UIViewController {
         
             guard let project = project
             else { return }
-        let moc = project.managedObjectContext!
+                
+        let name = taskNameField.text ?? "Not Working"
         let startTime = Date()
         let duration = minutesDatePicker.countDownDuration
         let date = dateDatePicker.date
+        let moc = project.managedObjectContext!
 
-        TaskController.createTask(project: project, startTime: startTime, duration: duration, date: date, moc: moc)
+        TaskController.createTask(project: project, name: name, startTime: startTime, duration: duration, date: date, moc: moc)
         
         navigationController?.popViewController(animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
