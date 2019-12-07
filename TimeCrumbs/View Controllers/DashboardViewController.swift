@@ -17,9 +17,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var dollarAmountLabel: UILabel!
     @IBOutlet weak var timeCrumbsImageView: UIImageView!
     @IBOutlet weak var timeCrumbsDollarLabel: UILabel!
-    @IBOutlet weak var congratulationsLabel: UILabel!
-    @IBOutlet weak var earningsContainerView: UIView!
-    
+    @IBOutlet weak var congratulationsLabel: UILabel!    
     
     // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
     var moc: NSManagedObjectContext!

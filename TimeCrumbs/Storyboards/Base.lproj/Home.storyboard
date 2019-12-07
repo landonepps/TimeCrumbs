@@ -211,8 +211,8 @@
                                                                         <constraint firstAttribute="width" secondItem="ohA-o1-CaZ" secondAttribute="height" multiplier="1:1" id="ebQ-hb-Fo5"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$8000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uYf-Sx-klx">
-                                                                    <rect key="frame" x="75" y="30" width="81.5" height="30"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$48" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uYf-Sx-klx">
+                                                                    <rect key="frame" x="75" y="30" width="48.5" height="30"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -353,13 +353,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,845 hrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t6-UD-bth">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 hrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t6-UD-bth">
                                                     <rect key="frame" x="124.5" y="0.0" width="125" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$88,888.88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="khm-eV-LN9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="khm-eV-LN9">
                                                     <rect key="frame" x="249.5" y="0.0" width="124.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -435,6 +435,7 @@
                                     <outlet property="durationLabel" destination="MDi-FH-lV5" id="OTG-cn-lGK"/>
                                     <outlet property="taskNameLabel" destination="Dng-qO-Cf2" id="zDp-mC-zw4"/>
                                     <outlet property="totalAmountLabel" destination="ikA-P0-emX" id="6Jh-zp-wax"/>
+                                    <segue destination="wAQ-FR-tG7" kind="show" identifier="toEditTask" id="B2z-rC-sKp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -454,6 +455,8 @@
                         <outlet property="chargeRateLabel" destination="1oK-Ct-D2c" id="uom-JU-Qbk"/>
                         <outlet property="clientNameLabel" destination="js5-Et-iTh" id="Q2I-UE-j4o"/>
                         <outlet property="projectNameLabel" destination="aoU-0U-L9x" id="D2y-VD-kJZ"/>
+                        <outlet property="totalHoursLabel" destination="5t6-UD-bth" id="Yev-QU-WWG"/>
+                        <outlet property="totalMoneyLabel" destination="khm-eV-LN9" id="uzr-Kg-3lR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5h-f5-zFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -691,5 +694,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QUx-Ua-ZFs"/>
+        <segue reference="B2z-rC-sKp"/>
     </inferredMetricsTieBreakers>
 </document>

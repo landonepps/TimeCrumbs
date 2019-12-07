@@ -19,6 +19,8 @@ class ProjectDetailTableViewController: UITableViewController {
     @IBOutlet weak var clientNameLabel: UILabel!
     @IBOutlet weak var chargeRateLabel: UILabel!
     
+    @IBOutlet weak var totalHoursLabel: UILabel!
+    @IBOutlet weak var totalMoneyLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +30,13 @@ class ProjectDetailTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        tableView.reloadData()
         updateViews()
     }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return fetchedResultsController?.fetchedObjects?.count ?? 0
     }
     
@@ -85,7 +88,6 @@ class ProjectDetailTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "toEditProject" {
             guard let destination = segue.destination as? AddProjectViewController,
                 let project = project
@@ -104,7 +106,6 @@ class ProjectDetailTableViewController: UITableViewController {
     
     // MARK: - Helper Functions
     func updateViews() {
-        
         guard let project = project else { return }
         
         if let projectColorName = project.color,
@@ -118,7 +119,6 @@ class ProjectDetailTableViewController: UITableViewController {
     }
     
     func setUpPredicate() {
-        
         let request = Task.sortedFetchRequest
         request.predicate = NSPredicate(format: "project == %@", project)
         
@@ -136,7 +136,6 @@ class ProjectDetailTableViewController: UITableViewController {
 }
 
 extension ProjectDetailTableViewController: NSFetchedResultsControllerDelegate {
-    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }

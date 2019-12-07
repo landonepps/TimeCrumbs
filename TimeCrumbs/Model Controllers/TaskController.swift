@@ -26,6 +26,7 @@ class TaskController {
     
     // Update
     static func updateTask(_ task: Task, name: String, date: Date, duration: Double) {
+        task.name = name
         task.date = date
         task.duration = duration
         

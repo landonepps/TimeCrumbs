@@ -36,7 +36,7 @@ class FAKETaskViewController: UIViewController {
         let date = dateDatePicker.date
         let moc = project.managedObjectContext!
 
-        TaskController.createTask(project: project, name: name, startTime: startTime, duration: duration, date: date, moc: moc)
+            TaskController.createTask(project: project, name: name, startTime: startTime, duration: duration, date: date, moc: moc)
         
         navigationController?.popViewController(animated: true)
     }
