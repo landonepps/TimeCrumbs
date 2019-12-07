@@ -35,6 +35,7 @@ class AddProjectViewController: UIViewController {
         super.viewDidLoad()
         setUpColorStackView()
         selectColor(named: Colors.projectColorNames.first!)
+        dismissKeyboardOnTap()
     }
     
     override func viewDidLayoutSubviews() {
@@ -89,14 +90,6 @@ class AddProjectViewController: UIViewController {
         presentDeleteAlertController()
     }
     
-    
-    /*
-     // MARK: - Navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     
-     }
-     */
-    
     // MARK: - Helper Functions
     func presentDeleteAlertController() {
         
@@ -127,6 +120,11 @@ class AddProjectViewController: UIViewController {
             alertController.dismiss(animated: true, completion: nil)
         }
         
+    }
+    
+    func dismissKeyboardOnTap() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     func makeColorButton(color: UIColor) -> UIButton {
