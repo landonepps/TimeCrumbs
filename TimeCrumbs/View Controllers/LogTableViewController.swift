@@ -18,12 +18,22 @@ class LogTableViewController: UITableViewController {
     
     // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
     var moc: NSManagedObjectContext!
+    var fetchedResultsController: NSFetchedResultsController<Task>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let buttonView = makeExportButton()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: buttonView)
+        
+        fetchedResultsController = NSFetchedResultsController<Task>(fetchRequest: Task.sortedFetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController?.delegate = self
+        
+        do {
+            try fetchedResultsController?.performFetch()
+        } catch {
+            print("Error:", error)
+        }
     }
     
     // MARK: - Actions
@@ -31,17 +41,19 @@ class LogTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 7
+        return fetchedResultsController?.fetchedObjects?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as? LogItemTableViewCell
+            else { fatalError("Cell with identifier TaskCell is not of type LogItemTableViewCell")}
+        
+        if let task = fetchedResultsController?.object(at: indexPath) {
+            cell.update(with: task)
+        }
+        
         return cell
     }
 
@@ -124,5 +136,11 @@ class LogTableViewController: UITableViewController {
 extension LogTableViewController: CoreDataClient {
     func set(moc: NSManagedObjectContext) {
         self.moc = moc
+    }
+}
+
+extension LogTableViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
     }
 }
