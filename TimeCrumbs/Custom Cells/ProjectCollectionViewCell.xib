@@ -41,7 +41,7 @@
                                             <constraint firstAttribute="height" constant="62" id="8KN-gT-zqG"/>
                                             <constraint firstAttribute="width" secondItem="fje-MG-TIO" secondAttribute="height" multiplier="1:1" id="cwI-oT-rmI"/>
                                         </constraints>
-                                        <state key="normal" image="plus" backgroundImage="smallbutton"/>
+                                        <state key="normal" image="plus" backgroundImage="smallButton"/>
                                         <connections>
                                             <action selector="logTimeButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="5iN-oN-9ij"/>
                                         </connections>
@@ -63,7 +63,7 @@
                                             <constraint firstAttribute="height" constant="62" id="Bom-W6-BTa"/>
                                             <constraint firstAttribute="width" secondItem="F5P-Ly-bCD" secondAttribute="height" multiplier="1:1" id="lBw-y4-kBL"/>
                                         </constraints>
-                                        <state key="normal" image="clock" backgroundImage="smallbutton">
+                                        <state key="normal" image="clock" backgroundImage="smallButton">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -110,6 +110,6 @@
     <resources>
         <image name="clock" width="35" height="40"/>
         <image name="plus" width="35" height="35"/>
-        <image name="smallbutton" width="62" height="62"/>
+        <image name="smallButton" width="62" height="62"/>
     </resources>
 </document>

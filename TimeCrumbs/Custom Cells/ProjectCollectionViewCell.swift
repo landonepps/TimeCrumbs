@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol ProjectCollectionViewCellDelegate {
+protocol ProjectCollectionViewCellDelegate: class {
     func logTimeButtonTapped(cell: ProjectCollectionViewCell)
     func startButtonTapped(cell: ProjectCollectionViewCell)
 }
 
-class ProjectCollectionViewCell: UICollectionViewCell, ExpandableCell {
+class ProjectCollectionViewCell: UICollectionViewCell {
     
-    var delegate: ProjectCollectionViewCellDelegate?
+    weak var delegate: ProjectCollectionViewCellDelegate?
     var project: Project? {
         didSet {
             setupViews()
@@ -91,24 +91,6 @@ class ProjectCollectionViewCell: UICollectionViewCell, ExpandableCell {
             startButton.tintColor = projectColor
         }
         
-    }
-    
-    // MARK: - Expanding/Collapsing
-    
-    func expand(in collectionView: UICollectionView) {
-        initialFrame = frame
-        
-        frame = CGRect(x: 0, y: collectionView.contentOffset.y, width: collectionView.frame.width, height: collectionView.frame.height)
-        
-        layoutIfNeeded()
-    }
-    
-    func collapse() {
-        frame = initialFrame ?? frame
-        
-        initialFrame = nil
-        
-        layoutIfNeeded()
     }
     
 }

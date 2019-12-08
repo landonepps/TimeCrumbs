@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A349C1723957F570012AD58 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2A349C1623957F570012AD58 /* Charts */; };
 		2A349C1A2395827F0012AD58 /* LogItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A349C192395827F0012AD58 /* LogItemTableViewCell.swift */; };
 		2A349C1C2395853D0012AD58 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A349C1B2395853D0012AD58 /* ProjectCollectionViewCell.swift */; };
 		2A349C21239723F00012AD58 /* ProjectDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A349C20239723F00012AD58 /* ProjectDetailTableViewController.swift */; };
@@ -28,8 +27,8 @@
 		446812E8238C8B4F00CF522A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446812E1238C8B4F00CF522A /* Settings.storyboard */; };
 		446812E9238C8B4F00CF522A /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446812E3238C8B4F00CF522A /* Dashboard.storyboard */; };
 		446812EA238C8B4F00CF522A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446812E5238C8B4F00CF522A /* Home.storyboard */; };
-		4482E47223970EB40056EEAF /* LogTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4482E47123970EB40056EEAF /* LogTimeView.xib */; };
-		4482E47423970FBC0056EEAF /* LogTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482E47323970FBC0056EEAF /* LogTimeView.swift */; };
+		44893CC5239CA7A900A5D2B2 /* LogTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44893CC4239CA7A900A5D2B2 /* LogTimeViewController.swift */; };
+		44893CC7239CA7BC00A5D2B2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44893CC6239CA7BC00A5D2B2 /* TimerViewController.swift */; };
 		4496D6502385ADE800294710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D64F2385ADE800294710 /* AppDelegate.swift */; };
 		4496D6522385ADE800294710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D6512385ADE800294710 /* SceneDelegate.swift */; };
 		4496D6572385ADE800294710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4496D6552385ADE800294710 /* Main.storyboard */; };
@@ -86,8 +85,8 @@
 		446812E2238C8B4F00CF522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		446812E4238C8B4F00CF522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
 		446812E6238C8B4F00CF522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
-		4482E47123970EB40056EEAF /* LogTimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogTimeView.xib; sourceTree = "<group>"; };
-		4482E47323970FBC0056EEAF /* LogTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTimeView.swift; sourceTree = "<group>"; };
+		44893CC4239CA7A900A5D2B2 /* LogTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTimeViewController.swift; sourceTree = "<group>"; };
+		44893CC6239CA7BC00A5D2B2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		4496D64C2385ADE800294710 /* TimeCrumbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCrumbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4496D64F2385ADE800294710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4496D6512385ADE800294710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,7 +118,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FCE8CA238C994200F1DFA9 /* CloudKit.framework in Frameworks */,
-				2A349C1723957F570012AD58 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +144,6 @@
 				2A349C192395827F0012AD58 /* LogItemTableViewCell.swift */,
 				2A349C1B2395853D0012AD58 /* ProjectCollectionViewCell.swift */,
 				44BE441A2395C7D0004F7811 /* ProjectCollectionViewCell.xib */,
-				4482E47323970FBC0056EEAF /* LogTimeView.swift */,
-				4482E47123970EB40056EEAF /* LogTimeView.xib */,
 				2AAAADE82399B8D5005A328E /* ProjectDetailTableViewCell.swift */,
 			);
 			path = "Custom Cells";
@@ -273,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				449B3E5A238DA4200091819D /* HomeCollectionViewController.swift */,
+				44893CC4239CA7A900A5D2B2 /* LogTimeViewController.swift */,
+				44893CC6239CA7BC00A5D2B2 /* TimerViewController.swift */,
 				449B3E56238D9B4F0091819D /* DashboardViewController.swift */,
 				449B3E54238D99DC0091819D /* LogTableViewController.swift */,
 				2A349C20239723F00012AD58 /* ProjectDetailTableViewController.swift */,
@@ -320,7 +318,6 @@
 			);
 			name = TimeCrumbs;
 			packageProductDependencies = (
-				2A349C1623957F570012AD58 /* Charts */,
 			);
 			productName = TimeCrumbs;
 			productReference = 4496D64C2385ADE800294710 /* TimeCrumbs.app */;
@@ -395,7 +392,6 @@
 			);
 			mainGroup = 4496D6432385ADE800294710;
 			packageReferences = (
-				2A349C1523957F570012AD58 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 4496D64D2385ADE800294710 /* Products */;
 			projectDirPath = "";
@@ -413,7 +409,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4482E47223970EB40056EEAF /* LogTimeView.xib in Resources */,
 				4496D65F2385ADEA00294710 /* LaunchScreen.storyboard in Resources */,
 				4496D65C2385ADEA00294710 /* Assets.xcassets in Resources */,
 				4433A0552385C0BE004AC1E7 /* README.md in Resources */,
@@ -451,11 +446,13 @@
 				2A349C21239723F00012AD58 /* ProjectDetailTableViewController.swift in Sources */,
 				4496D6502385ADE800294710 /* AppDelegate.swift in Sources */,
 				2A349C1A2395827F0012AD58 /* LogItemTableViewCell.swift in Sources */,
+				44893CC5239CA7A900A5D2B2 /* LogTimeViewController.swift in Sources */,
 				4496D65A2385ADE800294710 /* TimeCrumbs.xcdatamodeld in Sources */,
 				44A7EA6A2398512300B5E6E4 /* ExpandableCellProtocol.swift in Sources */,
 				449B3E53238D98D00091819D /* SettingsTableViewController.swift in Sources */,
 				4496D6522385ADE800294710 /* SceneDelegate.swift in Sources */,
 				2AAAADE72399B3D9005A328E /* Decimal+AsCurrency.swift in Sources */,
+				44893CC7239CA7BC00A5D2B2 /* TimerViewController.swift in Sources */,
 				4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				2AA1FA6B239ABC07000E2C3A /* FAKETaskViewController.swift in Sources */,
 				449B3E57238D9B4F0091819D /* DashboardViewController.swift in Sources */,
@@ -465,7 +462,6 @@
 				2A67DBF9239875550077B243 /* Colors.swift in Sources */,
 				2AAAADE92399B8D5005A328E /* ProjectDetailTableViewCell.swift in Sources */,
 				2A8155E1238C961300B1859C /* Task.swift in Sources */,
-				4482E47423970FBC0056EEAF /* LogTimeView.swift in Sources */,
 				2A8155E5238C988D00B1859C /* ProjectControllers.swift in Sources */,
 				2A8155EA238D98C000B1859C /* TaskController.swift in Sources */,
 				2A8155DF238C90A100B1859C /* Project.swift in Sources */,
@@ -842,25 +838,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2A349C1523957F570012AD58 /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2A349C1623957F570012AD58 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A349C1523957F570012AD58 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4496D6582385ADE800294710 /* TimeCrumbs.xcdatamodeld */ = {
