@@ -11,7 +11,7 @@ import CoreData
 
 class ProjectDetailTableViewController: UITableViewController {
     
-    var project: Project!
+    var project: Project?
     var fetchedResultsController: NSFetchedResultsController<Task>?
     
     // MARK: - Outlets
@@ -119,6 +119,7 @@ class ProjectDetailTableViewController: UITableViewController {
     }
     
     func setUpPredicate() {
+        guard let project = project else { return }
         let request = Task.sortedFetchRequest
         request.predicate = NSPredicate(format: "project == %@", project)
         

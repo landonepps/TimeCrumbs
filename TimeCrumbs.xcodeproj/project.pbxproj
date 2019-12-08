@@ -3,13 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A349C1723957F570012AD58 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2A349C1623957F570012AD58 /* Charts */; };
 		2A349C1A2395827F0012AD58 /* LogItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A349C192395827F0012AD58 /* LogItemTableViewCell.swift */; };
-		2A349C1C2395853D0012AD58 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A349C1B2395853D0012AD58 /* ProjectCollectionViewCell.swift */; };
 		2A349C21239723F00012AD58 /* ProjectDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A349C20239723F00012AD58 /* ProjectDetailTableViewController.swift */; };
 		2A67DBF723984D540077B243 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A67DBF623984D540077B243 /* AddProjectViewController.swift */; };
 		2A67DBF9239875550077B243 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A67DBF8239875550077B243 /* Colors.swift */; };
@@ -21,15 +19,13 @@
 		2AA1FA6B239ABC07000E2C3A /* FAKETaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA1FA6A239ABC07000E2C3A /* FAKETaskViewController.swift */; };
 		2AAAADE72399B3D9005A328E /* Decimal+AsCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAAADE62399B3D9005A328E /* Decimal+AsCurrency.swift */; };
 		2AAAADE92399B8D5005A328E /* ProjectDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAAADE82399B8D5005A328E /* ProjectDetailTableViewCell.swift */; };
-		441C07FE239597BC002BB48E /* HomeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441C07FD239597BC002BB48E /* HomeLayout.swift */; };
+		442350B0239AC5AB0069E42D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442350AF239AC5AB0069E42D /* HomeView.swift */; };
 		4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */; };
 		4433A0552385C0BE004AC1E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4433A0542385C0BE004AC1E7 /* README.md */; };
 		446812E7238C8B4F00CF522A /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446812DF238C8B4F00CF522A /* Log.storyboard */; };
 		446812E8238C8B4F00CF522A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446812E1238C8B4F00CF522A /* Settings.storyboard */; };
 		446812E9238C8B4F00CF522A /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446812E3238C8B4F00CF522A /* Dashboard.storyboard */; };
 		446812EA238C8B4F00CF522A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446812E5238C8B4F00CF522A /* Home.storyboard */; };
-		4482E47223970EB40056EEAF /* LogTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4482E47123970EB40056EEAF /* LogTimeView.xib */; };
-		4482E47423970FBC0056EEAF /* LogTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482E47323970FBC0056EEAF /* LogTimeView.swift */; };
 		4496D6502385ADE800294710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D64F2385ADE800294710 /* AppDelegate.swift */; };
 		4496D6522385ADE800294710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D6512385ADE800294710 /* SceneDelegate.swift */; };
 		4496D6572385ADE800294710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4496D6552385ADE800294710 /* Main.storyboard */; };
@@ -41,10 +37,9 @@
 		449B3E53238D98D00091819D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E52238D98D00091819D /* SettingsTableViewController.swift */; };
 		449B3E55238D99DC0091819D /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E54238D99DC0091819D /* LogTableViewController.swift */; };
 		449B3E57238D9B4F0091819D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E56238D9B4F0091819D /* DashboardViewController.swift */; };
-		449B3E5B238DA4200091819D /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E5A238DA4200091819D /* HomeCollectionViewController.swift */; };
 		449B3E5D238DA7DB0091819D /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E5C238DA7DB0091819D /* CoreDataClient.swift */; };
 		44A7EA6A2398512300B5E6E4 /* ExpandableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7EA692398512300B5E6E4 /* ExpandableCellProtocol.swift */; };
-		44BE441C2395C7D0004F7811 /* ProjectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44BE441A2395C7D0004F7811 /* ProjectCollectionViewCell.xib */; };
+		44B75F43239C6908000079BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B75F42239C6908000079BD /* HomeViewController.swift */; };
 		44FCE8CA238C994200F1DFA9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCE8C9238C994200F1DFA9 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +62,6 @@
 
 /* Begin PBXFileReference section */
 		2A349C192395827F0012AD58 /* LogItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItemTableViewCell.swift; sourceTree = "<group>"; };
-		2A349C1B2395853D0012AD58 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A349C20239723F00012AD58 /* ProjectDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailTableViewController.swift; sourceTree = "<group>"; };
 		2A67DBF623984D540077B243 /* AddProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
 		2A67DBF8239875550077B243 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -79,15 +73,13 @@
 		2AA1FA6A239ABC07000E2C3A /* FAKETaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAKETaskViewController.swift; sourceTree = "<group>"; };
 		2AAAADE62399B3D9005A328E /* Decimal+AsCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+AsCurrency.swift"; sourceTree = "<group>"; };
 		2AAAADE82399B8D5005A328E /* ProjectDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailTableViewCell.swift; sourceTree = "<group>"; };
-		441C07FD239597BC002BB48E /* HomeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayout.swift; sourceTree = "<group>"; };
+		442350AF239AC5AB0069E42D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		4433A0542385C0BE004AC1E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		446812E0238C8B4F00CF522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Log.storyboard; sourceTree = "<group>"; };
 		446812E2238C8B4F00CF522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		446812E4238C8B4F00CF522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
 		446812E6238C8B4F00CF522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
-		4482E47123970EB40056EEAF /* LogTimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogTimeView.xib; sourceTree = "<group>"; };
-		4482E47323970FBC0056EEAF /* LogTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTimeView.swift; sourceTree = "<group>"; };
 		4496D64C2385ADE800294710 /* TimeCrumbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCrumbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4496D64F2385ADE800294710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4496D6512385ADE800294710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,10 +97,9 @@
 		449B3E52238D98D00091819D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		449B3E54238D99DC0091819D /* LogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
 		449B3E56238D9B4F0091819D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		449B3E5A238DA4200091819D /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		449B3E5C238DA7DB0091819D /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
 		44A7EA692398512300B5E6E4 /* ExpandableCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCellProtocol.swift; sourceTree = "<group>"; };
-		44BE441A2395C7D0004F7811 /* ProjectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCollectionViewCell.xib; sourceTree = "<group>"; };
+		44B75F42239C6908000079BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		44FCE8C7238C993C00F1DFA9 /* TimeCrumbs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeCrumbs.entitlements; sourceTree = "<group>"; };
 		44FCE8C9238C994200F1DFA9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -119,7 +110,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FCE8CA238C994200F1DFA9 /* CloudKit.framework in Frameworks */,
-				2A349C1723957F570012AD58 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,10 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				2A349C192395827F0012AD58 /* LogItemTableViewCell.swift */,
-				2A349C1B2395853D0012AD58 /* ProjectCollectionViewCell.swift */,
-				44BE441A2395C7D0004F7811 /* ProjectCollectionViewCell.xib */,
-				4482E47323970FBC0056EEAF /* LogTimeView.swift */,
-				4482E47123970EB40056EEAF /* LogTimeView.xib */,
 				2AAAADE82399B8D5005A328E /* ProjectDetailTableViewCell.swift */,
 			);
 			path = "Custom Cells";
@@ -171,14 +157,6 @@
 				2A67DBF8239875550077B243 /* Colors.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		441C07FA23959778002BB48E /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-				441C07FD239597BC002BB48E /* HomeLayout.swift */,
-			);
-			path = Layouts;
 			sourceTree = "<group>";
 		};
 		4433A0532385B809004AC1E7 /* Extensions */ = {
@@ -220,11 +198,11 @@
 				2A8155DD238C7FFB00B1859C /* Model Controllers */,
 				44B4EBB12385B28C00BEA8FA /* View Controllers */,
 				2A349C1D239585480012AD58 /* Custom Cells */,
-				441C07FA23959778002BB48E /* Layouts */,
 				44B4EBB22385B29100BEA8FA /* Storyboards */,
 				2A8155E6238CA91B00B1859C /* Helpers */,
 				4433A0532385B809004AC1E7 /* Extensions */,
 				449C5A202385B25B007828C7 /* Supporting Files */,
+				442350AF239AC5AB0069E42D /* HomeView.swift */,
 			);
 			path = TimeCrumbs;
 			sourceTree = "<group>";
@@ -272,7 +250,7 @@
 		44B4EBB12385B28C00BEA8FA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				449B3E5A238DA4200091819D /* HomeCollectionViewController.swift */,
+				44B75F42239C6908000079BD /* HomeViewController.swift */,
 				449B3E56238D9B4F0091819D /* DashboardViewController.swift */,
 				449B3E54238D99DC0091819D /* LogTableViewController.swift */,
 				2A349C20239723F00012AD58 /* ProjectDetailTableViewController.swift */,
@@ -320,7 +298,6 @@
 			);
 			name = TimeCrumbs;
 			packageProductDependencies = (
-				2A349C1623957F570012AD58 /* Charts */,
 			);
 			productName = TimeCrumbs;
 			productReference = 4496D64C2385ADE800294710 /* TimeCrumbs.app */;
@@ -395,7 +372,6 @@
 			);
 			mainGroup = 4496D6432385ADE800294710;
 			packageReferences = (
-				2A349C1523957F570012AD58 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 4496D64D2385ADE800294710 /* Products */;
 			projectDirPath = "";
@@ -413,12 +389,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4482E47223970EB40056EEAF /* LogTimeView.xib in Resources */,
 				4496D65F2385ADEA00294710 /* LaunchScreen.storyboard in Resources */,
 				4496D65C2385ADEA00294710 /* Assets.xcassets in Resources */,
 				4433A0552385C0BE004AC1E7 /* README.md in Resources */,
 				446812E8238C8B4F00CF522A /* Settings.storyboard in Resources */,
-				44BE441C2395C7D0004F7811 /* ProjectCollectionViewCell.xib in Resources */,
 				4496D6572385ADE800294710 /* Main.storyboard in Resources */,
 				446812E9238C8B4F00CF522A /* Dashboard.storyboard in Resources */,
 				446812E7238C8B4F00CF522A /* Log.storyboard in Resources */,
@@ -459,18 +433,16 @@
 				4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				2AA1FA6B239ABC07000E2C3A /* FAKETaskViewController.swift in Sources */,
 				449B3E57238D9B4F0091819D /* DashboardViewController.swift in Sources */,
-				441C07FE239597BC002BB48E /* HomeLayout.swift in Sources */,
 				449B3E5D238DA7DB0091819D /* CoreDataClient.swift in Sources */,
+				44B75F43239C6908000079BD /* HomeViewController.swift in Sources */,
 				2A67DBF723984D540077B243 /* AddProjectViewController.swift in Sources */,
 				2A67DBF9239875550077B243 /* Colors.swift in Sources */,
 				2AAAADE92399B8D5005A328E /* ProjectDetailTableViewCell.swift in Sources */,
 				2A8155E1238C961300B1859C /* Task.swift in Sources */,
-				4482E47423970FBC0056EEAF /* LogTimeView.swift in Sources */,
+				442350B0239AC5AB0069E42D /* HomeView.swift in Sources */,
 				2A8155E5238C988D00B1859C /* ProjectControllers.swift in Sources */,
 				2A8155EA238D98C000B1859C /* TaskController.swift in Sources */,
 				2A8155DF238C90A100B1859C /* Project.swift in Sources */,
-				2A349C1C2395853D0012AD58 /* ProjectCollectionViewCell.swift in Sources */,
-				449B3E5B238DA4200091819D /* HomeCollectionViewController.swift in Sources */,
 				2A8155E8238CA94400B1859C /* Managed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,7 +663,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -714,7 +686,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -842,25 +814,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2A349C1523957F570012AD58 /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2A349C1623957F570012AD58 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A349C1523957F570012AD58 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4496D6582385ADE800294710 /* TimeCrumbs.xcdatamodeld */ = {

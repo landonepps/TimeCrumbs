@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cZE-v0-N4m">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8xd-Jd-rd8" kind="relationship" relationship="rootViewController" id="hab-YL-MKE"/>
+                        <segue destination="HJ6-QH-GK3" kind="relationship" relationship="rootViewController" id="9QC-uO-cCX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JnB-r8-6jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -112,36 +112,47 @@
             </objects>
             <point key="canvasLocation" x="3986" y="385"/>
         </scene>
-        <!--Home Collection View Controller-->
-        <scene sceneID="PIN-ia-Zst">
+        <!--Home View Controller-->
+        <scene sceneID="yej-Od-rjx">
             <objects>
-                <collectionViewController id="8xd-Jd-rd8" customClass="HomeCollectionViewController" customModule="TimeCrumbs" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xDn-wq-Pti">
+                <viewController id="HJ6-QH-GK3" customClass="HomeViewController" customModule="TimeCrumbs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nrE-eh-yn0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4T-WN-VyX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <connections>
+                                    <segue destination="6gE-zC-eF0" kind="embed" destinationCreationSelector="addHomeView:" id="q1q-W9-Qfl"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewLayout key="collectionViewLayout" id="V7G-fH-3g9" customClass="HomeLayout" customModule="TimeCrumbs" customModuleProvider="target"/>
-                        <cells/>
-                        <connections>
-                            <outlet property="dataSource" destination="8xd-Jd-rd8" id="q0P-6o-XQC"/>
-                            <outlet property="delegate" destination="8xd-Jd-rd8" id="BIm-c1-roz"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="s1z-E4-sRc">
-                        <barButtonItem key="leftBarButtonItem" title="View Archive" id="5jX-4S-B1A"/>
-                        <barButtonItem key="rightBarButtonItem" title="Add Project" id="FuV-BX-kZq">
+                        <constraints>
+                            <constraint firstItem="hW7-wr-yA9" firstAttribute="bottom" secondItem="h4T-WN-VyX" secondAttribute="bottom" id="0be-34-wSJ"/>
+                            <constraint firstItem="hW7-wr-yA9" firstAttribute="trailing" secondItem="h4T-WN-VyX" secondAttribute="trailing" id="IVm-Nz-HoE"/>
+                            <constraint firstItem="h4T-WN-VyX" firstAttribute="top" secondItem="hW7-wr-yA9" secondAttribute="top" id="f1Y-Xd-pmJ"/>
+                            <constraint firstItem="h4T-WN-VyX" firstAttribute="leading" secondItem="hW7-wr-yA9" secondAttribute="leading" id="paC-DT-X4g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hW7-wr-yA9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Adc-ji-9gU">
+                        <barButtonItem key="leftBarButtonItem" title="View Archive" id="yuw-mu-JcG">
                             <connections>
-                                <segue destination="vzc-gO-dz3" kind="show" identifier="AddProject" id="Ahi-Wu-iWS"/>
+                                <segue destination="t0z-c8-CDI" kind="show" id="NIU-rf-k9x"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Project" id="aPa-y3-hdk">
+                            <connections>
+                                <segue destination="vzc-gO-dz3" kind="show" id="u1E-m3-ck0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="t0z-c8-CDI" kind="show" identifier="CellToProjectDetail" id="ELp-0G-Ko3"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MVQ-aL-prB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXx-Vl-axD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="97c-Oq-qEo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2011.594202898551" y="136.60714285714286"/>
+            <point key="canvasLocation" x="2024.6376811594205" y="136.60714285714286"/>
         </scene>
         <!--Project Detail Table View Controller-->
         <scene sceneID="ltz-FG-M0r">
@@ -667,6 +678,7 @@
                         <outlet property="projectColorSelectionStackView" destination="L3K-BJ-69l" id="67c-DG-Jgv"/>
                         <outlet property="projectNameTextField" destination="3yX-5f-kYC" id="MpV-hI-dBP"/>
                         <outlet property="selectedColorView" destination="rjS-dD-Kza" id="H0M-AF-c7b"/>
+                        <segue destination="97c-Oq-qEo" kind="unwind" identifier="EditToHomeUnwind" unwindAction="comingFromEditProjectUnwindSegueWithSegue:" id="F7N-4f-qC5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyi-An-VYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -699,6 +711,14 @@
             </objects>
             <point key="canvasLocation" x="3393" y="-12"/>
         </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="Cb9-IF-fC7">
+            <objects>
+                <hostingController id="6gE-zC-eF0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uLI-GE-xQT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1407" y="867"/>
+        </scene>
     </scenes>
     <resources>
         <image name="DonutGraphPlaceholder" width="112" height="112"/>
@@ -706,7 +726,7 @@
         <image name="timeCrumbsTotal" width="106" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QUx-Ua-ZFs"/>
+        <segue reference="u1E-m3-ck0"/>
         <segue reference="B2z-rC-sKp"/>
     </inferredMetricsTieBreakers>
 </document>

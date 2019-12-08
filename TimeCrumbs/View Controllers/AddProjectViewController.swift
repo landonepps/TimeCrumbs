@@ -99,8 +99,7 @@ class AddProjectViewController: UIViewController {
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
             if let project = self.project {
                 ProjectController.deleteProject(project)
-                self.navigationController?.popViewController(animated: true)
-                self.navigationController?.popViewController(animated: true)
+                self.performSegue(withIdentifier: "EditToHomeUnwind", sender: self)
             }
         }
         
