@@ -21,6 +21,8 @@ class FAKETaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dismissKeyboardOnTap()
     }
     
     
@@ -39,5 +41,11 @@ class FAKETaskViewController: UIViewController {
             TaskController.createTask(project: project, name: name, startTime: startTime, duration: duration, date: date, moc: moc)
         
         navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Helpers
+    func dismissKeyboardOnTap() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
 }
