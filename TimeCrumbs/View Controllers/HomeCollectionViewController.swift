@@ -13,11 +13,15 @@ fileprivate let reuseIdentifier = "ProjectCell"
 
 class HomeCollectionViewController: UICollectionViewController {
     
+    // MARK: - Properties
+    
     // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
     var moc: NSManagedObjectContext!
     
     var fetchedResultsController: NSFetchedResultsController<Project>?
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +55,15 @@ class HomeCollectionViewController: UICollectionViewController {
             guard let cell = sender as? ProjectCollectionViewCell,
                 let indexPath = collectionView.indexPath(for: cell),
                 let destination = segue.destination as? LogTimeViewController,
+                let project = fetchedResultsController?.object(at: indexPath)
+                else { return }
+            
+            destination.project = project
+            
+        } else if segue.identifier == "CellToTimer" {
+            guard let cell = sender as? ProjectCollectionViewCell,
+                let indexPath = collectionView.indexPath(for: cell),
+                let destination = segue.destination as? TimerViewController,
                 let project = fetchedResultsController?.object(at: indexPath)
                 else { return }
             
