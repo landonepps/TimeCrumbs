@@ -35,9 +35,9 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hom-wf-AWo">
-                                            <rect key="frame" x="0.0" y="96" width="112" height="36"/>
+                                            <rect key="frame" x="0.0" y="96" width="120" height="36"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                            <state key="normal" title="Report a bug"/>
+                                            <state key="normal" title="Privacy Policy"/>
                                         </button>
                                     </subviews>
                                 </stackView>
