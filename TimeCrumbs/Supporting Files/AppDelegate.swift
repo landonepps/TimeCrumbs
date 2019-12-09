@@ -14,32 +14,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        #warning("Remove code to reset DB & generate dummy data")
-        print("Removing all records in:", persistentContainer.name)
-        // create the delete request for the specified entity
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-
-        let taskFetchRequest: NSFetchRequest<NSFetchRequestResult> = Task.fetchRequest()
-        let taskDeleteRequest = NSBatchDeleteRequest(fetchRequest: taskFetchRequest)
-
-        let backgroundMOC = persistentContainer.newBackgroundContext()
-
-        // perform the delete
-        do {
-            try backgroundMOC.execute(deleteRequest)
-            try backgroundMOC.execute(taskDeleteRequest)
-        } catch let error as NSError {
-            print(error)
-        }
-
-        backgroundMOC.saveOrRollback()
-
-        print("Recreating dummy project")
-        print("Is main thread?: \(Thread.isMainThread)")
-        ProjectController.createProject(name: "Project 3", color: "cerulean", moc: persistentContainer.viewContext)
-        ProjectController.createProject(name: "Project 2", color: "orange", moc: persistentContainer.viewContext)
-        ProjectController.createProject(name: "Project 1", color: "wheat", moc: persistentContainer.viewContext)
+//        #warning("Remove code to reset DB & generate dummy data")
+//        print("Removing all records in:", persistentContainer.name)
+//        // create the delete request for the specified entity
+//        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
+//        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+//
+//        let taskFetchRequest: NSFetchRequest<NSFetchRequestResult> = Task.fetchRequest()
+//        let taskDeleteRequest = NSBatchDeleteRequest(fetchRequest: taskFetchRequest)
+//
+//        let backgroundMOC = persistentContainer.newBackgroundContext()
+//
+//        // perform the delete
+//        do {
+//            try backgroundMOC.execute(deleteRequest)
+//            try backgroundMOC.execute(taskDeleteRequest)
+//        } catch let error as NSError {
+//            print(error)
+//        }
+//
+//        backgroundMOC.saveOrRollback()
+//
+//        print("Recreating dummy project")
+//        print("Is main thread?: \(Thread.isMainThread)")
+//        ProjectController.createProject(name: "Project 3", color: "cerulean", moc: persistentContainer.viewContext)
+//        ProjectController.createProject(name: "Project 2", color: "orange", moc: persistentContainer.viewContext)
+//        ProjectController.createProject(name: "Project 1", color: "wheat", moc: persistentContainer.viewContext)
 
         return true
     }

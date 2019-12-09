@@ -23,9 +23,6 @@ class LogTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let buttonView = makeExportButton()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: buttonView)
-        
         fetchedResultsController = NSFetchedResultsController<Task>(fetchRequest: Task.sortedFetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController?.delegate = self
         
@@ -39,6 +36,11 @@ class LogTableViewController: UITableViewController {
     // MARK: - Actions
     @IBAction func dateRangeButtonTapped(_ sender: Any) {
     }
+    
+    @IBAction func exportButtonTapped(_ sender: Any) {
+        exportToCSV()
+    }
+    
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,35 +105,43 @@ class LogTableViewController: UITableViewController {
     */
     
     // MARK: - Helpers
-    func makeExportButton() -> UIView {
-        let buttonView = UIView()
+    
+    func exportToCSV() {
+        let fileName = "Tasks.csv"
+        let path = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
         
-        // Set up subviews
-        let imageView = UIImageView(image: UIImage(systemName: "square.and.arrow.down"))
-        let label = UILabel()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        label.translatesAutoresizingMaskIntoConstraints = false
-        buttonView.addSubview(imageView)
-        buttonView.addSubview(label)
+        var csvText = "date,project,client,task,duration,amount\n"
         
-        label.text = "Export"
-        label.textColor = UIColor.systemBlue
+        for task in fetchedResultsController?.fetchedObjects ?? [] {
+            var taskLine = [String]()
+            taskLine.append("\(task.date?.asString() ?? "")")
+            taskLine.append("\(task.project?.name ?? "")")
+            taskLine.append("\(task.project?.clientName ?? "")")
+            taskLine.append("\(task.name ?? "")")
+            taskLine.append("\(task.duration / 60)")
+            
+            if task.project?.isHourly ?? false,
+                let rate = task.project?.rate
+                {
+                    taskLine.append("\(rate.multiplying(by: NSDecimalNumber(floatLiteral: task.duration)).dividing(by: 3600))")
+            } else {
+                taskLine.append("")
+            }
+            csvText.append("\(taskLine.joined(separator: ","))\n")
+        }
         
-        // Add constraints
-        imageView.topAnchor.constraint(equalTo: buttonView.topAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor).isActive = true
-        imageView.leftAnchor.constraint(equalTo: buttonView.leftAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: buttonView.topAnchor).isActive = true
-        label.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor).isActive = true
-        label.rightAnchor.constraint(equalTo: buttonView.rightAnchor).isActive = true
-        label.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8).isActive = true
-        
-        buttonView.sizeToFit()
-        
-        return buttonView
+        do {
+            try csvText.write(to: path, atomically: true, encoding: String.Encoding.utf8)
+            
+            let vc = UIActivityViewController(activityItems: [path], applicationActivities: [])
+            present(vc, animated: true, completion: nil)
+        } catch {
+            print("Failed to create file", error)
+        }
+        // Present Alert Controller?
     }
-
 }
+
 
 extension LogTableViewController: CoreDataClient {
     func set(moc: NSManagedObjectContext) {
