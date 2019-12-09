@@ -110,7 +110,7 @@ class LogTableViewController: UITableViewController {
         let fileName = "Tasks.csv"
         let path = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
         
-        var csvText = "date,project,client,task,duration,rate\n"
+        var csvText = "date,project,client,task,duration,amount\n"
         
         for task in fetchedResultsController?.fetchedObjects ?? [] {
             var taskLine = [String]()
@@ -121,9 +121,9 @@ class LogTableViewController: UITableViewController {
             taskLine.append("\(task.duration / 60)")
             
             if task.project?.isHourly ?? false,
-                let rate = task.project?.rate as? Double
+                let rate = task.project?.rate
                 {
-            taskLine.append("\(rate * task.duration)")
+                    taskLine.append("\(rate.multiplying(by: NSDecimalNumber(floatLiteral: task.duration)).dividing(by: 3600))")
             } else {
                 taskLine.append("")
             }
