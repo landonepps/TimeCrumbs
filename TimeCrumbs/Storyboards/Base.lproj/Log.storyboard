@@ -14,28 +14,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="lcv-mU-nDd">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8J-bV-fc3">
-                                    <rect key="frame" x="20" y="8" width="55" height="34"/>
-                                    <state key="normal" title="All Time"/>
-                                    <connections>
-                                        <action selector="dateRangeButtonTapped:" destination="1ko-7l-l5r" eventType="touchUpInside" id="cLA-dx-Vgw"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="K8J-bV-fc3" secondAttribute="bottom" constant="8" id="Wh9-Vk-ycq"/>
-                                <constraint firstItem="K8J-bV-fc3" firstAttribute="top" secondItem="lcv-mU-nDd" secondAttribute="top" constant="8" id="mFl-93-2Wj"/>
-                                <constraint firstItem="K8J-bV-fc3" firstAttribute="leading" secondItem="lcv-mU-nDd" secondAttribute="leading" constant="20" id="mWp-zt-Hdw"/>
-                            </constraints>
-                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="75" id="334-Yu-EBH" customClass="LogItemTableViewCell" customModule="TimeCrumbs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="78" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="334-Yu-EBH" id="ood-2O-e0U">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
@@ -124,9 +105,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="dateRangeButton" destination="K8J-bV-fc3" id="Dey-2q-v7y"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaG-gt-TC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
