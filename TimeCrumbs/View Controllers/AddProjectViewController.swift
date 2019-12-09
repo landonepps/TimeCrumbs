@@ -53,7 +53,7 @@ class AddProjectViewController: UIViewController {
         guard let projectName = projectNameTextField.text,
             projectName.isEmpty == false
         else {
-            presentEmptyFieldAlertController(title: "Unable to Save", message: "Invalid Project Name")
+            presentEmptyFieldAlertController(title: "Unable to Save", message: "Empty Project Name")
             return
         }
         

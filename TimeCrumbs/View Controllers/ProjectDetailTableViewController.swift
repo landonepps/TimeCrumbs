@@ -95,12 +95,6 @@ class ProjectDetailTableViewController: UITableViewController {
             
             destination.project = project
             
-        } else if segue.identifier == "toAddTask" {
-            guard let destination = segue.destination as? FAKETaskViewController,
-                let project = project
-                else { return }
-            
-            destination.project = project
         }
     }
     
