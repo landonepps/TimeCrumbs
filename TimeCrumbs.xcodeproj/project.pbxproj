@@ -12,6 +12,7 @@
 		2A349C21239723F00012AD58 /* ProjectDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A349C20239723F00012AD58 /* ProjectDetailTableViewController.swift */; };
 		2A67DBF723984D540077B243 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A67DBF623984D540077B243 /* AddProjectViewController.swift */; };
 		2A67DBF9239875550077B243 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A67DBF8239875550077B243 /* Colors.swift */; };
+		2A6DB141239F07FF00D12A0B /* MeetTheTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6DB140239F07FF00D12A0B /* MeetTheTeamTableViewController.swift */; };
 		2A8155DF238C90A100B1859C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155DE238C90A100B1859C /* Project.swift */; };
 		2A8155E1238C961300B1859C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E0238C961300B1859C /* Task.swift */; };
 		2A8155E5238C988D00B1859C /* ProjectControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8155E4238C988D00B1859C /* ProjectControllers.swift */; };
@@ -72,6 +73,7 @@
 		2A349C20239723F00012AD58 /* ProjectDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailTableViewController.swift; sourceTree = "<group>"; };
 		2A67DBF623984D540077B243 /* AddProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
 		2A67DBF8239875550077B243 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		2A6DB140239F07FF00D12A0B /* MeetTheTeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetTheTeamTableViewController.swift; sourceTree = "<group>"; };
 		2A8155DE238C90A100B1859C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		2A8155E0238C961300B1859C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2A8155E4238C988D00B1859C /* ProjectControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectControllers.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				449B3E52238D98D00091819D /* SettingsTableViewController.swift */,
 				2A67DBF623984D540077B243 /* AddProjectViewController.swift */,
 				2AA1FA6A239ABC07000E2C3A /* FAKETaskViewController.swift */,
+				2A6DB140239F07FF00D12A0B /* MeetTheTeamTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				449B3E57238D9B4F0091819D /* DashboardViewController.swift in Sources */,
 				441C07FE239597BC002BB48E /* HomeLayout.swift in Sources */,
 				449B3E5D238DA7DB0091819D /* CoreDataClient.swift in Sources */,
+				2A6DB141239F07FF00D12A0B /* MeetTheTeamTableViewController.swift in Sources */,
 				2A67DBF723984D540077B243 /* AddProjectViewController.swift in Sources */,
 				2A67DBF9239875550077B243 /* Colors.swift in Sources */,
 				2AAAADE92399B8D5005A328E /* ProjectDetailTableViewCell.swift in Sources */,
