@@ -46,11 +46,20 @@ class HomeCollectionViewController: UICollectionViewController {
             else { return }
             
             destination.project = project
+
+        } else if segue.identifier == "CellToLogTime" {
+            guard let cell = sender as? ProjectCollectionViewCell,
+                let indexPath = collectionView.indexPath(for: cell),
+                let destination = segue.destination as? LogTimeViewController,
+                let project = fetchedResultsController?.object(at: indexPath)
+                else { return }
             
+            destination.project = project
             
         } else if segue.identifier == "AddProject" {
             guard let destination = segue.destination as? AddProjectViewController
                 else { return }
+            
             destination.moc = moc
         }
     }
@@ -87,11 +96,11 @@ class HomeCollectionViewController: UICollectionViewController {
 
 extension HomeCollectionViewController: ProjectCollectionViewCellDelegate {
     func logTimeButtonTapped(cell: ProjectCollectionViewCell) {
-        performSegue(withIdentifier: "CellToLogTime", sender: self)
+        performSegue(withIdentifier: "CellToLogTime", sender: cell)
     }
     
     func startButtonTapped(cell: ProjectCollectionViewCell) {
-        performSegue(withIdentifier: "CellToTimer", sender: self)
+        performSegue(withIdentifier: "CellToTimer", sender: cell)
     }
 }
 

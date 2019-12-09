@@ -29,6 +29,7 @@
 		446812EA238C8B4F00CF522A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446812E5238C8B4F00CF522A /* Home.storyboard */; };
 		44893CC5239CA7A900A5D2B2 /* LogTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44893CC4239CA7A900A5D2B2 /* LogTimeViewController.swift */; };
 		44893CC7239CA7BC00A5D2B2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44893CC6239CA7BC00A5D2B2 /* TimerViewController.swift */; };
+		44967572239DBC9E00D96842 /* UIAlertController+TemporaryAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44967571239DBC9E00D96842 /* UIAlertController+TemporaryAlert.swift */; };
 		4496D6502385ADE800294710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D64F2385ADE800294710 /* AppDelegate.swift */; };
 		4496D6522385ADE800294710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4496D6512385ADE800294710 /* SceneDelegate.swift */; };
 		4496D6572385ADE800294710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4496D6552385ADE800294710 /* Main.storyboard */; };
@@ -87,6 +88,7 @@
 		446812E6238C8B4F00CF522A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		44893CC4239CA7A900A5D2B2 /* LogTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTimeViewController.swift; sourceTree = "<group>"; };
 		44893CC6239CA7BC00A5D2B2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		44967571239DBC9E00D96842 /* UIAlertController+TemporaryAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+TemporaryAlert.swift"; sourceTree = "<group>"; };
 		4496D64C2385ADE800294710 /* TimeCrumbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCrumbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4496D64F2385ADE800294710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4496D6512385ADE800294710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */,
 				2AAAADE62399B3D9005A328E /* Decimal+AsCurrency.swift */,
+				44967571239DBC9E00D96842 /* UIAlertController+TemporaryAlert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44967572239DBC9E00D96842 /* UIAlertController+TemporaryAlert.swift in Sources */,
 				449B3E55238D99DC0091819D /* LogTableViewController.swift in Sources */,
 				2A349C21239723F00012AD58 /* ProjectDetailTableViewController.swift in Sources */,
 				4496D6502385ADE800294710 /* AppDelegate.swift in Sources */,
