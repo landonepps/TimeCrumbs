@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GGX-Fe-I1K">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -118,7 +118,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="zC1-ek-qIr">
-                        <barButtonItem key="leftBarButtonItem" title="Export" image="square.and.arrow.down" catalog="system" id="dOS-3Z-RdM"/>
+                        <barButtonItem key="leftBarButtonItem" title="Export" image="square.and.arrow.down" catalog="system" id="dOS-3Z-RdM">
+                            <connections>
+                                <action selector="exportButtonTapped:" destination="1ko-7l-l5r" id="3qt-VX-Ux3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateRangeButton" destination="K8J-bV-fc3" id="Dey-2q-v7y"/>
