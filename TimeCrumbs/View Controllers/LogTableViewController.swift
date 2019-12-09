@@ -38,6 +38,7 @@ class LogTableViewController: UITableViewController {
     
     // MARK: - Actions
     @IBAction func dateRangeButtonTapped(_ sender: Any) {
+        exportToCSV()
     }
 
     // MARK: - Table view data source
@@ -130,8 +131,43 @@ class LogTableViewController: UITableViewController {
         
         return buttonView
     }
-
+    
+    func exportToCSV() {
+        let fileName = "Tasks.csv"
+        let path = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        
+        var csvText = "date,project,client,task,duration,rate\n"
+        
+        for task in fetchedResultsController?.fetchedObjects ?? [] {
+            var taskLine = [String]()
+            taskLine.append("\(task.date?.asString() ?? "")")
+            taskLine.append("\(task.project?.name ?? "")")
+            taskLine.append("\(task.project?.clientName ?? "")")
+            taskLine.append("\(task.name ?? "")")
+            taskLine.append("\(task.duration / 60)")
+            
+            if task.project?.isHourly ?? false,
+                let rate = task.project?.rate as? Double
+                {
+            taskLine.append("\(rate * task.duration)")
+            } else {
+                taskLine.append("")
+            }
+            csvText.append("\(taskLine.joined(separator: ","))\n")
+        }
+        
+        do {
+            try csvText.write(to: path, atomically: true, encoding: String.Encoding.utf8)
+            
+            let vc = UIActivityViewController(activityItems: [path], applicationActivities: [])
+            present(vc, animated: true, completion: nil)
+        } catch {
+            print("Failed to create file", error)
+        }
+        // Present Alert Controller?
+    }
 }
+
 
 extension LogTableViewController: CoreDataClient {
     func set(moc: NSManagedObjectContext) {
