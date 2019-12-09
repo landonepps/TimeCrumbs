@@ -9,5 +9,5 @@
 import Foundation
 
 struct Colors {
-    static let projectColorNames = ["lightOrange", "orange", "red", "meyerLemon", "skyBlue", "cerulean", "azure"]
+    static let projectColorNames = ["wheat", "orange", "red", "meyerLemon", "skyBlue", "cerulean", "azure"]
 }

@@ -46,11 +46,20 @@ class HomeCollectionViewController: UICollectionViewController {
             else { return }
             
             destination.project = project
+
+        } else if segue.identifier == "CellToLogTime" {
+            guard let cell = sender as? ProjectCollectionViewCell,
+                let indexPath = collectionView.indexPath(for: cell),
+                let destination = segue.destination as? LogTimeViewController,
+                let project = fetchedResultsController?.object(at: indexPath)
+                else { return }
             
+            destination.project = project
             
         } else if segue.identifier == "AddProject" {
             guard let destination = segue.destination as? AddProjectViewController
                 else { return }
+            
             destination.moc = moc
         }
     }
@@ -83,23 +92,15 @@ class HomeCollectionViewController: UICollectionViewController {
         performSegue(withIdentifier: "CellToProjectDetail", sender: cell)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
-    
-    // MARK: Expanding/Collapsing
-    
-    func expand(cell: UICollectionViewCell) {
-        guard let cell = cell as? ExpandableCell else { return }
-        
-//        cell.expand(in: collectionView)
-    }
 }
 
 extension HomeCollectionViewController: ProjectCollectionViewCellDelegate {
     func logTimeButtonTapped(cell: ProjectCollectionViewCell) {
-        expand(cell: cell)
+        performSegue(withIdentifier: "CellToLogTime", sender: cell)
     }
     
     func startButtonTapped(cell: ProjectCollectionViewCell) {
-        expand(cell: cell)
+        performSegue(withIdentifier: "CellToTimer", sender: cell)
     }
 }
 
