@@ -12,6 +12,7 @@ import CoreData
 class AddProjectViewController: UIViewController {
     
     // MARK: - Class Properties
+    
     var moc: NSManagedObjectContext!
     var colorButtons = [UIButton]()
     var selectedColorName: String?
@@ -19,6 +20,7 @@ class AddProjectViewController: UIViewController {
     var project: Project?
     
     // MARK: - Outlets
+    
     @IBOutlet weak var deleteButtonStackView: UIStackView!
     @IBOutlet weak var projectNameTextField: UITextField!
     @IBOutlet weak var clientNameTextField: UITextField!
@@ -42,6 +44,7 @@ class AddProjectViewController: UIViewController {
     }
     
     // MARK: - Actions
+    
     @IBAction func cancelButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -81,14 +84,12 @@ class AddProjectViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func archiveProjectButtonTapped(_ sender: Any) {
-    }
-    
     @IBAction func deleteProjectButtonTapped(_ sender: Any) {
         presentDeleteAlertController()
     }
     
-    // MARK: - Helper Functions
+    // MARK: - Helper Methods
+    
     func presentDeleteAlertController() {
         
         let alertController = UIAlertController(title: "Delete Project", message: "This action cannot be undone. Delete Project?", preferredStyle: .actionSheet)
