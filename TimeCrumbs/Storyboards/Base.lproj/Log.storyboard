@@ -2,7 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GGX-Fe-I1K">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,10 +24,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qX8-WS-oT0" userLabel="Project Color View">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="2"/>
-                                            <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="10" height="75"/>
+                                            <color key="backgroundColor" name="wheat"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="2" id="dCE-u3-VHT"/>
+                                                <constraint firstAttribute="width" constant="10" id="B1l-ay-E5y"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6Iv-g2-JNj">
@@ -85,12 +86,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="6Iv-g2-JNj" firstAttribute="top" secondItem="ood-2O-e0U" secondAttribute="top" constant="8" id="40W-g8-Qgp"/>
-                                        <constraint firstItem="qX8-WS-oT0" firstAttribute="top" secondItem="ood-2O-e0U" secondAttribute="top" id="9wW-eQ-z1w"/>
-                                        <constraint firstItem="qX8-WS-oT0" firstAttribute="width" secondItem="ood-2O-e0U" secondAttribute="width" id="CXF-DC-Xa8"/>
-                                        <constraint firstItem="qX8-WS-oT0" firstAttribute="centerX" secondItem="6Iv-g2-JNj" secondAttribute="centerX" id="LPg-RS-PTX"/>
+                                        <constraint firstItem="qX8-WS-oT0" firstAttribute="top" secondItem="ood-2O-e0U" secondAttribute="top" id="AMq-zT-slp"/>
+                                        <constraint firstItem="qX8-WS-oT0" firstAttribute="leading" secondItem="ood-2O-e0U" secondAttribute="leading" id="HGb-zN-pQw"/>
                                         <constraint firstItem="6Iv-g2-JNj" firstAttribute="leading" secondItem="ood-2O-e0U" secondAttribute="leading" constant="20" id="Xv5-pN-kzk"/>
                                         <constraint firstAttribute="trailing" secondItem="6Iv-g2-JNj" secondAttribute="trailing" constant="20" id="bZ4-3m-ugL"/>
                                         <constraint firstAttribute="bottom" secondItem="6Iv-g2-JNj" secondAttribute="bottom" constant="8" id="oOG-wW-0c5"/>
+                                        <constraint firstAttribute="bottom" secondItem="qX8-WS-oT0" secondAttribute="bottom" id="soL-Py-PC0"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -110,7 +111,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="zC1-ek-qIr">
-                        <barButtonItem key="leftBarButtonItem" title="Export" image="square.and.arrow.down" catalog="system" id="dOS-3Z-RdM">
+                        <barButtonItem key="leftBarButtonItem" title="Export CSV" id="dOS-3Z-RdM">
                             <connections>
                                 <action selector="exportButtonTapped:" destination="1ko-7l-l5r" id="3qt-VX-Ux3"/>
                             </connections>
@@ -119,7 +120,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaG-gt-TC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="1108"/>
+            <point key="canvasLocation" x="1031.8840579710145" y="1106.9196428571429"/>
         </scene>
         <!--LogTimeViewController-->
         <scene sceneID="9wT-XD-sCE">
@@ -154,6 +155,8 @@
     </scenes>
     <resources>
         <image name="log history" width="34" height="44"/>
-        <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
+        <namedColor name="wheat">
+            <color red="0.9882352941176471" green="0.76470588235294112" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

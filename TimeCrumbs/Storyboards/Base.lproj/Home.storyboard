@@ -154,9 +154,9 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIX-nX-ijV">
-                                                                    <rect key="frame" x="316" y="0.0" width="58" height="0.0"/>
+                                                                    <rect key="frame" x="281" y="0.0" width="93" height="0.0"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                    <state key="normal" title="Export "/>
+                                                                    <state key="normal" title="Export CSV"/>
                                                                     <connections>
                                                                         <action selector="exportButtonTapped:" destination="t0z-c8-CDI" eventType="touchUpInside" id="hXV-EI-ohi"/>
                                                                     </connections>
@@ -535,7 +535,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                                                         <color key="tintColor" name="wheat"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYi-zG-KAJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="—" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYi-zG-KAJ">
                                                         <rect key="frame" x="0.0" y="68.333333333333314" width="170" height="33.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -868,6 +868,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QUx-Ua-ZFs"/>
-        <segue reference="2FE-7a-7K9"/>
+        <segue reference="Hl3-fV-4cs"/>
     </inferredMetricsTieBreakers>
 </document>
