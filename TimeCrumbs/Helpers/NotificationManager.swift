@@ -11,7 +11,7 @@ import UserNotifications
 
 class NotificationManager: NSObject {
     
-    func requestPermission() {
+    static func requestPermission(completionHandler: @escaping (Bool) -> Void) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             if granted {
                 print("We have permission to send notifications")
@@ -19,10 +19,11 @@ class NotificationManager: NSObject {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 // Tell them that we can't send notifications
             }
+            completionHandler(granted)
         }
     }
     
-    func fireCheckInNotification(timeInterval: Int) {
+    static func fireCheckInNotification(timeInterval: Int) {
         let noteContent = UNMutableNotificationContent()
         noteContent.title = "Still Working?"
         noteContent.body = "Don't forget to stop your timer if you have completed your task!"
@@ -38,7 +39,7 @@ class NotificationManager: NSObject {
         }
     }
     
-    func fireResumeTimerNotification(timeInterval: Int) {
+    static func fireResumeTimerNotification(timeInterval: Int) {
         let noteContent = UNMutableNotificationContent()
         noteContent.title = "Back At It?"
         noteContent.body = "Don't forget to resume your timer if you started working again!"
@@ -52,5 +53,11 @@ class NotificationManager: NSObject {
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
             }
         }
+    }
+    
+    static func deletePendingNotifications() {
+        
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
     }
 }

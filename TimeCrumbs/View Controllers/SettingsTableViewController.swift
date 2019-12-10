@@ -13,9 +13,11 @@ class SettingsTableViewController: UITableViewController {
     
     // Set by the SceneDelegate's scene(scene:willConnectTo:options:) method
     var moc: NSManagedObjectContext!
-    let notificationManager = NotificationManager()
     var checkInIsShort: Bool = false
     var resumeIsShort: Bool = false
+    var checkInIsEnabled: Bool = false
+    var resumeIsEnabled: Bool = false
+    
     
     // MARK: - Outlets
     
@@ -28,39 +30,93 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    // MARK: - Actions
-    
-    @IBAction func projectCheckInSwitchToggled(_ sender: Any) {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
     }
     
-    @IBAction func resumeTimerSwitchToggled(_ sender: Any) {
+    // MARK: - Actions
+    
+    @IBAction func projectCheckInSwitchToggled(_ sender: UISwitch) {
+        if sender.isOn {
+            NotificationManager.requestPermission { granted in
+                DispatchQueue.main.async {
+                    if granted {
+                        self.checkInIsEnabled = sender.isOn
+                        UserDefaults.standard.set(self.checkInIsEnabled, forKey: "checkInIsEnabled")
+                    } else {
+                        sender.isOn = false
+                        UIAlertController.presentTemporaryAlert(in: self, title: "Permission Denied", message: "Please enable notifications in settings.")
+                    }
+                }
+            }
+        } else {
+            checkInIsEnabled = sender.isOn
+            UserDefaults.standard.set(checkInIsEnabled, forKey: "checkInIsEnabled")
+        }
+    }
+    
+    @IBAction func resumeTimerSwitchToggled(_ sender: UISwitch) {
+        if sender.isOn {
+            NotificationManager.requestPermission { granted in
+                DispatchQueue.main.async {
+                    if granted {
+                        self.resumeIsEnabled = sender.isOn
+                        UserDefaults.standard.set(self.resumeIsEnabled, forKey: "resumeIsEnabled")
+                    } else {
+                        sender.isOn = false
+                        UIAlertController.presentTemporaryAlert(in: self, title: "Permission Denied", message: "Please enable notifications in settings.")
+                    }
+                }
+            }
+        } else {
+            resumeIsEnabled = sender.isOn
+            UserDefaults.standard.set(resumeIsEnabled, forKey: "resumeIsEnabled")
+        }
     }
     
     @IBAction func projectCheckInAlertFrequencyButtonTapped(_ sender: Any) {
         checkInIsShort.toggle()
-        if checkInIsShort {
-            projectCheckInAlertFrequencyButton.setTitle("15 min", for: .normal)
-        } else {
-            projectCheckInAlertFrequencyButton.setTitle("30 min", for: .normal)
-        }
         UserDefaults.standard.set(checkInIsShort, forKey: "checkInIsShort")
+        updateViews()
     }
     
     @IBAction func resumeTimerAlertFrequencyButtonTapped(_ sender: Any) {
         resumeIsShort.toggle()
-        if resumeIsShort {
-            resumeTimerAlertFrequencyButton.setTitle("15 min", for: .normal)
-        } else {
-            resumeTimerAlertFrequencyButton.setTitle("30 min", for: .normal)
-        }
         UserDefaults.standard.set(resumeIsShort, forKey: "resumeIsShort")
+        updateViews()
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
+    
+    func updateViews() {
+        checkInIsEnabled = UserDefaults.standard.bool(forKey: "checkInIsEnabled")
+        resumeIsEnabled = UserDefaults.standard.bool(forKey: "resumeIsEnabled")
+        
+        checkInIsShort = UserDefaults.standard.bool(forKey: "checkInIsShort")
+        resumeIsShort = UserDefaults.standard.bool(forKey: "resumeIsShort")
+        
+        projectCheckInSwitch.isOn = checkInIsEnabled
+        resumeTimerSwitch.isOn = resumeIsEnabled
+        
+        if checkInIsShort {
+            projectCheckInAlertFrequencyButton.setTitle("15 min", for: .normal)
+        } else {
+            projectCheckInAlertFrequencyButton.setTitle("30 min", for: .normal)
+        }
+        
+        if resumeIsShort {
+            resumeTimerAlertFrequencyButton.setTitle("15 min", for: .normal)
+        } else {
+            resumeTimerAlertFrequencyButton.setTitle("30 min", for: .normal)
+        }
+    }
+    
+    
+    
 }
 
 extension SettingsTableViewController: CoreDataClient {
