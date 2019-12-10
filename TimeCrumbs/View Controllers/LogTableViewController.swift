@@ -38,7 +38,6 @@ class LogTableViewController: UITableViewController {
     @IBAction func exportButtonTapped(_ sender: Any) {
         exportToCSV()
     }
-    
 
     // MARK: - Table View Data Source
     
@@ -85,7 +84,6 @@ class LogTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toLogTimeVC" {
             guard let indexPath = tableView.indexPathForSelectedRow,

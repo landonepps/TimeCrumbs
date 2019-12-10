@@ -59,7 +59,10 @@ class DashboardViewController: UIViewController {
         
         if timeCrumbTotal.compare(0) == .orderedDescending,
             let totalString = timeCrumbTotal.asCurrency() {
+            congratulationsLabel.isHidden = false
             congratulationsLabel.text = "Congratulations - you made an extra \(totalString) by tracking your Time Crumb tasks under 30 minutes!"
+        } else {
+            congratulationsLabel.isHidden = true
         }
     }
     

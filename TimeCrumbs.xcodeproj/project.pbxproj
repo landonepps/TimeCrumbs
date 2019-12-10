@@ -44,7 +44,7 @@
 		449B3E53238D98D00091819D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E52238D98D00091819D /* SettingsTableViewController.swift */; };
 		449B3E55238D99DC0091819D /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E54238D99DC0091819D /* LogTableViewController.swift */; };
 		449B3E57238D9B4F0091819D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E56238D9B4F0091819D /* DashboardViewController.swift */; };
-		449B3E5B238DA4200091819D /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E5A238DA4200091819D /* HomeCollectionViewController.swift */; };
+		449B3E5B238DA4200091819D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E5A238DA4200091819D /* HomeViewController.swift */; };
 		449B3E5D238DA7DB0091819D /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B3E5C238DA7DB0091819D /* CoreDataClient.swift */; };
 		44A7EA6A2398512300B5E6E4 /* ExpandableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7EA692398512300B5E6E4 /* ExpandableCellProtocol.swift */; };
 		44BE441C2395C7D0004F7811 /* ProjectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44BE441A2395C7D0004F7811 /* ProjectCollectionViewCell.xib */; };
@@ -112,7 +112,7 @@
 		449B3E52238D98D00091819D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		449B3E54238D99DC0091819D /* LogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
 		449B3E56238D9B4F0091819D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		449B3E5A238DA4200091819D /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		449B3E5A238DA4200091819D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		449B3E5C238DA7DB0091819D /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
 		44A7EA692398512300B5E6E4 /* ExpandableCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCellProtocol.swift; sourceTree = "<group>"; };
 		44BE441A2395C7D0004F7811 /* ProjectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 		44B4EBB12385B28C00BEA8FA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				449B3E5A238DA4200091819D /* HomeCollectionViewController.swift */,
+				449B3E5A238DA4200091819D /* HomeViewController.swift */,
 				44893CC4239CA7A900A5D2B2 /* LogTimeViewController.swift */,
 				44893CC6239CA7BC00A5D2B2 /* TimerViewController.swift */,
 				2A349C20239723F00012AD58 /* ProjectDetailTableViewController.swift */,
@@ -482,7 +482,7 @@
 				2A8155DF238C90A100B1859C /* Project.swift in Sources */,
 				2A349C1C2395853D0012AD58 /* ProjectCollectionViewCell.swift in Sources */,
 				2A6DB143239F17C600D12A0B /* PrivacyPolicyViewController.swift in Sources */,
-				449B3E5B238DA4200091819D /* HomeCollectionViewController.swift in Sources */,
+				449B3E5B238DA4200091819D /* HomeViewController.swift in Sources */,
 				2A8155E8238CA94400B1859C /* Managed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

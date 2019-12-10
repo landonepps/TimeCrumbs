@@ -149,7 +149,6 @@ class TimerViewController: UIViewController {
                 startedTasks.count > 0 {
                 
                 task = startedTasks.first
-                
             } else {
                 // Otherwise, create a new task
                 let currentTime = Date()
@@ -158,18 +157,25 @@ class TimerViewController: UIViewController {
         }
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] timer in
-            guard let self = self,
-                let task = self.task,
-                let startTime = task.startTime
-            else { return }
+            guard let self = self else { return }
             
-            let elapsedTime = Date().timeIntervalSince(startTime) + task.duration
-            
-            let seconds = Int(elapsedTime.truncatingRemainder(dividingBy: 60))
-            let minutes = Int(elapsedTime.truncatingRemainder(dividingBy: 3600) / 60)
-            let hours = Int(elapsedTime / 3600)
-            self.timeLabel.text = String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
+            self.updateViews()
         })
+        
+        updateViews()
+    }
+    
+    func updateViews() {
+        guard let task = self.task,
+            let startTime = task.startTime
+        else { return }
+        
+        let elapsedTime = Date().timeIntervalSince(startTime) + task.duration
+        
+        let seconds = Int(elapsedTime.truncatingRemainder(dividingBy: 60))
+        let minutes = Int(elapsedTime.truncatingRemainder(dividingBy: 3600) / 60)
+        let hours = Int(elapsedTime / 3600)
+        self.timeLabel.text = String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
     }
 }
 

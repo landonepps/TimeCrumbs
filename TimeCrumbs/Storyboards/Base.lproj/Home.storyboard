@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,44 +22,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8xd-Jd-rd8" kind="relationship" relationship="rootViewController" id="hab-YL-MKE"/>
+                        <segue destination="cb5-vg-Ktk" kind="relationship" relationship="rootViewController" id="8y0-u0-cUO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JnB-r8-6jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1295.6521739130435" y="136.60714285714286"/>
-        </scene>
-        <!--Home Collection View Controller-->
-        <scene sceneID="PIN-ia-Zst">
-            <objects>
-                <collectionViewController id="8xd-Jd-rd8" customClass="HomeCollectionViewController" customModule="TimeCrumbs" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xDn-wq-Pti">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewLayout key="collectionViewLayout" id="V7G-fH-3g9" customClass="HomeLayout" customModule="TimeCrumbs" customModuleProvider="target"/>
-                        <cells/>
-                        <connections>
-                            <outlet property="dataSource" destination="8xd-Jd-rd8" id="q0P-6o-XQC"/>
-                            <outlet property="delegate" destination="8xd-Jd-rd8" id="BIm-c1-roz"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="s1z-E4-sRc">
-                        <barButtonItem key="rightBarButtonItem" title="Add Project" id="FuV-BX-kZq">
-                            <connections>
-                                <segue destination="vzc-gO-dz3" kind="show" identifier="AddProject" id="Ahi-Wu-iWS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="t0z-c8-CDI" kind="show" identifier="CellToProjectDetail" id="ELp-0G-Ko3"/>
-                        <segue destination="p9c-dZ-NFf" kind="show" identifier="CellToLogTime" id="gWO-4A-5RU"/>
-                        <segue destination="pvh-2b-Pgv" kind="show" identifier="CellToTimer" id="6Qr-Uc-S8I"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MVQ-aL-prB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2011.594202898551" y="136.60714285714286"/>
         </scene>
         <!--Project Detail Table View Controller-->
         <scene sceneID="ltz-FG-M0r">
@@ -359,7 +328,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5h-f5-zFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2705.7971014492755" y="136.60714285714286"/>
+            <point key="canvasLocation" x="2716" y="137"/>
         </scene>
         <!--Log Time View Controller-->
         <scene sceneID="lx1-Op-tRM">
@@ -853,6 +822,67 @@
             </objects>
             <point key="canvasLocation" x="2717" y="904"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="ia7-QT-RGJ">
+            <objects>
+                <viewController id="cb5-vg-Ktk" customClass="HomeViewController" customModule="TimeCrumbs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TZK-33-Su3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Etz-o3-IN4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewLayout key="collectionViewLayout" id="Xea-ac-85m" customClass="HomeLayout" customModule="TimeCrumbs" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Gwe-hk-0hq">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JlJ-Vn-QlI">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a project to get started..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX2-HS-oiR">
+                                <rect key="frame" x="30" y="128" width="354" height="28.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Etz-o3-IN4" firstAttribute="top" secondItem="TZK-33-Su3" secondAttribute="top" id="0QA-nR-8Jb"/>
+                            <constraint firstItem="suP-15-ksg" firstAttribute="trailing" secondItem="WX2-HS-oiR" secondAttribute="trailing" constant="30" id="1ss-Xq-EDE"/>
+                            <constraint firstItem="Etz-o3-IN4" firstAttribute="trailing" secondItem="suP-15-ksg" secondAttribute="trailing" id="9Q1-QW-QSv"/>
+                            <constraint firstItem="Etz-o3-IN4" firstAttribute="leading" secondItem="suP-15-ksg" secondAttribute="leading" id="9Rb-xm-7tB"/>
+                            <constraint firstAttribute="bottom" secondItem="Etz-o3-IN4" secondAttribute="bottom" id="JWo-TE-vTM"/>
+                            <constraint firstItem="WX2-HS-oiR" firstAttribute="top" secondItem="suP-15-ksg" secondAttribute="top" constant="40" id="NWc-7O-UjH"/>
+                            <constraint firstItem="WX2-HS-oiR" firstAttribute="leading" secondItem="suP-15-ksg" secondAttribute="leading" constant="30" id="ZsB-EV-nlK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="suP-15-ksg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Te2-B8-xc3">
+                        <barButtonItem key="rightBarButtonItem" title="Add Project" id="Yqg-oZ-apv">
+                            <connections>
+                                <segue destination="vzc-gO-dz3" kind="show" identifier="AddProject" id="I1Y-mD-xAb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addAProjectLabel" destination="WX2-HS-oiR" id="hzG-aL-mhD"/>
+                        <outlet property="collectionView" destination="Etz-o3-IN4" id="cU5-NJ-CHW"/>
+                        <segue destination="p9c-dZ-NFf" kind="show" identifier="CellToLogTime" id="bGR-w1-uRr"/>
+                        <segue destination="pvh-2b-Pgv" kind="show" identifier="CellToTimer" id="5JQ-LO-SO6"/>
+                        <segue destination="t0z-c8-CDI" kind="show" identifier="CellToProjectDetail" id="Uvg-jP-alR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRf-V9-dMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2021.7391304347827" y="136.60714285714286"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bigButton" width="77" height="77"/>
@@ -867,7 +897,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QUx-Ua-ZFs"/>
-        <segue reference="Hl3-fV-4cs"/>
+        <segue reference="I1Y-mD-xAb"/>
+        <segue reference="bGR-w1-uRr"/>
     </inferredMetricsTieBreakers>
 </document>

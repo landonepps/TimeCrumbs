@@ -1,5 +1,5 @@
 //
-//  HomeCollectionViewController.swift
+//  HomeViewController.swift
 //  TimeCrumbs
 //
 //  Created by Landon Epps on 11/26/19.
@@ -11,7 +11,7 @@ import CoreData
 
 fileprivate let reuseIdentifier = "ProjectCell"
 
-class HomeCollectionViewController: UICollectionViewController {
+class HomeViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -19,12 +19,19 @@ class HomeCollectionViewController: UICollectionViewController {
     var moc: NSManagedObjectContext!
     
     var fetchedResultsController: NSFetchedResultsController<Project>?
-
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var addAProjectLabel: UILabel!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.delegate = self
+        collectionView.dataSource = self
         collectionView.register(ProjectCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.register(UINib(nibName: "ProjectCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.backgroundColor = UIColor(named: "backgroundColor")
@@ -37,6 +44,8 @@ class HomeCollectionViewController: UICollectionViewController {
         } catch {
             print("Error:", error)
         }
+        
+        updateViews()
     }
 
     // MARK: - Navigation
@@ -76,38 +85,49 @@ class HomeCollectionViewController: UICollectionViewController {
             destination.moc = moc
         }
     }
+    
+    // MARK: - Helper Methods
+    
+    func updateViews() {
+       addAProjectLabel.isHidden = (fetchedResultsController?.fetchedObjects?.count ?? 0) > 0
+    }
+}
 
-    // MARK: UICollectionViewDataSource
+// MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+extension HomeViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return fetchedResultsController?.sections?.count ?? 0
     }
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchedResultsController?.fetchedObjects?.count ?? 0
     }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ProjectCollectionViewCell,
             let project = fetchedResultsController?.object(at: indexPath)
         else { fatalError("Incorrect cell type: expected ProjectCollectionViewCell") }
-    
+        
         cell.delegate = self
         cell.project = project
-    
+        
         return cell
-    } 
+    }
+}
 
-    // MARK: UICollectionViewDelegate
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+// MARK: UICollectionViewDelegate
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         performSegue(withIdentifier: "CellToProjectDetail", sender: cell)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 
-extension HomeCollectionViewController: ProjectCollectionViewCellDelegate {
+extension HomeViewController: ProjectCollectionViewCellDelegate {
     func logTimeButtonTapped(cell: ProjectCollectionViewCell) {
         performSegue(withIdentifier: "CellToLogTime", sender: cell)
     }
@@ -117,13 +137,14 @@ extension HomeCollectionViewController: ProjectCollectionViewCellDelegate {
     }
 }
 
-extension HomeCollectionViewController: NSFetchedResultsControllerDelegate {
+extension HomeViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         collectionView.reloadData()
+        updateViews()
     }
 }
 
-extension HomeCollectionViewController: CoreDataClient {
+extension HomeViewController: CoreDataClient {
     func set(moc: NSManagedObjectContext) {
         self.moc = moc
     }
