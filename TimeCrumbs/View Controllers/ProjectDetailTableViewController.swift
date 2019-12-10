@@ -182,7 +182,17 @@ class ProjectDetailTableViewController: UITableViewController {
         
         let fileName = "\(fileNameComponents.joined(separator: " ")).csv"
         
-        let path = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        var path: URL
+        do {
+            let temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(),
+                                            isDirectory: true)
+            path = temporaryDirectoryURL.appendingPathComponent(UUID().uuidString)
+            try FileManager.default.createDirectory(at: path, withIntermediateDirectories: true, attributes: nil)
+            path = path.appendingPathComponent(fileName)
+        } catch {
+            print(error)
+            return
+        }
         
         var csvText = "date,project,client,task,duration,amount\n"
         

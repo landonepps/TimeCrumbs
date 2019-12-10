@@ -109,22 +109,22 @@
                                             <rect key="frame" x="0.0" y="110.33333333333334" width="374" height="144"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ZJ-g9-vNC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="110"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="144"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeCrumbsTotal" translatesAutoresizingMaskIntoConstraints="NO" id="ohA-o1-CaZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="ohA-o1-CaZ" secondAttribute="height" multiplier="1:1" id="ebQ-hb-Fo5"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="600" verticalHuggingPriority="251" text="$49.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uYf-Sx-klx">
-                                                            <rect key="frame" x="95" y="40" width="87.333333333333314" height="30"/>
+                                                            <rect key="frame" x="129" y="57" width="87.333333333333314" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g38-v7-iPX">
-                                                            <rect key="frame" x="197.33333333333337" y="20" width="156.66666666666663" height="70"/>
+                                                            <rect key="frame" x="231.33333333333334" y="20" width="122.66666666666666" height="104"/>
                                                             <string key="text">Time Crumbs
 (under 30 mins)</string>
                                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
@@ -148,13 +148,13 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="800" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-bn-zah">
-                                                    <rect key="frame" x="0.0" y="110" width="374" height="34"/>
+                                                    <rect key="frame" x="0.0" y="143.99999999999997" width="374" height="0.0"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="bHT-YD-7fI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIX-nX-ijV">
-                                                                    <rect key="frame" x="316" y="0.0" width="58" height="34"/>
+                                                                    <rect key="frame" x="316" y="0.0" width="58" height="0.0"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                     <state key="normal" title="Export "/>
                                                                     <connections>
@@ -377,7 +377,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2RH-BG-30U">
-                                <rect key="frame" x="50" y="100" width="344" height="683"/>
+                                <rect key="frame" x="50" y="100" width="344" height="701"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="o7B-NS-pMt">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="36"/>
@@ -396,7 +396,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="x4j-p3-BkF">
-                                        <rect key="frame" x="0.0" y="90" width="344" height="248"/>
+                                        <rect key="frame" x="0.0" y="89.999999999999986" width="344" height="218.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="7Vi-2g-nUk">
                                                 <rect key="frame" x="0.0" y="0.0" width="344" height="24"/>
@@ -405,12 +405,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" verticalHuggingPriority="600" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="9LR-3m-3jJ">
-                                                <rect key="frame" x="0.0" y="32" width="344" height="216"/>
+                                                <rect key="frame" x="0.0" y="32" width="344" height="186.66666666666666"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iSY-Mc-nRv">
-                                        <rect key="frame" x="0.0" y="348" width="344" height="248"/>
+                                        <rect key="frame" x="0.0" y="318.66666666666669" width="344" height="218.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="u25-rt-fRf">
                                                 <rect key="frame" x="0.0" y="0.0" width="344" height="24"/>
@@ -419,15 +419,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="600" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rU-tE-0Or">
-                                                <rect key="frame" x="0.0" y="32" width="344" height="216"/>
+                                                <rect key="frame" x="0.0" y="32" width="344" height="186.33333333333334"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="92b-rM-uPF">
-                                        <rect key="frame" x="0.0" y="606" width="344" height="77"/>
+                                        <rect key="frame" x="0.0" y="547" width="344" height="154"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S70-9I-fMR">
-                                                <rect key="frame" x="133.66666666666666" y="0.0" width="77" height="77"/>
+                                                <rect key="frame" x="95" y="0.0" width="154" height="154"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="tintColor" name="wheat"/>
                                                 <state key="normal" title="Save" backgroundImage="bigButton"/>
@@ -512,7 +512,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kvq-WG-mY9">
-                                <rect key="frame" x="65" y="329" width="314" height="267"/>
+                                <rect key="frame" x="65" y="329" width="314" height="344"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AF9-J6-oRj">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="170"/>
@@ -547,13 +547,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lF9-Hq-0eH">
-                                        <rect key="frame" x="0.0" y="190" width="314" height="77"/>
+                                        <rect key="frame" x="0.0" y="190" width="314" height="154"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="amz-bl-FhY">
-                                                <rect key="frame" x="0.0" y="0.0" width="237" height="77"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="154"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAM-Y8-SSk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="154" height="154"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <color key="tintColor" name="wheat"/>
                                                         <state key="normal" title="Finish" backgroundImage="bigButton">
@@ -566,7 +566,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="700" horizontalCompressionResistancePriority="900" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzc-ej-wYG">
-                                                <rect key="frame" x="237" y="0.0" width="77" height="77"/>
+                                                <rect key="frame" x="160" y="0.0" width="154" height="154"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <color key="tintColor" name="wheat"/>
                                                 <state key="normal" title="Resume" backgroundImage="bigButton">
