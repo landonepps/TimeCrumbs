@@ -57,10 +57,6 @@ class SettingsTableViewController: UITableViewController {
         UserDefaults.standard.set(resumeIsShort, forKey: "resumeIsShort")
     }
     
-    @IBAction func enableNotificationsButtonTapped(_ sender: Any) {
-        notificationManager.requestPermission()
-    }
-    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -184,11 +184,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Reminders" id="AXL-zY-ZHC">
-                        <barButtonItem key="leftBarButtonItem" title="Enable Noties" id="QCI-8P-0ZB">
-                            <connections>
-                                <action selector="enableNotificationsButtonTapped:" destination="ZyF-xs-fzV" id="sIp-aZ-sA6"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Enable Noties" id="QCI-8P-0ZB"/>
                     </navigationItem>
                     <connections>
                         <outlet property="projectCheckInAlertFrequencyButton" destination="2VL-NF-rG7" id="nlz-Zk-ItT"/>
