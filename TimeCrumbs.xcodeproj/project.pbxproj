@@ -22,6 +22,7 @@
 		2A833AF6239EB6CA00A2BCE2 /* Date+AsString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A833AF5239EB6CA00A2BCE2 /* Date+AsString.swift */; };
 		2AAAADE72399B3D9005A328E /* Decimal+AsCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAAADE62399B3D9005A328E /* Decimal+AsCurrency.swift */; };
 		2AAAADE92399B8D5005A328E /* ProjectDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAAADE82399B8D5005A328E /* ProjectDetailTableViewCell.swift */; };
+		2AE76DA823A0181600C29D93 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE76DA723A0181600C29D93 /* NotificationManager.swift */; };
 		441C07FE239597BC002BB48E /* HomeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441C07FD239597BC002BB48E /* HomeLayout.swift */; };
 		4433A0522385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */; };
 		4433A0552385C0BE004AC1E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4433A0542385C0BE004AC1E7 /* README.md */; };
@@ -85,6 +86,7 @@
 		2A833AF5239EB6CA00A2BCE2 /* Date+AsString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+AsString.swift"; sourceTree = "<group>"; };
 		2AAAADE62399B3D9005A328E /* Decimal+AsCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+AsCurrency.swift"; sourceTree = "<group>"; };
 		2AAAADE82399B8D5005A328E /* ProjectDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailTableViewCell.swift; sourceTree = "<group>"; };
+		2AE76DA723A0181600C29D93 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		441C07FD239597BC002BB48E /* HomeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayout.swift; sourceTree = "<group>"; };
 		4433A0512385B805004AC1E7 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		4433A0542385C0BE004AC1E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				44A7EA692398512300B5E6E4 /* ExpandableCellProtocol.swift */,
 				2A67DBF8239875550077B243 /* Colors.swift */,
 				447743B2239F0D1900C1DBA4 /* ReplaceSegue.swift */,
+				2AE76DA723A0181600C29D93 /* NotificationManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				2A6DB141239F07FF00D12A0B /* MeetTheTeamTableViewController.swift in Sources */,
 				2A67DBF723984D540077B243 /* AddProjectViewController.swift in Sources */,
 				2A67DBF9239875550077B243 /* Colors.swift in Sources */,
+				2AE76DA823A0181600C29D93 /* NotificationManager.swift in Sources */,
 				2AAAADE92399B8D5005A328E /* ProjectDetailTableViewCell.swift in Sources */,
 				2A8155E1238C961300B1859C /* Task.swift in Sources */,
 				2A8155E5238C988D00B1859C /* ProjectControllers.swift in Sources */,
