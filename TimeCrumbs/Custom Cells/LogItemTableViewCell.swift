@@ -10,6 +10,7 @@ import UIKit
 
 class LogItemTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var projectColorView: UIView!
     @IBOutlet weak var projectNameLabel: UILabel!
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -31,7 +32,7 @@ class LogItemTableViewCell: UITableViewCell {
         if let projectColorName = task.project?.color,
             let projectColor = UIColor(named: projectColorName)
         {
-            projectNameLabel.textColor = projectColor
+            projectColorView.backgroundColor = projectColor
         }
         
         let taskDuration = format(duration: task.duration)
@@ -41,7 +42,12 @@ class LogItemTableViewCell: UITableViewCell {
         
         taskNameLabel.text = task.name
         timeLabel.text = taskDuration
-        dollarAmountLabel.text = String(format: "%.02f", task.duration * task.project!.rate!.doubleValue / 60 / 60)
+        
+        if task.project?.isHourly == true {
+            dollarAmountLabel.text = (task.project?.rate ?? 0).multiplying(by: NSDecimalNumber(value: task.duration)).dividing(by: NSDecimalNumber(3600)).asCurrency()
+        } else {
+            dollarAmountLabel.text = "—"
+        }
     }
     
     // MARK: Value Formatting

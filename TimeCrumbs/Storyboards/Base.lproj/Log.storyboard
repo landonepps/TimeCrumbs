@@ -22,6 +22,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qX8-WS-oT0" userLabel="Project Color View">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="2"/>
+                                            <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="2" id="dCE-u3-VHT"/>
+                                            </constraints>
+                                        </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6Iv-g2-JNj">
                                             <rect key="frame" x="20" y="8" width="374" height="59"/>
                                             <subviews>
@@ -29,13 +36,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="27"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Project 15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="bp1-xa-pmT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="246.5" height="27"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="250.5" height="27"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="4Zr-yl-Z1d">
-                                                            <rect key="frame" x="246.5" y="0.0" width="127.5" height="27"/>
+                                                            <rect key="frame" x="250.5" y="0.0" width="123.5" height="27"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -79,6 +85,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="6Iv-g2-JNj" firstAttribute="top" secondItem="ood-2O-e0U" secondAttribute="top" constant="8" id="40W-g8-Qgp"/>
+                                        <constraint firstItem="qX8-WS-oT0" firstAttribute="top" secondItem="ood-2O-e0U" secondAttribute="top" id="9wW-eQ-z1w"/>
+                                        <constraint firstItem="qX8-WS-oT0" firstAttribute="width" secondItem="ood-2O-e0U" secondAttribute="width" id="CXF-DC-Xa8"/>
+                                        <constraint firstItem="qX8-WS-oT0" firstAttribute="centerX" secondItem="6Iv-g2-JNj" secondAttribute="centerX" id="LPg-RS-PTX"/>
                                         <constraint firstItem="6Iv-g2-JNj" firstAttribute="leading" secondItem="ood-2O-e0U" secondAttribute="leading" constant="20" id="Xv5-pN-kzk"/>
                                         <constraint firstAttribute="trailing" secondItem="6Iv-g2-JNj" secondAttribute="trailing" constant="20" id="bZ4-3m-ugL"/>
                                         <constraint firstAttribute="bottom" secondItem="6Iv-g2-JNj" secondAttribute="bottom" constant="8" id="oOG-wW-0c5"/>
@@ -87,6 +96,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="4Zr-yl-Z1d" id="cM8-KA-ATx"/>
                                     <outlet property="dollarAmountLabel" destination="czL-J4-rk5" id="mD8-Li-EXa"/>
+                                    <outlet property="projectColorView" destination="qX8-WS-oT0" id="sK3-1k-TVQ"/>
                                     <outlet property="projectNameLabel" destination="bp1-xa-pmT" id="TDm-m2-Xqq"/>
                                     <outlet property="taskNameLabel" destination="qZB-60-49L" id="Nli-pd-xPl"/>
                                     <outlet property="timeLabel" destination="txu-92-Gal" id="Rt5-2p-F0R"/>
@@ -108,7 +118,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaG-gt-TC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="1108"/>
+            <point key="canvasLocation" x="1033" y="1108"/>
         </scene>
         <!--Log History-->
         <scene sceneID="Cdd-LD-LkD">

@@ -107,7 +107,7 @@ class LogTableViewController: UITableViewController {
     // MARK: - Helpers
     
     func exportToCSV() {
-        let fileName = "Tasks.csv"
+        let fileName = "tasks.csv"
         let path = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
         
         var csvText = "date,project,client,task,duration,amount\n"

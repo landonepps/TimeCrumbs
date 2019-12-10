@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Dashboard View Controller-->
+        <!--Dashboard-->
         <scene sceneID="Zfk-Pa-pxb">
             <objects>
                 <viewController id="Htf-Ky-8Ne" customClass="DashboardViewController" customModule="TimeCrumbs" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +141,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8mp-MH-GVN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FyD-KD-3ib"/>
+                    <navigationItem key="navigationItem" title="Dashboard" id="FyD-KD-3ib"/>
                     <connections>
                         <outlet property="congratulationsLabel" destination="EUA-Kf-YdP" id="FlR-ja-g4J"/>
                         <outlet property="hoursLabel" destination="16G-vb-jD8" id="M7I-VQ-OmC"/>
