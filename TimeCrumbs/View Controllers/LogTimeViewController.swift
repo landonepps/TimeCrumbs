@@ -45,7 +45,7 @@ class LogTimeViewController: UIViewController {
             let moc = project.managedObjectContext
         else { return }
         
-        guard let taskName = taskNameTextField.text, taskName.isEmpty == false else {
+        guard let taskName = taskNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), taskName.isEmpty == false else {
             UIAlertController.presentTemporaryAlert(in: self, title: "Unable to Save", message: "Missing Task Name")
             return
         }

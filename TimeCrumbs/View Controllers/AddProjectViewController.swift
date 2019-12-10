@@ -48,7 +48,7 @@ class AddProjectViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         
-        guard let projectName = projectNameTextField.text,
+        guard let projectName = projectNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             projectName.isEmpty == false
         else {
             presentEmptyFieldAlertController(title: "Unable to Save", message: "Empty Project Name")
