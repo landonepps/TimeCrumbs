@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-//        #warning("Remove code to reset DB & generate dummy data")
+        #warning("Remove code to reset DB & generate dummy data")
 //        print("Removing all records in:", persistentContainer.name)
 //        // create the delete request for the specified entity
 //        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
