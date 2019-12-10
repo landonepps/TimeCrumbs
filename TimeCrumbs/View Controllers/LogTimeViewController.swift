@@ -33,6 +33,20 @@ class LogTimeViewController: UIViewController {
         dismissKeyboardOnTap()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // block double-tap on tab bar to navigate to root
+        tabBarController?.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // disable blocking double-tap on tab bar
+        tabBarController?.delegate = nil
+    }
+    
     // MARK: - Actions
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -110,5 +124,12 @@ class LogTimeViewController: UIViewController {
 extension LogTimeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+    }
+}
+
+extension LogTimeViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        let indexOfNewVC = tabBarController.viewControllers?.firstIndex(of: viewController)
+        return (indexOfNewVC != 0) || (indexOfNewVC != tabBarController.selectedIndex)
     }
 }
