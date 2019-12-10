@@ -75,7 +75,7 @@ class LogTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         guard let task = fetchedResultsController?.object(at: indexPath) else { return nil }
 
-        if task.startTime != nil {
+        if task.isActive {
             return nil
         }
 

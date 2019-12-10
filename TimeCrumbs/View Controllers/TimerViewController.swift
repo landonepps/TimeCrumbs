@@ -97,7 +97,7 @@ class TimerViewController: UIViewController {
         let goBackAction = UIAlertAction(title: "Go Back", style: .cancel, handler: nil)
         let finishAction = UIAlertAction(title: "Finish", style: .default) { _ in
             guard let task = self.task else { return }
-            TaskController.pauseTask(task)
+            TaskController.finishTask(task)
             self.performSegue(withIdentifier: "TimerToLogTime", sender: self)
         }
         alertController.addAction(goBackAction)
@@ -141,18 +141,24 @@ class TimerViewController: UIViewController {
             let moc = project.managedObjectContext
         else { return }
         
+        // Task is nil when starting a timer
         if task == nil {
             // If the project already has a task started, use that
             let request: NSFetchRequest<Task> = Task.fetchRequest()
-            request.predicate = NSPredicate(format: "(project = %@) AND (startTime != nil)", project)
+            request.predicate = NSPredicate(format: "(project = %@) AND (isActive = YES)", project)
             if let startedTasks = try? project.managedObjectContext?.fetch(request),
                 startedTasks.count > 0 {
                 
                 task = startedTasks.first
+                
+                if let task = task {
+                    TaskController.resumeTask(task)
+                }
+                
             } else {
                 // Otherwise, create a new task
                 let currentTime = Date()
-                task = TaskController.createTask(project: project, startTime: currentTime, date: currentTime, moc: moc)
+                task = TaskController.createTask(project: project, startTime: currentTime, date: currentTime, isActive: true, moc: moc)
             }
         }
         
