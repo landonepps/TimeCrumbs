@@ -79,6 +79,15 @@ class TimerViewController: UIViewController {
                 timerImageView.tintColor = projectColor
             }
             
+            NotificationManager.deletePendingNotifications()
+            if UserDefaults.standard.bool(forKey: "checkInIsEnabled") {
+                if UserDefaults.standard.bool(forKey: "checkInIsShort") {
+                    NotificationManager.fireCheckInNotification(timeInterval: 900)
+                } else {
+                    NotificationManager.fireCheckInNotification(timeInterval: 1800)
+                }
+            }
+            
         } else {
             TaskController.pauseTask(task)
             
@@ -88,6 +97,15 @@ class TimerViewController: UIViewController {
                 let lightProjectColorName = "light" + projectColorName.prefix(1).capitalized + projectColorName.dropFirst()
 
                 timerImageView.tintColor = UIColor(named: lightProjectColorName)
+            }
+            
+            NotificationManager.deletePendingNotifications()
+            if UserDefaults.standard.bool(forKey: "resumeIsEnabled") {
+                if UserDefaults.standard.bool(forKey: "resumeIsShort") {
+                    NotificationManager.fireResumeTimerNotification(timeInterval: 900)
+                } else {
+                    NotificationManager.fireResumeTimerNotification(timeInterval: 1800)
+                }
             }
         }
     }
@@ -159,6 +177,14 @@ class TimerViewController: UIViewController {
                 // Otherwise, create a new task
                 let currentTime = Date()
                 task = TaskController.createTask(project: project, startTime: currentTime, date: currentTime, isActive: true, moc: moc)
+            }
+            NotificationManager.deletePendingNotifications()
+            if UserDefaults.standard.bool(forKey: "checkInIsEnabled") {
+                if UserDefaults.standard.bool(forKey: "checkInIsShort") {
+                    NotificationManager.fireCheckInNotification(timeInterval: 900)
+                } else {
+                    NotificationManager.fireCheckInNotification(timeInterval: 1800)
+                }
             }
         }
         
