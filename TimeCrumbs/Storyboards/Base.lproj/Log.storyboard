@@ -10,7 +10,7 @@
         <scene sceneID="APj-3C-vW6">
             <objects>
                 <tableViewController id="1ko-7l-l5r" customClass="LogTableViewController" customModule="TimeCrumbs" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Awg-Yq-DlP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Awg-Yq-DlP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -100,6 +100,7 @@
                                     <outlet property="projectNameLabel" destination="bp1-xa-pmT" id="TDm-m2-Xqq"/>
                                     <outlet property="taskNameLabel" destination="qZB-60-49L" id="Nli-pd-xPl"/>
                                     <outlet property="timeLabel" destination="txu-92-Gal" id="Rt5-2p-F0R"/>
+                                    <segue destination="HEk-Dh-krb" kind="show" identifier="toLogTimeVC" id="AQw-pg-2Qi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -119,6 +120,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaG-gt-TC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1033" y="1108"/>
+        </scene>
+        <!--LogTimeViewController-->
+        <scene sceneID="9wT-XD-sCE">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="LogTimeViewController" storyboardName="Home" referencedIdentifier="LogTimeViewController" id="HEk-Dh-krb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CRu-BR-TOL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3OF-WM-ECy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1825" y="1075"/>
         </scene>
         <!--Log History-->
         <scene sceneID="Cdd-LD-LkD">
