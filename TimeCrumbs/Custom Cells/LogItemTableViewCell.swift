@@ -41,7 +41,12 @@ class LogItemTableViewCell: UITableViewCell {
         
         taskNameLabel.text = task.name
         timeLabel.text = taskDuration
-        dollarAmountLabel.text = String(format: "%.02f", task.duration * task.project!.rate!.doubleValue / 60 / 60)
+        
+        if task.project?.isHourly == true {
+            dollarAmountLabel.text = (task.project?.rate ?? 0).multiplying(by: NSDecimalNumber(value: task.duration)).dividing(by: NSDecimalNumber(3600)).asCurrency()
+        } else {
+            dollarAmountLabel.text = "—"
+        }
     }
     
     // MARK: Value Formatting
