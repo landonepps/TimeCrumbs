@@ -13,7 +13,7 @@ class ProjectDetailTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var project: Project!
+    var project: Project?
     var fetchedResultsController: NSFetchedResultsController<Task>?
     
     // MARK: - Outlets
@@ -125,7 +125,7 @@ class ProjectDetailTableViewController: UITableViewController {
         let request: NSFetchRequest<Task> = Task.fetchRequest()
         request.predicate = NSPredicate(format: "project == %@", project)
         
-        guard let tasks = try? project.managedObjectContext!.fetch(request) else { return }
+        guard let tasks = try? project.managedObjectContext?.fetch(request) else { return }
         
         var totalTime = 0.0
         var totalIncome: NSDecimalNumber = 0.0
@@ -156,6 +156,7 @@ class ProjectDetailTableViewController: UITableViewController {
     }
     
     func setupFetchedResultsController() {
+        guard let project = project else { return }
         let request = Task.sortedFetchRequest
         request.predicate = NSPredicate(format: "project == %@", project)
         
@@ -174,7 +175,7 @@ class ProjectDetailTableViewController: UITableViewController {
     func exportToCSV() {
         var fileNameComponents = [String]()
         
-        if let projectName = project.name?.trimmingCharacters(in: .whitespacesAndNewlines) {
+        if let projectName = project?.name?.trimmingCharacters(in: .whitespacesAndNewlines) {
             fileNameComponents.append(projectName)
         }
         fileNameComponents.append("Tasks")
