@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class TimerViewController: UIViewController {
     
     // MARK: - Properties
     
     var project: Project?
+    var task: Task?
+    
+    var timer: Timer?
     
     // MARK: - Outlets
     
@@ -21,7 +25,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timerImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var finishButton: UIButton!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
     
     // MARK: - Lifecycle
 
@@ -36,6 +40,8 @@ class TimerViewController: UIViewController {
         
         // block double-tap on tab bar to navigate to root
         tabBarController?.delegate = self
+        
+        setupTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,13 +54,50 @@ class TimerViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        let alertController = UIAlertController(title: "Cancel Timer?", message: "If you cancel the timer, your current task won't be saved.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
+            guard let self = self, let task = self.task else { return }
+            TaskController.deleteTask(task)
+            self.navigationController?.popViewController(animated: true)
+        }
+        let goBackAction = UIAlertAction(title: "Go Back", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(goBackAction)
+        
+        present(alertController, animated: true)
+    }
+    
+    @IBAction func pauseButtonTapped(_ sender: Any) {
+        guard let task = task else { return }
+        
+        if task.startTime == nil {
+            TaskController.resumeTask(task)
+            
+            pauseButton.setTitle("Pause", for: .normal)
+            
+            if let projectColorName = project?.color, let projectColor = UIColor(named: projectColorName) {
+                timerImageView.tintColor = projectColor
+            }
+            
+        } else {
+            TaskController.pauseTask(task)
+            
+            pauseButton.setTitle("Resume", for: .normal)
+            
+            if let projectColorName = project?.color {
+                let lightProjectColorName = "light" + projectColorName.prefix(1).capitalized + projectColorName.dropFirst()
+
+                timerImageView.tintColor = UIColor(named: lightProjectColorName)
+            }
+        }
     }
     
     @IBAction func finishButtonTapped(_ sender: Any) {
         let alertController = UIAlertController(title: "Finish", message: "Are you sure you're finished?", preferredStyle: .alert)
         let goBackAction = UIAlertAction(title: "Go Back", style: .cancel, handler: nil)
         let finishAction = UIAlertAction(title: "Finish", style: .default) { _ in
+            guard let task = self.task else { return }
+            TaskController.pauseTask(task)
             self.performSegue(withIdentifier: "TimerToLogTime", sender: self)
         }
         alertController.addAction(goBackAction)
@@ -69,6 +112,7 @@ class TimerViewController: UIViewController {
             guard let destination = segue.destination as? LogTimeViewController else { return }
             
             destination.project = project
+            destination.task = task
         }
     }
     
@@ -88,10 +132,45 @@ class TimerViewController: UIViewController {
             projectColorView.backgroundColor = projectColor
             timerImageView.tintColor = projectColor
             finishButton.tintColor = projectColor
-            startButton.tintColor = projectColor
+            pauseButton.tintColor = projectColor
         }
     }
 
+    func setupTimer() {
+        guard let project = project,
+            let moc = project.managedObjectContext
+        else { return }
+        
+        if task == nil {
+            // If the project already has a task started, use that
+            let request: NSFetchRequest<Task> = Task.fetchRequest()
+            request.predicate = NSPredicate(format: "(project = %@) AND (startTime != nil)", project)
+            if let startedTasks = try? project.managedObjectContext?.fetch(request),
+                startedTasks.count > 0 {
+                
+                task = startedTasks.first
+                
+            } else {
+                // Otherwise, create a new task
+                let currentTime = Date()
+                task = TaskController.createTask(project: project, startTime: currentTime, date: currentTime, moc: moc)
+            }
+        }
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] timer in
+            guard let self = self,
+                let task = self.task,
+                let startTime = task.startTime
+            else { return }
+            
+            let elapsedTime = Date().timeIntervalSince(startTime) + task.duration
+            
+            let seconds = Int(elapsedTime.truncatingRemainder(dividingBy: 60))
+            let minutes = Int(elapsedTime.truncatingRemainder(dividingBy: 3600) / 60)
+            let hours = Int(elapsedTime / 3600)
+            self.timeLabel.text = String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
+        })
+    }
 }
 
 extension TimerViewController: UITabBarControllerDelegate {

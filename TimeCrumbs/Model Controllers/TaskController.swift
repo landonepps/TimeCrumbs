@@ -13,7 +13,8 @@ class TaskController {
     
     // MARK: - CRUD
     // Create
-    static func createTask(project: Project, name: String, startTime: Date? = nil, duration: Double = 0, date: Date = Date(), moc: NSManagedObjectContext) {
+    @discardableResult
+    static func createTask(project: Project, name: String? = nil, startTime: Date? = nil, duration: Double = 0, date: Date = Date(), moc: NSManagedObjectContext) -> Task {
         let task = Task(context: moc)
         
         task.project = project
@@ -22,10 +23,12 @@ class TaskController {
         task.duration = duration
         task.date = date
         moc.saveOrRollback()
+        
+        return task
     }
     
     // Update
-    static func updateTask(_ task: Task, name: String, date: Date, duration: Double) {
+    static func updateTask(_ task: Task, name: String?, date: Date, duration: Double) {
         task.name = name
         task.date = date
         task.duration = duration
@@ -36,7 +39,7 @@ class TaskController {
     static func pauseTask(_ task: Task) {
         guard let startTime = task.startTime else {return}
         
-        task.duration = Date().timeIntervalSince(startTime)
+        task.duration += Date().timeIntervalSince(startTime)
         task.startTime = nil
         task.managedObjectContext?.saveOrRollback()
     }

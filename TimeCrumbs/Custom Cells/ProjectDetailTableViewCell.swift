@@ -22,8 +22,18 @@ class ProjectDetailTableViewCell: UITableViewCell {
     func update(with task: Task) {
         let taskDuration = format(duration: task.duration)
         
-        taskNameLabel.text = task.name
-        durationLabel.text = taskDuration
+        if let taskName = task.name?.trimmingCharacters(in: .whitespacesAndNewlines),
+            taskName.isEmpty == false {
+            taskNameLabel.text = task.name
+        } else {
+            taskNameLabel.text = "Unnamed"
+        }
+        
+        if task.startTime == nil {
+            durationLabel.text = taskDuration
+        } else {
+            durationLabel.text = "—"
+        }
         
         guard let project = task.project else { return }
         

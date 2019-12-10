@@ -40,7 +40,8 @@ class LogTableViewController: UITableViewController {
     }
     
 
-    // MARK: - Table view data source
+    // MARK: - Table View Data Source
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return fetchedResultsController?.fetchedObjects?.count ?? 0
@@ -55,6 +56,31 @@ class LogTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let task = fetchedResultsController?.object(at: indexPath) {
+                let alertController = UIAlertController(title: "Delete", message: "Delete the task?", preferredStyle: .alert)
+                let goBackAction = UIAlertAction(title: "Go Back", style: .cancel, handler: nil)
+                let finishAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+                    TaskController.deleteTask(task)
+                }
+                alertController.addAction(goBackAction)
+                alertController.addAction(finishAction)
+                present(alertController, animated: true)
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard let task = fetchedResultsController?.object(at: indexPath) else { return nil }
+
+        if task.startTime != nil {
+            return nil
+        }
+
+        return indexPath
     }
 
     // MARK: - Navigation

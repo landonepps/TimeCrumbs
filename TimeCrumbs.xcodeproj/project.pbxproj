@@ -149,10 +149,10 @@
 		2A349C1D239585480012AD58 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2A349C192395827F0012AD58 /* LogItemTableViewCell.swift */,
 				2A349C1B2395853D0012AD58 /* ProjectCollectionViewCell.swift */,
 				44BE441A2395C7D0004F7811 /* ProjectCollectionViewCell.xib */,
 				2AAAADE82399B8D5005A328E /* ProjectDetailTableViewCell.swift */,
+				2A349C192395827F0012AD58 /* LogItemTableViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";

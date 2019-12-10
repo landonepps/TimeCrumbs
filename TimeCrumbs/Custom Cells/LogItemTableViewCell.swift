@@ -40,8 +40,18 @@ class LogItemTableViewCell: UITableViewCell {
             dateLabel.text = format(date: date)
         }
         
-        taskNameLabel.text = task.name
-        timeLabel.text = taskDuration
+        if let taskName = task.name?.trimmingCharacters(in: .whitespacesAndNewlines),
+            taskName.isEmpty == false {
+            taskNameLabel.text = task.name
+        } else {
+            taskNameLabel.text = "Unnamed"
+        }
+        
+        if task.startTime == nil {
+            timeLabel.text = taskDuration
+        } else {
+            timeLabel.text = "—"
+        }
         
         if task.project?.isHourly == true {
             dollarAmountLabel.text = (task.project?.rate ?? 0).multiplying(by: NSDecimalNumber(value: task.duration)).dividing(by: NSDecimalNumber(3600)).asCurrency()

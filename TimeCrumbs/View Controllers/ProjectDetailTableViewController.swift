@@ -83,7 +83,14 @@ class ProjectDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let task = fetchedResultsController?.object(at: indexPath) {
-                TaskController.deleteTask(task)
+                let alertController = UIAlertController(title: "Delete", message: "Delete the task?", preferredStyle: .alert)
+                let goBackAction = UIAlertAction(title: "Go Back", style: .cancel, handler: nil)
+                let finishAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+                    TaskController.deleteTask(task)
+                }
+                alertController.addAction(goBackAction)
+                alertController.addAction(finishAction)
+                present(alertController, animated: true)
             }
         }
     }

@@ -377,7 +377,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2RH-BG-30U">
-                                <rect key="frame" x="50" y="100" width="344" height="701"/>
+                                <rect key="frame" x="50" y="100" width="344" height="668"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="o7B-NS-pMt">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="36"/>
@@ -396,7 +396,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="x4j-p3-BkF">
-                                        <rect key="frame" x="0.0" y="89.999999999999986" width="344" height="218.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="90" width="344" height="202"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="7Vi-2g-nUk">
                                                 <rect key="frame" x="0.0" y="0.0" width="344" height="24"/>
@@ -405,12 +405,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" verticalHuggingPriority="600" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="9LR-3m-3jJ">
-                                                <rect key="frame" x="0.0" y="32" width="344" height="186.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="32" width="344" height="170"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="170" id="Cvg-7U-6ac"/>
+                                                </constraints>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iSY-Mc-nRv">
-                                        <rect key="frame" x="0.0" y="318.66666666666669" width="344" height="218.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="302" width="344" height="202"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="u25-rt-fRf">
                                                 <rect key="frame" x="0.0" y="0.0" width="344" height="24"/>
@@ -419,23 +422,31 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="600" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rU-tE-0Or">
-                                                <rect key="frame" x="0.0" y="32" width="344" height="186.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="32" width="344" height="170"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="92b-rM-uPF">
-                                        <rect key="frame" x="0.0" y="547" width="344" height="154"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="cPv-me-8wI">
+                                        <rect key="frame" x="0.0" y="514" width="344" height="154"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S70-9I-fMR">
-                                                <rect key="frame" x="95" y="0.0" width="154" height="154"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                <color key="tintColor" name="wheat"/>
-                                                <state key="normal" title="Save" backgroundImage="bigButton"/>
-                                                <connections>
-                                                    <action selector="saveButtonTapped:" destination="p9c-dZ-NFf" eventType="touchUpInside" id="rLE-Yp-yL9"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="92b-rM-uPF">
+                                                <rect key="frame" x="0.0" y="0.0" width="344" height="154"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S70-9I-fMR">
+                                                        <rect key="frame" x="95" y="0.0" width="154" height="154"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                        <color key="tintColor" name="wheat"/>
+                                                        <state key="normal" title="Save" backgroundImage="bigButton"/>
+                                                        <connections>
+                                                            <action selector="saveButtonTapped:" destination="p9c-dZ-NFf" eventType="touchUpInside" id="rLE-Yp-yL9"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="100" constant="100" id="lIv-R7-KLM"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -569,9 +580,12 @@
                                                 <rect key="frame" x="160" y="0.0" width="154" height="154"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <color key="tintColor" name="wheat"/>
-                                                <state key="normal" title="Resume" backgroundImage="bigButton">
+                                                <state key="normal" title="Pause" backgroundImage="bigButton">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pauseButtonTapped:" destination="pvh-2b-Pgv" eventType="touchUpInside" id="4qA-Ld-MPX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -599,8 +613,8 @@
                     <connections>
                         <outlet property="backgroundView" destination="uBI-Ki-xWD" id="PQW-Cv-a98"/>
                         <outlet property="finishButton" destination="lAM-Y8-SSk" id="e3J-bx-1Wx"/>
+                        <outlet property="pauseButton" destination="pzc-ej-wYG" id="PrZ-4M-Xhe"/>
                         <outlet property="projectColorView" destination="IUG-e4-zQw" id="N7d-1e-wmI"/>
-                        <outlet property="startButton" destination="pzc-ej-wYG" id="PrZ-4M-Xhe"/>
                         <outlet property="timeLabel" destination="cYi-zG-KAJ" id="l7r-gv-gNB"/>
                         <outlet property="timerImageView" destination="aqE-Nl-Bgx" id="4Dk-41-XvG"/>
                         <segue destination="p9c-dZ-NFf" kind="show" identifier="TimerToLogTime" customClass="ReplaceSegue" customModule="TimeCrumbs" customModuleProvider="target" id="2FE-7a-7K9"/>
@@ -854,6 +868,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QUx-Ua-ZFs"/>
-        <segue reference="Hl3-fV-4cs"/>
+        <segue reference="2FE-7a-7K9"/>
     </inferredMetricsTieBreakers>
 </document>

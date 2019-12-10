@@ -59,9 +59,10 @@ class LogTimeViewController: UIViewController {
             let moc = project.managedObjectContext
         else { return }
         
-        guard let taskName = taskNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), taskName.isEmpty == false else {
-            UIAlertController.presentTemporaryAlert(in: self, title: "Unable to Save", message: "Missing Task Name")
-            return
+        
+        var taskName = taskNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if taskName?.isEmpty ?? false {
+            taskName = nil
         }
         
         let duration: Double = durationPicker.countDownDuration
@@ -111,6 +112,7 @@ class LogTimeViewController: UIViewController {
         }
         
         if let duration = task?.duration {
+            durationPicker.minuteInterval = 1
             durationPicker.countDownDuration = duration
         } else {
             durationPicker.countDownDuration = 1_800 // 30 minutes in seconds
