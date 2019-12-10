@@ -41,20 +41,4 @@ class HomeLayout: UICollectionViewFlowLayout {
         return attributes
     }
 
-//    override var collectionViewContentSize: CGSize {
-//        #warning("Placeholder")
-//        return  collectionView!.frame.size
-//    }
-    
-    // Return the content offset of the nearest cell to have snapping
-//    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
-//        #warning("Placeholder")
-//        return CGPoint()
-//    }
-    
-    // Whenever
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        #warning("Placeholder")
-        return true
-    }
 }

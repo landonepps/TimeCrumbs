@@ -13,6 +13,7 @@ class LogTimeViewController: UIViewController {
     // MARK: - Properties
     
     var project: Project?
+    var task: Task?
     
     // MARK: - Outlets
 
@@ -44,8 +45,7 @@ class LogTimeViewController: UIViewController {
             let moc = project.managedObjectContext
         else { return }
         
-        guard let taskName = taskNameTextField.text, taskName.isEmpty == false
-        else {
+        guard let taskName = taskNameTextField.text, taskName.isEmpty == false else {
             UIAlertController.presentTemporaryAlert(in: self, title: "Unable to Save", message: "Missing Task Name")
             return
         }
@@ -53,7 +53,11 @@ class LogTimeViewController: UIViewController {
         let duration: Double = durationPicker.countDownDuration
         let date = datePicker.date
         
-        TaskController.createTask(project: project, name: taskName, duration: duration, date: date, moc: moc)
+        if let task = task {
+            TaskController.updateTask(task, name: taskName, date: date, duration: duration)
+        } else {
+            TaskController.createTask(project: project, name: taskName, duration: duration, date: date, moc: moc)
+        }
         
         saveButton.setImage(UIImage(named: "saveButtonCheck"), for: .normal)
         saveButton.setTitle("", for: .normal)
@@ -80,8 +84,21 @@ class LogTimeViewController: UIViewController {
             saveButton.tintColor = projectColor
         }
         
-        datePicker.date = Date()
-        durationPicker.countDownDuration = 1_800 // 30 minutes in seconds
+        if let taskName = task?.name {
+            taskNameTextField.text = taskName
+        }
+        
+        if let date = task?.date {
+            datePicker.date = date
+        } else {
+            datePicker.date = Date()
+        }
+        
+        if let duration = task?.duration {
+            durationPicker.countDownDuration = duration
+        } else {
+            durationPicker.countDownDuration = 1_800 // 30 minutes in seconds
+        }
     }
     
     func dismissKeyboardOnTap() {

@@ -25,14 +25,20 @@ class ProjectDetailTableViewCell: UITableViewCell {
         taskNameLabel.text = task.name
         durationLabel.text = taskDuration
         
-        totalAmountLabel.text = (task.project?.rate ?? 0).multiplying(by: NSDecimalNumber(value: task.duration)).dividing(by: NSDecimalNumber(3600)).asCurrency()
+        guard let project = task.project else { return }
+        
+        if project.isHourly {
+            totalAmountLabel.text = (project.rate ?? 0).multiplying(by: NSDecimalNumber(value: task.duration)).dividing(by: NSDecimalNumber(3600)).asCurrency()
+        } else {
+            totalAmountLabel.text = "—"
+        }
     }
     
     func format(duration: TimeInterval) -> String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute]
         formatter.unitsStyle = .abbreviated
-        formatter.maximumUnitCount = 1
+        formatter.maximumUnitCount = 2
         
         return formatter.string(from: duration)!
     }

@@ -15,6 +15,7 @@ class ProjectDetailTableViewController: UITableViewController {
     var fetchedResultsController: NSFetchedResultsController<Task>?
     
     // MARK: - Outlets
+    @IBOutlet weak var projectColorView: UIView!
     @IBOutlet weak var projectNameLabel: UILabel!
     @IBOutlet weak var clientNameLabel: UILabel!
     @IBOutlet weak var chargeRateLabel: UILabel!
@@ -55,7 +56,9 @@ class ProjectDetailTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if let task = fetchedResultsController?.object(at: indexPath) {
+                TaskController.deleteTask(task)
+            }
         }
     }
     
@@ -64,9 +67,18 @@ class ProjectDetailTableViewController: UITableViewController {
         if segue.identifier == "toEditProject" {
             guard let destination = segue.destination as? AddProjectViewController,
                 let project = project
-                else { return }
+            else { return }
             
             destination.project = project
+            
+        } else if segue.identifier == "CellToLogTime" {
+            guard let destination = segue.destination as? LogTimeViewController,
+                let indexPath = tableView.indexPathForSelectedRow,
+                let task = fetchedResultsController?.object(at: indexPath)
+            else { return }
+            
+            destination.task = task
+            destination.project = task.project
         }
     }
     
@@ -76,7 +88,7 @@ class ProjectDetailTableViewController: UITableViewController {
         
         if let projectColorName = project.color,
             let projectColor = UIColor(named: projectColorName) {
-            projectNameLabel.textColor = projectColor
+            projectColorView.backgroundColor = projectColor
         }
         
         projectNameLabel.text = project.name

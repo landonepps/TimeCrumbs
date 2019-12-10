@@ -16,14 +16,10 @@ class AddProjectViewController: UIViewController {
     var colorButtons = [UIButton]()
     var selectedColorName: String?
     
-    var project: Project? {
-        didSet {
-            loadViewIfNeeded()
-            updateViews()
-        }
-    }
+    var project: Project?
     
     // MARK: - Outlets
+    @IBOutlet weak var deleteButtonStackView: UIStackView!
     @IBOutlet weak var projectNameTextField: UITextField!
     @IBOutlet weak var clientNameTextField: UITextField!
     @IBOutlet weak var billingRateTextField: UITextField!
@@ -36,6 +32,8 @@ class AddProjectViewController: UIViewController {
         setUpColorStackView()
         selectColor(named: Colors.projectColorNames.first!)
         dismissKeyboardOnTap()
+        
+        updateViews()
     }
     
     override func viewDidLayoutSubviews() {
@@ -167,7 +165,10 @@ class AddProjectViewController: UIViewController {
     
     func updateViews() {
         
-        guard let project = project else { return }
+        guard let project = project else {
+            deleteButtonStackView.isHidden = true
+            return
+        }
         
         if project.isHourly {
             billingTypeSegmentedControl.selectedSegmentIndex = 0
