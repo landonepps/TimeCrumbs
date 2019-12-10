@@ -102,10 +102,12 @@ class LogTimeViewController: UIViewController {
             taskNameTextField.text = taskName
         }
         
+        let currentDate = Date()
+        datePicker.maximumDate = currentDate
         if let date = task?.date {
             datePicker.date = date
         } else {
-            datePicker.date = Date()
+            datePicker.date = currentDate
         }
         
         if let duration = task?.duration {

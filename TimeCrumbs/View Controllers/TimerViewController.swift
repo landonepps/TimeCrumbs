@@ -52,7 +52,7 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func finishButtonTapped(_ sender: Any) {
-        let alertController = UIAlertController(title: "Finish", message: "Are you sure you're finised?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Finish", message: "Are you sure you're finished?", preferredStyle: .alert)
         let goBackAction = UIAlertAction(title: "Go Back", style: .cancel, handler: nil)
         let finishAction = UIAlertAction(title: "Finish", style: .default) { _ in
             self.performSegue(withIdentifier: "TimerToLogTime", sender: self)
