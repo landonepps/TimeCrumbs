@@ -10,6 +10,7 @@ import UIKit
 
 class LogItemTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var projectColorView: UIView!
     @IBOutlet weak var projectNameLabel: UILabel!
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -31,7 +32,7 @@ class LogItemTableViewCell: UITableViewCell {
         if let projectColorName = task.project?.color,
             let projectColor = UIColor(named: projectColorName)
         {
-            projectNameLabel.textColor = projectColor
+            projectColorView.backgroundColor = projectColor
         }
         
         let taskDuration = format(duration: task.duration)
