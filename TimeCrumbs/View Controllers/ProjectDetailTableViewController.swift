@@ -87,6 +87,7 @@ class ProjectDetailTableViewController: UITableViewController {
                 let goBackAction = UIAlertAction(title: "Go Back", style: .cancel, handler: nil)
                 let finishAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
                     TaskController.deleteTask(task)
+                    self.updateViews()
                 }
                 alertController.addAction(goBackAction)
                 alertController.addAction(finishAction)

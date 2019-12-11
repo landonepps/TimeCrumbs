@@ -33,6 +33,11 @@ class LogTableViewController: UITableViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     // MARK: - Actions
     
     @IBAction func exportButtonTapped(_ sender: Any) {
