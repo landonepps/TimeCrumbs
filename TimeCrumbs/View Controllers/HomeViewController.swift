@@ -47,6 +47,12 @@ class HomeViewController: UIViewController {
         
         updateViews()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView.reloadData()
+    }
 
     // MARK: - Navigation
 

@@ -28,8 +28,8 @@ class NotificationManager: NSObject {
         noteContent.title = "Still Working?"
         noteContent.body = "Don't forget to stop your timer if you have completed your task!"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInterval), repeats: false)
-        let requestIdentifier = "testRequest"
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInterval), repeats: true)
+        let requestIdentifier = UUID().uuidString
         let noteRequest = UNNotificationRequest(identifier: requestIdentifier, content: noteContent, trigger: trigger)
         
         UNUserNotificationCenter.current().add(noteRequest) { (error) in
@@ -44,8 +44,8 @@ class NotificationManager: NSObject {
         noteContent.title = "Back At It?"
         noteContent.body = "Don't forget to resume your timer if you started working again!"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInterval), repeats: false)
-        let requestIdentifier = "testRequest"
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInterval), repeats: true)
+        let requestIdentifier = UUID().uuidString
         let noteRequest = UNNotificationRequest(identifier: requestIdentifier, content: noteContent, trigger: trigger)
         
         UNUserNotificationCenter.current().add(noteRequest) { (error) in

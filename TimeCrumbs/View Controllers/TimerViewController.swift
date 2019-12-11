@@ -188,6 +188,7 @@ class TimerViewController: UIViewController {
             }
         }
         
+        timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] timer in
             guard let self = self else { return }
             
