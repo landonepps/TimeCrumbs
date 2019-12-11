@@ -145,6 +145,8 @@ class TimerViewController: UIViewController {
         backgroundView.layer.shadowRadius = 7.0
         backgroundView.layer.masksToBounds = false
         
+        projectNameLabel.text = project?.name ?? "Unnamed Project"
+        
         guard let project = project else { return }
         
         if let projectColorName = project.color, let projectColor = UIColor(named: projectColorName) {
@@ -210,7 +212,6 @@ class TimerViewController: UIViewController {
         let minutes = Int(elapsedTime.truncatingRemainder(dividingBy: 3600) / 60)
         let hours = Int(elapsedTime / 3600)
         self.timeLabel.text = String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
-        projectNameLabel.text = project?.name
     }
 }
 

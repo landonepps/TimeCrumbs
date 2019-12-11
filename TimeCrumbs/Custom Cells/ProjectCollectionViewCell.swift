@@ -99,8 +99,10 @@ class ProjectCollectionViewCell: UICollectionViewCell {
         if let startedTasks = try? project.managedObjectContext?.fetch(request),
             startedTasks.count > 0 {
             
+            startButton.setImage(UIImage(named: "triangle"), for: .normal)
             startLabel.text = "RESUME"
         } else {
+            startButton.setImage(UIImage(named: "clock"), for: .normal)
             startLabel.text = "START"
         }
     }
