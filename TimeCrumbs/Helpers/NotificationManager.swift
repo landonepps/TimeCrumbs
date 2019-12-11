@@ -44,7 +44,7 @@ class NotificationManager: NSObject {
         noteContent.title = "Back At It?"
         noteContent.body = "Don't forget to resume your timer if you started working again!"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInterval), repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInterval), repeats: false)
         let requestIdentifier = UUID().uuidString
         let noteRequest = UNNotificationRequest(identifier: requestIdentifier, content: noteContent, trigger: trigger)
         
