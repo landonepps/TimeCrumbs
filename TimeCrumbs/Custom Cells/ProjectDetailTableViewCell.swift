@@ -22,7 +22,9 @@ class ProjectDetailTableViewCell: UITableViewCell {
     func update(with task: Task) {
         let taskDuration = format(duration: task.duration)
         
-        if let taskName = task.name?.trimmingCharacters(in: .whitespacesAndNewlines),
+        if task.isActive {
+            taskNameLabel.text = "In Progress"
+        } else if let taskName = task.name?.trimmingCharacters(in: .whitespacesAndNewlines),
             taskName.isEmpty == false {
             taskNameLabel.text = task.name
         } else {

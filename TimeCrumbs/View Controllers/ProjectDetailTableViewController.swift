@@ -79,6 +79,15 @@ class ProjectDetailTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if let task = fetchedResultsController?.object(at: indexPath) {
+            if task.isActive {
+                return .none
+            }
+        }
+        return .delete
+    }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -96,7 +105,18 @@ class ProjectDetailTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard let task = fetchedResultsController?.object(at: indexPath) else { return nil }
+        
+        if task.isActive {
+            return nil
+        }
+        
+        return indexPath
+    }
+    
     // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEditProject" {
             guard let destination = segue.destination as? AddProjectViewController,

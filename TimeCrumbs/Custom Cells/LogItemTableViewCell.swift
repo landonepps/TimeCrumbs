@@ -40,7 +40,9 @@ class LogItemTableViewCell: UITableViewCell {
             dateLabel.text = format(date: date)
         }
         
-        if let taskName = task.name?.trimmingCharacters(in: .whitespacesAndNewlines),
+        if task.isActive {
+            taskNameLabel.text = "In Progress"
+        } else if let taskName = task.name?.trimmingCharacters(in: .whitespacesAndNewlines),
             taskName.isEmpty == false {
             taskNameLabel.text = task.name
         } else {

@@ -62,6 +62,15 @@ class LogTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if let task = fetchedResultsController?.object(at: indexPath) {
+            if task.isActive {
+                return .none
+            }
+        }
+        return .delete
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let task = fetchedResultsController?.object(at: indexPath) {

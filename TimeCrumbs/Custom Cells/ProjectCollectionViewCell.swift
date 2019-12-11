@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol ProjectCollectionViewCellDelegate: class {
     func logTimeButtonTapped(cell: ProjectCollectionViewCell)
@@ -82,15 +83,26 @@ class ProjectCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupViews() {
-        projectLabel.text = project?.name
-        if let projectColorName = project?.color,
+        guard let project = project else { return }
+        
+        projectLabel.text = project.name
+        if let projectColorName = project.color,
             let projectColor = UIColor(named: projectColorName)
         {
             projectColorView.backgroundColor = projectColor
             logTimeButton.tintColor = projectColor
             startButton.tintColor = projectColor
         }
-        
+
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        request.predicate = NSPredicate(format: "(project = %@) AND (isActive = YES)", project)
+        if let startedTasks = try? project.managedObjectContext?.fetch(request),
+            startedTasks.count > 0 {
+            
+            startLabel.text = "RESUME"
+        } else {
+            startLabel.text = "START"
+        }
     }
     
 }
