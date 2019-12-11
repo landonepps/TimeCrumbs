@@ -53,9 +53,10 @@ class TaskController {
     }
     
     static func finishTask(_ task: Task) {
-        guard let startTime = task.startTime else {return}
+        if let startTime = task.startTime {
+            task.duration = Date().timeIntervalSince(startTime)
+        }
         
-        task.duration = Date().timeIntervalSince(startTime)
         task.startTime = nil
         task.isActive = false
         task.managedObjectContext?.saveOrRollback()
