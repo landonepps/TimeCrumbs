@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cZE-v0-N4m">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -585,6 +585,7 @@
                         <outlet property="finishButton" destination="lAM-Y8-SSk" id="e3J-bx-1Wx"/>
                         <outlet property="pauseButton" destination="pzc-ej-wYG" id="PrZ-4M-Xhe"/>
                         <outlet property="projectColorView" destination="IUG-e4-zQw" id="N7d-1e-wmI"/>
+                        <outlet property="projectNameLabel" destination="RJg-Lp-TX7" id="ZtL-Mk-Ugu"/>
                         <outlet property="timeLabel" destination="cYi-zG-KAJ" id="l7r-gv-gNB"/>
                         <outlet property="timerImageView" destination="aqE-Nl-Bgx" id="4Dk-41-XvG"/>
                         <segue destination="p9c-dZ-NFf" kind="show" identifier="TimerToLogTime" customClass="ReplaceSegue" customModule="TimeCrumbs" customModuleProvider="target" id="2FE-7a-7K9"/>
@@ -899,6 +900,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QUx-Ua-ZFs"/>
-        <segue reference="Hl3-fV-4cs"/>
+        <segue reference="2FE-7a-7K9"/>
     </inferredMetricsTieBreakers>
 </document>

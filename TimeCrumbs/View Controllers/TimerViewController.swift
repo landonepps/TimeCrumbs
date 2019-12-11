@@ -26,6 +26,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var projectNameLabel: UILabel!
     
     // MARK: - Lifecycle
 
@@ -209,6 +210,7 @@ class TimerViewController: UIViewController {
         let minutes = Int(elapsedTime.truncatingRemainder(dividingBy: 3600) / 60)
         let hours = Int(elapsedTime / 3600)
         self.timeLabel.text = String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
+        projectNameLabel.text = project?.name
     }
 }
 
