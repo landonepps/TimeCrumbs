@@ -46,6 +46,11 @@ class HomeViewController: UIViewController {
         }
         
         updateViews()
+        
+        if !UserDefaults.standard.bool(forKey: "hasCompletedOnboarding") {
+            performSegue(withIdentifier: "ShowOnboarding", sender: self)
+            UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

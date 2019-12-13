@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cZE-v0-N4m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cZE-v0-N4m">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="5Bz-P2-dgh">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="md7-2i-TWx" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ac5-TB-keJ"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GGg-Rv-TQS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2001" y="-583"/>
+        </scene>
         <!--Home-->
         <scene sceneID="DdZ-0f-eDs">
             <objects>
@@ -329,7 +339,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5h-f5-zFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2865" y="137"/>
+            <point key="canvasLocation" x="2716" y="137"/>
         </scene>
         <!--Log Time View Controller-->
         <scene sceneID="lx1-Op-tRM">
@@ -347,7 +357,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2RH-BG-30U">
-                                <rect key="frame" x="50" y="100" width="344" height="668"/>
+                                <rect key="frame" x="50" y="100" width="344" height="614"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="o7B-NS-pMt">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="36"/>
@@ -397,13 +407,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="cPv-me-8wI">
-                                        <rect key="frame" x="0.0" y="514" width="344" height="154"/>
+                                        <rect key="frame" x="0.0" y="514" width="344" height="100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="92b-rM-uPF">
-                                                <rect key="frame" x="0.0" y="0.0" width="344" height="154"/>
+                                                <rect key="frame" x="0.0" y="23" width="344" height="77"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S70-9I-fMR">
-                                                        <rect key="frame" x="95" y="0.0" width="154" height="154"/>
+                                                        <rect key="frame" x="133.66666666666666" y="0.0" width="77" height="77"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                         <color key="tintColor" name="wheat"/>
                                                         <state key="normal" title="Save" backgroundImage="bigButton"/>
@@ -493,7 +503,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kvq-WG-mY9">
-                                <rect key="frame" x="65" y="329" width="314" height="344"/>
+                                <rect key="frame" x="65" y="329" width="314" height="267"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AF9-J6-oRj">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="170"/>
@@ -528,13 +538,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lF9-Hq-0eH">
-                                        <rect key="frame" x="0.0" y="190" width="314" height="154"/>
+                                        <rect key="frame" x="0.0" y="190" width="314" height="77"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="amz-bl-FhY">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="154"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="237" height="77"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAM-Y8-SSk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="154" height="154"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <color key="tintColor" name="wheat"/>
                                                         <state key="normal" title="Finish" backgroundImage="bigButton">
@@ -547,7 +557,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="700" horizontalCompressionResistancePriority="900" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzc-ej-wYG">
-                                                <rect key="frame" x="160" y="0.0" width="154" height="154"/>
+                                                <rect key="frame" x="237" y="0.0" width="77" height="77"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <color key="tintColor" name="wheat"/>
                                                 <state key="normal" title="Pause" backgroundImage="bigButton">
@@ -822,7 +832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyi-An-VYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2865" y="903"/>
+            <point key="canvasLocation" x="2717" y="904"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ia7-QT-RGJ">
@@ -879,22 +889,12 @@
                         <segue destination="p9c-dZ-NFf" kind="show" identifier="CellToLogTime" id="bGR-w1-uRr"/>
                         <segue destination="pvh-2b-Pgv" kind="show" identifier="CellToTimer" id="5JQ-LO-SO6"/>
                         <segue destination="t0z-c8-CDI" kind="show" identifier="CellToProjectDetail" id="Uvg-jP-alR"/>
-                        <segue destination="Swg-qV-qPT" kind="presentation" identifier="ShowOnboarding" id="6pU-J1-u6F"/>
+                        <segue destination="md7-2i-TWx" kind="showDetail" id="6pU-J1-u6F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRf-V9-dMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2021.7391304347827" y="136.60714285714286"/>
-        </scene>
-        <!--Onboarding-->
-        <scene sceneID="JQw-jN-7z2">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Onboarding" id="Swg-qV-qPT" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="5Fp-ub-MHa"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fwI-ng-cS0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2563" y="-279"/>
         </scene>
     </scenes>
     <resources>
@@ -910,7 +910,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QUx-Ua-ZFs"/>
-        <segue reference="Hl3-fV-4cs"/>
+        <segue reference="I1Y-mD-xAb"/>
+        <segue reference="bGR-w1-uRr"/>
     </inferredMetricsTieBreakers>
 </document>
