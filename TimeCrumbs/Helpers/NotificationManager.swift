@@ -28,7 +28,7 @@ class NotificationManager: NSObject {
         noteContent.title = "Still Working?"
         noteContent.body = "Don't forget to stop your timer if you have completed your task!"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInterval), repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInterval), repeats: false)
         let requestIdentifier = UUID().uuidString
         let noteRequest = UNNotificationRequest(identifier: requestIdentifier, content: noteContent, trigger: trigger)
         

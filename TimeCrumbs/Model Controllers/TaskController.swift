@@ -54,7 +54,7 @@ class TaskController {
     
     static func finishTask(_ task: Task) {
         if let startTime = task.startTime {
-            task.duration = Date().timeIntervalSince(startTime)
+            task.duration = task.duration + Date().timeIntervalSince(startTime)
         }
         
         task.startTime = nil
@@ -63,11 +63,6 @@ class TaskController {
     }
     
     // Delete
-    static func cancelTask(_ task: Task) {
-        task.startTime = nil
-        task.managedObjectContext?.saveOrRollback()
-    }
-    
     static func deleteTask(_ task: Task) {
         let moc = task.managedObjectContext
         
